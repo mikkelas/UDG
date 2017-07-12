@@ -73,19 +73,19 @@
                         <p>Et eksempel er denne guide. <code>header</code> og <code>footer</code> er ikke i en <code>.container</code>, men det er menuen og alt indhold.</p>
                         <p><code>footer</code> "låses" til bunden af siden (hvis indholdet ikke er længere end browserens vindue) ved at sætte alle elmenter (undtagen <code>footer</code>) i en container med klassen <code>.skts-wrap</code>. Et <code>div</code> element med klassen <code>.skts-push</code> skal indsættes lige før <code>.skts-wrap</code> container afsluttes.</p>
 <pre class="prettyprint linenums">
-&lt;div class="skts-wrap"&gt;
-    &lt;header&gt;
-        &lt;div class="container"&gt;Header med logo, evt. global menu og log af&lt;/div&gt;
-    &lt;/header&gt;
-    &lt;div class="navbar navbar-default" role="navigation"&gt;
-        &lt;div class="container"&gt;Top menu og evt. søgeboks&lt;/div&gt;
+    &lt;div class="skts-wrap"&gt;
+        &lt;header&gt;
+            &lt;div class="container"&gt;Header med logo, evt. global menu og log af&lt;/div&gt;
+        &lt;/header&gt;
+        &lt;div class="navbar navbar-default" role="navigation"&gt;
+            &lt;div class="container"&gt;Top menu og evt. søgeboks&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="container"&gt;Indhold og evt. venstre menu&lt;/div&gt;
+        &lt;div class="skts-push"&gt;&lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class="container"&gt;Indhold og evt. venstre menu&lt;/div&gt;
-    &lt;div class="skts-push"&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;footer&gt;
-    &lt;div class="container"&gt;Footer info&lt;/div&gt;
-&lt;/footer&gt;</pre>
+    &lt;footer&gt;
+        &lt;div class="container"&gt;Footer info&lt;/div&gt;
+    &lt;/footer&gt;</pre>
                         <hr />
                         <!--
                             ** Header **
