@@ -1,0 +1,153 @@
+/*SKAL LAVES til flere stoerelser*/
+.nav-pills > li > a:hover,
+.nav-pills > li > a:focus {
+  background: #14364C;
+  color: #fff;
+}
+.nav-pills > li > a > span.badge {
+  background: #7F98A7;
+}
+.nav-pills > li.active > a {
+  background: #395f77;
+  color: #fff;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  background: #395f77;
+  color: #fff;
+}
+/* ............ generel links ..................*/
+a.glyphicon {
+  color: #777777;
+}
+a.glyphicon:hover,
+a.glyphicon:focus {
+  text-decoration: none;
+  color: #eeeeee;
+}
+a {
+  text-decoration: none;
+}
+/* ............ topbar soegning..................*/
+/*  
+.navbar-form
+{
+	margin: 4px 0px;
+    ///  font-size: 15px; g�r at den ikke fucker  !?!?
+    font-size: 15px;
+	padding: 0px;
+}
+
+.input-sm, input, .form-control 
+{
+    font-size: 15px;
+}
+
+.navbar-form > .btn {
+    margin-bottom: 0em;
+    margin-right: 0em;
+}
+
+.top-margin {
+	margin-top: 2.8em;
+}
+*/
+/* .......... well .............. */
+/*
+.well-main {
+	text-align:center;
+}
+
+a > .well  {
+	color: @gray;
+} 
+*/
+/* ........................ table .......................... */
+thead > tr > td {
+  color: #777777;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 2px;
+  font-size: 14px;
+}
+/* ...................... typeahead ........................... */
+.tt-dropdown-menu {
+  width: 350px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.navbar-collapse .tt-dropdown-menu {
+  top: 40px;
+}
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #333333;
+}
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+}
+.tt-suggestion p {
+  margin: 0;
+}
+/* ............... print ......................*/
+@media print {
+  a[href]:after {
+    content: none;
+  }
+  abbr[title]:after {
+    content: none;
+  }
+}
+/* ............... generisk ......................*/
+.table-node {
+  width: 100%;
+  max-width: 100%;
+}
+.div-predicate {
+  float: left;
+  margin-top: 10px;
+  font-weight: bold;
+  background-color: #F1F3F5;
+  border-top: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+  padding: 2px 8px 2px 8px;
+}
+.border-left {
+  border-left: 1px solid #dddddd;
+  padding: 0px 8px 0px 5px;
+  background-color: #F1F3F5;
+}
+.border-right {
+  border-right: 1px solid #dddddd;
+  min-height: 16px;
+  padding-right: 4px;
+  background-color: #F1F3F5;
+}
+.border-bottom {
+  min-height: 16px;
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 4px;
+  background-color: #F1F3F5;
+}
+.border-top {
+  border-top: 1px solid #dddddd;
+  padding-top: 4px;
+  background-color: #F1F3F5;
+}
+/* ............... random .....................*/
+/*img {
+	max-width: 100%;
+}
+
+*/

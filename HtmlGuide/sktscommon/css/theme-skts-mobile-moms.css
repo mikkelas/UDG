@@ -1,0 +1,877 @@
+body,
+h1,
+h2,
+h3,
+p,
+label,
+.panel-title > a {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+h1 {
+  font-size: 2.3em;
+  margin-bottom: 35px;
+}
+a {
+  color: #3f6075;
+}
+header {
+  background: #14364c;
+}
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 19px;
+  height: 3px;
+  border-radius: 1px;
+}
+.skts-cookieouter {
+  max-width: 100%;
+  background: #000;
+  padding: 1em;
+}
+.navbar-default .navbar-nav > li > a {
+  text-decoration: underline;
+  padding: .65em 2.3em .65em 0;
+}
+.navbar-nav li a.active {
+  color: grey;
+  text-decoration: none;
+}
+.navbar-nav li a.active:hover {
+  color: grey;
+}
+.navbar-default .navbar-nav > li.active > a {
+  text-decoration: none;
+  color: #b5b5b5;
+}
+a.skts-toggle-section {
+  color: #14364C;
+  display: block;
+  background: url(../images/not-selected-icon.svg) no-repeat 2.3em 1.7em #D9E7EE;
+  text-indent: 3.5em;
+  line-height: 4em;
+  padding: 0.65em 2.3em;
+  -webkit-transition: background 300ms ease;
+  -moz-transition: background 300ms ease;
+  -ms-transition: background 300ms ease;
+  -o-transition: background 300ms ease;
+  transition: background 300ms ease;
+}
+a.skts-toggle-section:hover {
+  background: url(../images/not-selected-icon.svg) no-repeat 2.3em 1.7em #8DBAD0;
+}
+a.skts-toggle-section.selected {
+  background: url(../images/selected-icon.svg) no-repeat 2.3em 1.9em #D9E7EE;
+  -webkit-transition: background 300ms ease;
+  -moz-transition: background 300ms ease;
+  -ms-transition: background 300ms ease;
+  -o-transition: background 300ms ease;
+  transition: background 300ms ease;
+}
+a.skts-toggle-section.selected:hover {
+  background: url(../images/selected-icon.svg) no-repeat 2.3em 1.9em #8DBAD0;
+}
+moms-section-icon {
+  background: red;
+}
+.selected > .moms-section-icon {
+  background: green;
+}
+.breadcrumb {
+  padding: 20px 0;
+  margin-bottom: 22px;
+  list-style: none;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 0;
+  line-height: 28px;
+  border-bottom: 1px solid #A7A7A7;
+  border-top: 1px solid #A7A7A7;
+}
+.breadcrumb > li {
+  color: #A7A7A7;
+  font-size: 10px;
+}
+.breadcrumb > li + li:before {
+  content: url(../images/breadcrumb_arrow.png);
+}
+div#udvidet {
+  padding: 0;
+}
+#udvidet > p {
+  background: #D9E7EE;
+  padding: 0.65em 2.3em;
+  clear: both;
+}
+#udvidet > form > div > div > div > div:nth-child(4) > div > div:nth-child(2) {
+  padding-bottom: 2.6em;
+}
+.skts-cookieinner {
+  width: auto;
+}
+.btn {
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+.skts-btn-nemid:focus,
+.skts-btn-nemid:hover,
+.skts-btn-nemid:focus,
+.skts-btn-nemid:hover,
+.btn.btn-primary:hover {
+  background: #FF5C00;
+  color: #000;
+}
+.navbar-nav li {
+  border-right: none;
+  padding: 0;
+}
+.row {
+  display: table;
+  width: 100%;
+  margin: 0 0 -1px 0;
+}
+.col-md-6 {
+  display: table-cell;
+  vertical-align: top;
+}
+.col-md-6:nth-of-type(1) {
+  width: 70%;
+  max-width: 584px;
+  padding: .65em 0;
+}
+.col-md-6:nth-of-type(2) {
+  width: 30%;
+  max-width: 256px;
+  padding: .65em 0;
+  text-align: right;
+}
+.col-md-6 span.pull-right {
+  font-size: 1em;
+}
+lu li {
+  line-height: 3.3em;
+  list-style: none;
+}
+lu li a:hover {
+  text-decoration: none;
+  color: #000;
+}
+.panel-body {
+  background: #D9E7EE;
+  margin: 1.3em 0;
+  padding: 1.3em;
+}
+.skts-btn-nemid {
+  background: linear-gradient(135deg, #ffc200 40%, #ff8500 100%);
+  border: 0;
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 400;
+  border-radius: 0;
+  padding: 20px;
+}
+input#cvr.form-control,
+input#mm_tastselvKode.form-control {
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  color: #000;
+  border-right: 1px solid #a2a2a2;
+  border-bottom: 1px solid #a2a2a2;
+  font-size: 21px;
+  padding: 1.37em 3.6em 1.3em 1em;
+}
+.btn.btn-primary.skts-validate {
+  margin: 0;
+}
+.skts-icon-right-open-big {
+  text-decoration: underline;
+  margin-top: 1.3em;
+  padding: 0;
+}
+.skts-icon-right-open-big:before {
+  content: none;
+}
+h2.pull-left {
+  margin-bottom: 0;
+}
+.skts-process-form-section.skts-required p {
+  background: #FFF;
+  margin-top: 2em;
+  padding: 1.3em;
+}
+.skts-process-form-section.skts-required .arrow-down#white {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid #FFF;
+  position: relative;
+  margin: -0.8em 7em 0.6em 2em;
+}
+.navbar-toggle {
+  border: none;
+  border-radius: 0;
+  color: #FFF;
+  position: absolute;
+  top: -2.6em;
+  text-align: center;
+  width: 100%;
+  left: 0;
+  padding: .85em .5em .85em .9em;
+}
+span#menu_text {
+  position: absolute;
+  top: .7em;
+  left: 3.2em;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: transparent;
+}
+.navbar.navbar-default {
+  position: relative;
+  top: -0.8em;
+}
+.navbar-collapse {
+  overflow-x: visible;
+  padding-right: 7px;
+  padding-left: 1.7em;
+  -webkit-overflow-scrolling: touch;
+  background: #14364c;
+}
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body > div:nth-child(5) {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.alert-warning {
+  background-color: #D9E7EE;
+  color: #000;
+  border-radius: 0;
+  max-width: 800px;
+  border-color: transparent;
+  margin: 0;
+  padding: 1.3em!important;
+}
+.table.table-striped > tbody > tr {
+  height: 16.6em;
+  border: 0;
+  border-bottom: 30px solid #FFF;
+  background: #D9E7EE;
+}
+.table.table-striped > tbody > tr:nth-child(1) {
+  height: 15.3em;
+}
+.arrow-down#white {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid #FFF;
+  position: relative;
+  margin: -10.5em 7em 1.3em 2em;
+}
+.arrow-down#blue {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid #14364c;
+  position: relative;
+  float: right;
+  margin: 0;
+}
+.table.table-striped {
+  position: relative;
+}
+.table.table-striped > tbody > tr:nth-child(odd) > td {
+  background-color: transparent;
+}
+.table.table-striped > tbody > tr > td {
+  position: absolute;
+  margin: 1.3em;
+}
+table.table.table-striped.table.table-striped tr > td {
+  border-top: 0;
+  border-right: 0;
+  padding: 1em 1.3em;
+}
+#myTable > tbody > tr > td:nth-child(4) {
+  right: 7.1em;
+  margin-top: 8.5em;
+}
+.table.table-striped > tbody > tr > td:nth-child(1) {
+  border-right: 0!important;
+  background-color: #FFF;
+  height: 6.6em;
+  width: 9.9em;
+}
+.table.table-striped > tbody > tr > td:nth-child(2) {
+  margin-left: 11.4em;
+  background-color: #FFF;
+  height: 6.6em;
+  width: 12em;
+}
+table.table.table-striped.table.table-striped > tbody > tr > td:nth-child(3) {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid #FFF;
+  margin: 7.8em 0 1.3em 2em;
+  padding: 0;
+}
+table.table.table-striped.table.table-striped > tbody > tr > td:nth-child(3) a {
+  background: linear-gradient(135deg, #ffc200 40%, #ff8500 100%);
+  border-bottom: none !important;
+  color: #000;
+  text-decoration: none;
+  position: absolute;
+  white-space: nowrap;
+  top: .5em;
+  left: -1.3em;
+  padding: 1.3em;
+}
+table.table.table-striped.table.table-striped > tbody > tr > td:nth-child(3) a:hover {
+  background: #FF5c00;
+  color: #000;
+}
+.table.table-striped > tbody > tr > td:nth-child(4) a {
+  background: linear-gradient(135deg, #FFC200 40%, #FF8500 100%);
+  border-bottom: none !important;
+  color: #000;
+  text-decoration: none;
+  position: absolute;
+  white-space: nowrap;
+  padding: 1.32em 1.3em;
+}
+.table.table-striped > tbody > tr > td:nth-child(4) a:hover {
+  background: #FF5C00;
+  color: #000;
+}
+.arrow-down#light_blue {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid #D9E7EE;
+  float: right;
+  margin: 0 7em 1.3em 0;
+}
+.skts-label-mobil {
+  background-color: #D9E7EE;
+  margin: 0;
+  padding: 20px;
+}
+.form-control {
+  font-size: 26px;
+  font-weight: 300;
+  color: #000;
+  border-radius: 0;
+  border: none;
+  height: 74px;
+  width: 100%;
+  text-align: right;
+  margin: 0 auto;
+}
+.form-control#startDate {
+  padding-right: 2.3em;
+}
+.date-picker-control:link,
+.date-picker-control:visited {
+  background-image: url(../images/date_picker.png);
+  top: 1.3em;
+  right: 2.2em;
+  background-position: 0 0;
+  width: 53px;
+  height: 55px;
+  background-size: 59%;
+}
+.date-picker-button-active:link,
+.date-picker-control:focus,
+.date-picker-control:hover,
+.date-picker-control:active {
+  opacity: 0.6;
+}
+.skts-postfix-mobil:after,
+.skts-postfix-mobil-form:after,
+.skts-postfix-mobil-kvittering:after {
+  content: ',00 kr.';
+  font-size: 26px;
+  font-weight: 400;
+  top: .66em;
+  color: #bebebe;
+  right: 1.6em;
+  position: absolute;
+}
+.skts-postfix-mobil-form input[type='text'] {
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  color: #000;
+  border-right: 1px solid #a2a2a2;
+  border-bottom: 1px solid #a2a2a2;
+  margin: 1em;
+  padding: 1.3em 4.5em 1.3em 0;
+}
+.skts-postfix-mobil,
+.skts-postfix-mobil-form input[type='text'] {
+  text-align: right;
+  padding-right: 3.7em;
+}
+.btn.btn-primary {
+  background: linear-gradient(135deg, #ffc200 40%, #ff8500 100%) /*; #ffc61e*/;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+  border: 0;
+  color: #000;
+  text-decoration: none;
+  font-weight: 300;
+  border-radius: 0;
+  margin: 2.3em 0;
+  padding: 20px 60px;
+  float: right;
+  display: inline-block;
+}
+.btn.btn-primary:hover {
+  background: #FF5C00;
+  color: #000;
+}
+.col-md-12 {
+  position: relative;
+  min-height: 1px;
+  clear: both;
+  float: none;
+  width: auto;
+  padding: 1.3em;
+}
+.col-sm-12 {
+  background-color: #D9E7EE;
+  float: none;
+  width: auto;
+  padding: 0 2.3em 1.3em 2.3em;
+}
+#label_momsAngivelseBemærkning {
+  padding: 1.3em 2.3em;
+}
+#label_salgsMomsBeløbinput.col-sm-12,
+#label_MomsAngivelseKobsMomsBelob.col-sm-12,
+#label_MomsAngivelseAfgiftTilsvarBelob.col-sm-12,
+#label_MomsAngivelseMomsEUKobBelob.col-sm-12,
+#label_MomsAngivelseMomsEUYdelserBelob.col-sm-12,
+#label_MomsAngivelseOlieAfgiftBelob.col-sm-12,
+#label_MomsAngivelseElAfgiftBelob.col-sm-12,
+#label_MomsAngivelseGasAfgiftBelob.col-sm-12,
+#label_MomsAngivelseKulAfgiftBelob.col-sm-12,
+#label_MomsAngivelseCO2AfgiftBelob.col-sm-12,
+#label_MomsAngivelsevandAfgiftBelob.col-sm-12,
+#label_MomsAngivelseEUKobBelob.col-sm-12,
+#label_MomsAngivelseEUKobYdelseBelob.col-sm-12,
+#label_MomsAngivelseEUSalgBelob.col-sm-12,
+#label_MomsAngivelseEUSalgYdelseBelob.col-sm-12,
+#label_MomsAngivelseEksportOmsaetningBelob.col-sm-12,
+#label_startDate.col-sm-12,
+#label_betalingBeløbValue.col-sm-12 {
+  padding: 1.3em 2.3em 0.6em 2.3em;
+}
+.skts-postfix-kr,
+.skts-postfix-kr-year {
+  width: 100%;
+}
+#label_MomsAngivelseAfgiftTilsvarBelob > label:after {
+  display: none;
+}
+.col-md-6.skts-postfix-mobil {
+  border-bottom: 4px #000;
+  border-bottom-style: double;
+  margin: 3em 1.3em;
+}
+.col-md-6.skts-postfix-mobil span {
+  font-size: 26px;
+  font-weight: 400;
+  margin-right: 1.45em;
+}
+.col-md-6.skts-postfix-mobil:after {
+  color: #000;
+  top: 0;
+  right: .8em;
+}
+.btn.btn-default,
+.btn-default {
+  background: #DFDFDF;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+  border: none;
+  margin: 2.3em 0;
+  padding: 20px;
+  border-radius: 0;
+  float: left;
+}
+.btn.btn-default:hover {
+  background-image: none!important;
+  background: #BABABA;
+}
+.icon_sprite#godkend {
+  width: 21px;
+  height: 20px;
+  display: inline-block;
+  background-position: -365px -70px;
+  margin: 0 0.2em -0.2em;
+}
+.skts-postfix-mobil-kvittering {
+  border-bottom: 4px double;
+  text-align: right;
+  margin: 3em 0;
+}
+.skts-postfix-mobil-kvittering span {
+  font-size: 26px;
+  font-weight: 400;
+}
+.skts-postfix-mobil-kvittering:after {
+  float: right;
+  color: #000;
+}
+.btn.btn-default.skts-mobil-btn-tilbage-kvittering {
+  color: #3f6075;
+  margin-top: 1.2em;
+  float: right;
+  background: none;
+  border: none;
+  text-decoration: underline;
+}
+.icon_sprite#fortsaet {
+  width: 21px;
+  height: 20px;
+  display: inline-block;
+  background-position: -365px -90px;
+  margin: 0 0.5em -0.2em 0.2em;
+}
+.skts-postfix-mobil-momskvt:after,
+.skts-postfix-mobil-form-momskvt:after,
+.skts-postfix-mobil-kvittering-momskvt:after {
+  content: ',00 kr.';
+  font-size: 16px;
+  color: #000;
+}
+.col-md-6.skts-label-mobil-momskvt {
+  float: left;
+  padding: .5em 0 .5em 1.3em;
+}
+.skts-label-mobil-momskvt2 {
+  padding: 1.3em;
+}
+.table-responsive {
+  border: 0;
+  font-weight: 400;
+  width: auto;
+  margin: 0 1.3em;
+}
+.table > tbody > tr > td {
+  border-top: 0;
+  padding: .5em 0;
+}
+.table > tbody > tr {
+  border-bottom: 1px solid silver;
+}
+.table > tbody > tr > td:nth-child(2) {
+  padding-left: 1em;
+  vertical-align: bottom;
+}
+.table > tbody > tr > td:nth-child(2):after {
+  content: ',00 kr.';
+  color: #000;
+}
+.table.table-striped > tbody > tr > td:nth-child(2):after {
+  content: none;
+  color: #000;
+}
+.panel-title > a {
+  width: 100%;
+  display: block;
+  font-weight: 400;
+}
+.panel-title > a .arrow-down#white {
+  float: right;
+  margin: 0;
+}
+.panel-group .panel {
+  border-radius: 0;
+  margin: 0 1.3em;
+}
+.panel-default {
+  border-top: #14364c 1px solid;
+  border-right: #14364c 2px solid;
+  border-bottom: #14364c 2px solid;
+  border-left: #14364c 1px solid;
+}
+.panel-default > .panel-heading {
+  color: #14364c;
+  background-color: #FFF;
+  border-radius: 0;
+  border-color: #14364c;
+  padding: 1.3em;
+}
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #FFF;
+  background: #FFF;
+}
+.col-md-6.skts-postfix-mobil-momskvt {
+  text-align: right;
+  border-bottom: 4px #000;
+  border-bottom-style: double;
+  margin: 1.3em;
+}
+.col-md-6.skts-postfix-mobil-momskvt span {
+  font-size: 26px;
+  font-weight: 400;
+  margin-right: -0.3em;
+  color: #000;
+}
+.col-md-6.skts-postfix-mobil-momskvt:after {
+  color: #000;
+  font-size: 26px;
+  font-weight: 400;
+}
+.skts-logo {
+  background-image: url(../images/skat-logo-white.svg);
+  /*background: #14364c;*/
+  height: 2.8em;
+  position: absolute;
+  top: .6em;
+  width: 100%;
+  background-size: 2.5em;
+}
+.skts-print-icon,
+.skts-print-icon {
+  display: none!important;
+}
+.skts-loading span {
+  top: 58%;
+}
+.skts-spinner {
+  top: 50%;
+}
+.alert-info {
+  border-color: transparent!important;
+  background: transparent !important;
+}
+.navbar-default .navbar-toggle .icon-bar,
+.panel {
+  background-color: #FFF;
+}
+.alert,
+.skts-centered-padding,
+.panel-body,
+.col-sm-6,
+.panel-body p,
+.panel-body h2,
+.panel-body li {
+  padding: 0;
+}
+a.pull-right.skts-login,
+footer {
+  display: none;
+}
+.skts-postfix-mobil-kvittering:before,
+.skts-postfix-mobil:before,
+.skts-postfix-mobil-kvittering-momskvt:before,
+.skts-postfix-mobil-momskvt:before {
+  content: 'I alt';
+  font-size: 26px;
+  margin-left: -0.3em;
+  font-weight: 400;
+  float: left;
+}
+.navbar-nav li a,
+.skts-input-info select {
+  padding-left: 0;
+}
+.skts-postfix-kr:after {
+  content: 'kr.';
+  right: 1em;
+  font-size: 26px;
+  top: 0.7em;
+}
+.skts-postfix-kr input[type=text] {
+  padding-right: 2.5em;
+}
+@media (max-width: 991px) {
+  header {
+    height: 3.7em;
+  }
+  .table.table-striped {
+    margin-top: 0;
+  }
+  body > div:nth-child(5) {
+    margin: 2em auto;
+  }
+}
+@media (max-width: 800px) {
+  .table.table-striped {
+    margin-top: 0;
+  }
+}
+@media (max-width: 856px) {
+  body > .container > form > div.tabNav > div:nth-child(1) {
+    width: auto;
+  }
+}
+@media (max-width: 450px) {
+  .col-sm-12 {
+    padding: 0 1.3em 1.3em 1.3em;
+  }
+  #label_salgsMomsBeløbinput.col-sm-12,
+  #label_MomsAngivelseKobsMomsBelob.col-sm-12,
+  #label_MomsAngivelseAfgiftTilsvarBelob.col-sm-12,
+  #label_MomsAngivelseMomsEUKobBelob.col-sm-12,
+  #label_MomsAngivelseMomsEUYdelserBelob.col-sm-12,
+  #label_MomsAngivelseOlieAfgiftBelob.col-sm-12,
+  #label_MomsAngivelseElAfgiftBelob.col-sm-12,
+  #label_MomsAngivelseGasAfgiftBelob.col-sm-12,
+  #label_MomsAngivelseKulAfgiftBelob.col-sm-12,
+  #label_MomsAngivelseCO2AfgiftBelob.col-sm-12,
+  #label_MomsAngivelsevandAfgiftBelob.col-sm-12,
+  #label_MomsAngivelseEUKobBelob.col-sm-12,
+  #label_MomsAngivelseEUKobYdelseBelob.col-sm-12,
+  #label_MomsAngivelseEUSalgBelob.col-sm-12,
+  #label_MomsAngivelseEUSalgYdelseBelob.col-sm-12,
+  #label_MomsAngivelseEksportOmsaetningBelob.col-sm-12,
+  #label_startDate.col-sm-12,
+  #label_betalingBeløbValue.col-sm-12 {
+    padding: 1.3em 1.3em 0.6em 1.3em;
+  }
+  .btn.btn-primary {
+    margin-right: 1.3em;
+  }
+  .btn.btn-default,
+  .btn-default {
+    margin-left: 1.3em;
+  }
+  .col-md-6:nth-of-type(1) {
+    padding-left: 1.3em;
+  }
+  .col-md-6:nth-of-type(2) {
+    padding-right: 1.3em;
+  }
+  .skts-postfix-kr:after {
+    right: 0.8em;
+  }
+  #udvidet > p {
+    padding: 0.65em 1.3em;
+    margin-bottom: 3em;
+  }
+  .date-picker-control:link,
+  .date-picker-control:visited {
+    right: 1em;
+  }
+  h2,
+  h3,
+  p,
+  li {
+    padding: 0 1.3em;
+  }
+  h1 {
+    padding: 0 .5em;
+  }
+  .breadcrumb {
+    padding: 20px;
+  }
+  .breadcrumb > li {
+    padding: 0;
+  }
+  .table.table-striped > tbody > tr > td:nth-child(1) {
+    border-right: 0!important;
+    background-color: #FFF;
+    height: 6.6em;
+    width: 8.3em;
+    font-size: .9em;
+  }
+  .table.table-striped > tbody > tr > td:nth-child(2) {
+    margin-left: 9.7em;
+    background-color: #FFF;
+    height: 6.6em;
+    width: 9.5em;
+    font-size: .9em;
+  }
+  table.table.table-striped.table.table-striped > tbody > tr > td:nth-child(3) {
+    width: 0;
+    height: 0;
+    border-left: 10px solid rgba(0, 0, 0, 0);
+    border-right: 10px solid rgba(0, 0, 0, 0);
+    border-top: 20px solid #FFF;
+    margin: 6.8em 0 1.3em 2em;
+    padding: 0;
+  }
+  table.table.table-striped.table.table-striped > tbody > tr > td:nth-child(3) a {
+    background: linear-gradient(135deg, #FFC200 40%, #FF8500 100%);
+    border-bottom: none !important;
+    color: #000;
+    text-decoration: none;
+    position: absolute;
+    white-space: nowrap;
+    top: .5em;
+    left: -1.3em;
+    padding: 1.3em;
+  }
+  #myTable > tbody > tr > td:nth-child(4) {
+    left: 111px;
+    margin-top: 157px;
+  }
+  .table.table-striped > tbody > tr > td:nth-child(4) a {
+    background: linear-gradient(135deg, #FFC200 40%, #FF8500 100%);
+    border-bottom: none !important;
+    color: #000;
+    text-decoration: none;
+    position: absolute;
+    white-space: nowrap;
+    top: -1.25em;
+    left: 0.6em;
+    padding: 1.3em;
+  }
+}
+@media (max-width: 370px) {
+  .btn.btn-primary {
+    padding: 20px !important;
+  }
+  .btn.btn-default,
+  .btn-default {
+    padding: 20px 10px;
+  }
+  a.skts-toggle-section {
+    background: url(../images/not-selected-icon.svg) no-repeat 1em 1.7em #D9E7EE;
+    padding: 0.65em 1.3em;
+    text-indent: 2.5em;
+  }
+  a.skts-toggle-section:hover {
+    background: url(../images/not-selected-icon.svg) no-repeat 1em 1.7em #8DBAD0;
+  }
+  a.skts-toggle-section.selected {
+    background: url(../images/selected-icon.svg) no-repeat 1.4em 2em #D9E7EE;
+    padding: 0.65em 1.3em;
+    text-indent: 2.5em;
+  }
+  a.skts-toggle-section.selected:hover {
+    background: url(../images/selected-icon.svg) no-repeat 1.4em 2em #8DBAD0;
+  }
+}
+@media (min-width: 992px) {
+  .skts-logo {
+    display: none;
+  }
+  .navbar-default.navbar {
+    top: -3.8em;
+  }
+  .navbar-default .navbar-nav > li > a {
+    text-decoration: none;
+  }
+}
