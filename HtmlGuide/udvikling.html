@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="da"> 
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Udviklings- og designguide - SKAT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link href="sktscommon/css/skat.min.css" rel="stylesheet">
+		<link href="sktscommon/css/calendar.min.css" rel="stylesheet" type="text/css" />
+		<link href="sktscommon/css/chosen.min.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/guide.css" rel="stylesheet" type="text/css" />
+		<script src="sktscommon/js/vendor/jquery-3.2.1.min.js"></script>
+    </head>
+	<body data-spy="scroll">
+        <div class="skts-wrap">
+            <header class="container-fluid header-show">
+                <div class="row">
+                    <div class="col-xs-3 text-center skts-bg-main-1">
+                        <div class="skts-header-item">
+                            <button type="button" class="skts-menu-button js-create-nav-modal" data-toggle="modal" data-target="#sktsNavModal" data-nav-link-selector="#sktsTopNavLinks">
+                                <span class="sr-only">Vis/skjul navigation</span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                            </button>
+                            <div class="navbar-collapse hidden" id="sktsTopNavLinks">
+                                 <ul>
+                                    <li><a href="index.html">Forside</a></li>
+                                    <li><a href="design.html">Design</a></li>
+                                    <li><a href="udvikling.html" class="active">Udvikling</a></li>
+                                    <li><a href="brugeroplevelser.html">Brugeroplevelser</a></li>
+                                    <li><a href="krav.html">Non funktionelle krav</a></li>
+                                    <li><a href="changelog.html">Changelog</a></li>
+                                    <li><a href="kontakt.html">Kontakt</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 text-center skts-bg-main-2">
+                        <div class="skts-header-item skts-header-item--logo">
+                            <a class="skts-logo-responsive" href="index.html">
+                                <span class="sr-only">Gå til forside</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 text-center skts-bg-main-4">
+                        <div class="skts-header-item">
+                            <a href="index.html">UDG</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="skts-breadcrumb-container">
+                <ol class="breadcrumb container">
+                    <li><a href="index.html">Forside</a></li>
+                </ol>
+            </div>
+    		<div class="container skts-top-pad-1">
+    			<div class="row">
+    				<div class="col-md-10 col-md-offset-1" id="mainContent">
+    					<h1 class="h1--guide">Udvikling</h1>
+
+    					<p>Her er beskrevet udvikling af løsninger i Bootstrap for SKAT. Elementerne er udviklet ud fra Bootstrap-frameworket og skal bruges i henhold til <a href="design-elementer.html">brug af elementer</a> og <a href="design.html">designstil</a> som SKAT arbejder med.</p>
+
+    					<div class="row skts-top-pad-1">
+    						<div class="col-md-6">
+    							<a href="udvikling-intro.html" class="skts-transport-box skts-transport-box--large">
+	                                <h2>Introduktion</h2>
+                                    <p>Kort om udvikling</p>
+    		                    </a>
+    		                </div>
+    						<div class="col-md-6">
+    							<a href="udvikling-framework.html" class="skts-transport-box skts-transport-box--large">
+	                                <h2>Framework udvikling</h2>
+                                    <p>Videreudvikling af SKATs Bootstrap-framework</p>
+    		                    </a>
+    		                </div>
+    		                <div class="col-md-6">
+    							<a href="udvikling-elementer.html" class="skts-transport-box skts-transport-box--large">
+	                                <h2>HTML-guide</h2>
+                                    <p>Opsætning af HTML-elementer</p>
+    		                    </a>
+    		                </div>
+                            <div class="col-md-6">
+                                <a href="udvikling-addons.html" class="skts-transport-box skts-transport-box--large">
+                                    <h2>Addons</h2>
+                                    <p>Opsætning af addons</p>
+                                </a>
+                            </div>
+    		            </div>
+    				</div>
+    			</div>
+    		</div>
+            <div class="skts-push"></div>
+        </div>
+        <footer>
+            <div class="row">
+                <div class="col-sm-4 text-left hidden-xs" >
+                    <div class="skts-logo-small"><span class="sr-only">SKAT logo</span></div>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <a href="https://www.skat.dk/SKAT.aspx?oId=967" target="_blank">Kontakt SKAT</a>
+                </div>
+                <div class="col-sm-4 text-right hidden-xs"> 
+                    <a target="_blank" href="https://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="sr-only"> Åbner nyt vindue</span></a>
+                </div>
+            </div>
+        </footer>
+		<script src="sktscommon/js/skat.min.js"></script>
+		<script src="sktscommon/js/calendar.min.js"></script>
+		<script src="sktscommon/js/chosen.min.js"></script>
+		<script src="sktscommon/js/prototype-workflows.min.js"></script>
+		<!--ADDED FOR GUIDE PURPOSES ONLY -->
+		<script src="assets/js/prettify.js"></script>
+		<script src="assets/js/guide.js"></script>
+	</body>
+</html>

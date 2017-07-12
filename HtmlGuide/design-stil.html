@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="da"> 
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Udviklings- og designguide - SKAT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link href="sktscommon/css/skat.min.css" rel="stylesheet">
+		<link href="assets/css/guide.css" rel="stylesheet" type="text/css" />
+    </head>
+	<body data-spy="scroll">
+        <div class="skts-wrap">
+        	<header class="container-fluid header-show">
+                <div class="row">
+                    <div class="col-xs-3 text-center skts-bg-main-1">
+                        <div class="skts-header-item">
+                            <button type="button" class="skts-menu-button js-create-nav-modal" data-toggle="modal" data-target="#sktsNavModal" data-nav-link-selector="#sktsTopNavLinks">
+                                <span class="sr-only">Vis/skjul navigation</span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                            </button>
+                            <div class="navbar-collapse hidden" id="sktsTopNavLinks">
+                                 <ul>
+                                    <li><a href="index.html">Forside</a></li>
+									<li><a href="design.html" class="active">Design</a></li>
+		                            <li><a href="udvikling.html">Udvikling</a></li>
+		                            <li><a href="brugeroplevelser.html">Brugeroplevelser</a></li>
+		                            <li><a href="krav.html">Non funktionelle krav</a></li>
+		                            <li><a href="changelog.html">Changelog</a></li>
+		                            <li><a href="kontakt.html">Kontakt</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 text-center skts-bg-main-2">
+                        <div class="skts-header-item skts-header-item--logo">
+                            <a class="skts-logo-responsive" href="index.html">
+                                <span class="sr-only">Gå til forside</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 text-center skts-bg-main-4">
+                        <div class="skts-header-item">
+                            <a href="index.html">UDG</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+			<div class="skts-breadcrumb-container">
+                <ol class="breadcrumb container">
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="design.html">Design</a></li>
+                </ol>
+            </div>
+			<div class="container skts-top-pad-1">
+				<div class="row">
+					<div class="col-md-8" id="mainContent">
+						<h1 class="h1--guide" id="subMethods">Designstil og tone</h1>
+						
+						<h2 class="h2--guide" id="subStyle">Stil</h2>
+						<p>SKATs primære funktion er at oplyse og hjælpe borgeren, ikke underholdning. Derfor skal alle elementer, der ikke har en funktion der understøtter dette, udelades.</p>
+						<p>SKAT bruger flat design, dvs.:</p>
+						<ul>
+							<li>Ingen skygger, 3d-effekter eller gradient farveskala for at skabe 3d effekter.</li>
+							<li>Flader er ensfarvede (se afsnit om farver) uden gradients.</li>
+							<li>Ingen smileys, emojis, clipart.</li>
+							<li>Runde hjørner (3px/0.2em) benyttes til at signalere vigtige klikbare elementer såsom navigationselementer</li>
+						</ul>
+						<hr/>
+						<h2 class="h2--guide">Hovedregler</h2>
+						<ul>
+							<li>Start altid med hvid baggrund og sort tekst</li>
+							<li>Vigtigt indhold: Mørkt</li>
+							<li>Ikke så vigtigt indhold: Lyst</li>
+						</ul>
+						<hr/>
+						<h2 class="h2--guide" id="subColours">Farveskema</h2>
+						<p><img src="assets/images/farver22.png" style="width:100%" alt="farver"/></p>
+						<p>I farveskemaet er farverne rangeret efter prioritet og hvor ofte de skal bruges</p>
+
+						<h3 class="h3--guide">Oftest brugt</h3>
+						<ul>
+							<li>Grå - brug gråtoner på tekst og ikke-klikbare elementer: Eksempelvis farveskift på side for at markere nyt indhold.</li>
+							<li>Blå "#395f77" er SKATs primærfarve til links, menu og klikbare elementer - med hvid tekst, se forsiden af skat.dk.</li>
+						</ul>
+						<h3 class="h3--guide">Mindre brugt</h3>
+						<ul>
+							<li>Gul "#ffc61e" skal kun bruges til at markere login knapper.</li>
+							<li>Grøn "#5A8D18"  skal kun bruges på OK/godkend/videre-knapper.</li>
+							<li>Rød "#FF462B" skal kun bruges på fejl-elementer og advarsler, hvor videre færd ikke er mulig.</li>
+						</ul>
+						<h3 class="h3--guide">Husk</h3>
+						<p>at tjekke om kontrasten mellem tekst og baggrund er tilstrækkelig stor - AA-niveauet skal overholdes.
+						Du kan tjekke kontrasten her: <a href="http://leaverou.github.io/contrast-ratio/#white-on-#000">http://leaverou.github.io/contrast-ratio/#white-on-#000</a></p>
+						<h3 class="h3--guide" id="subText">Tekst</h3>
+						<p>SKAT benytter Google Open Sans Font</p>
+						<p>Hvis ikke Open Sans er mulig så benyt en lignende sans-serif font</p>
+						<p>
+							Tag udgangspunkt i
+						</p>
+						<ul>
+							<li>Hvid baggrund og sort tekst</li>
+							<li>Der bruges kun farvet baggrund ved links, menu, og knapper.</li>
+						</ul>						
+						<p>Tekst skal være kort, gerne med tydelig call-to-action.</p>
+						<p>
+							Folk læser ikke, de skimmer - brug derfor:
+						</p>
+						<ul>
+							<li>Sigende overskrifter</li>
+							<li>Giv folk et overblik ved at pakke tekst væk i en fold-ind/fold-ud.</li>
+							<li>Brug ikke understregning - det er reserveret til links (se afsnit om links og knapper).</li>
+                            <li>Tekst-længden skal være max omkring 100 tegn.</li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<div class="skts-nav-guide hidden-xs hidden-sm skts-top-pad-1">
+							<h2>Designstil og tone</h2>
+							<ul class="nav">
+								<li><a href="#subStyle">Stil</a></li>
+								<li><a href="#subColours">Farver</a></li>	
+								<li><a href="#subText">Tekst</a></li>
+							</ul>
+						</div>
+					</div>
+					<hr/>
+				</div>			
+			</div>
+            <div class="skts-push"></div>
+        </div>
+		<footer>
+            <div class="row">
+                <div class="col-sm-4 text-left hidden-xs" >
+                    <div class="skts-logo-small"><span class="sr-only">SKAT logo</span></div>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <a href="https://www.skat.dk/SKAT.aspx?oId=967" target="_blank">Kontakt SKAT</a>
+                </div>
+                <div class="col-sm-4 text-right hidden-xs"> 
+                    <a target="_blank" href="https://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="sr-only"> Åbner nyt vindue</span></a>
+                </div>
+            </div>
+        </footer>
+		<script src="sktscommon/js/vendor/jquery-3.2.1.min.js"></script>
+		<script src="sktscommon/js/skat.min.js"></script>
+		<script src="sktscommon/js/prototype-workflows.min.js"></script>
+		<!--ADDED FOR GUIDE PURPOSES ONLY -->
+		<script src="assets/js/prettify.js"></script>
+		<script src="assets/js/guide.js"></script>
+	</body>
+</html>

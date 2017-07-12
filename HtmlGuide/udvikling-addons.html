@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html>
+<html lang="da"> 
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Udviklings- og designguide - SKAT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link href="sktscommon/css/skat.min.css" rel="stylesheet">
+		<link href="sktscommon/css/calendar.min.css" rel="stylesheet" type="text/css" />
+		<link href="sktscommon/css/chosen.min.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/guide.css" rel="stylesheet" type="text/css" />
+		<script src="sktscommon/js/vendor/jquery-3.2.1.min.js"></script>
+    </head>
+    <body data-spy="scroll">
+        <div class="skts-wrap">
+            <header class="container-fluid header-show">
+                <div class="row">
+                    <div class="col-xs-3 text-center skts-bg-main-1">
+                        <div class="skts-header-item">
+                            <button type="button" class="skts-menu-button js-create-nav-modal" data-toggle="modal" data-target="#sktsNavModal" data-nav-link-selector="#sktsTopNavLinks">
+                                <span class="sr-only">Vis/skjul navigation</span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                            </button>
+                            <div class="navbar-collapse hidden" id="sktsTopNavLinks">
+                                 <ul>
+                                    <li><a href="index.html">Forside</a></li>
+                                    <li><a href="design.html">Design</a></li>
+                                    <li><a href="udvikling.html" class="active">Udvikling</a></li>
+                                    <li><a href="brugeroplevelser.html">Brugeroplevelser</a></li>
+                                    <li><a href="krav.html">Non funktionelle krav</a></li>
+                                    <li><a href="changelog.html">Changelog</a></li>
+                                    <li><a href="kontakt.html">Kontakt</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 text-center skts-bg-main-2">
+                        <div class="skts-header-item skts-header-item--logo">
+                            <a class="skts-logo-responsive" href="index.html">
+                                <span class="sr-only">Gå til forside</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 text-center skts-bg-main-4">
+                        <div class="skts-header-item">
+                            <a href="index.html">UDG</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="skts-breadcrumb-container">
+                <ol class="breadcrumb container">
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="udvikling.html">Udvikling</a></li>
+                </ol>
+            </div>
+            <div class="container skts-top-pad-1">
+                <div class="row">
+                    <div class="col-md-8" id="mainContent">
+                        <h1 id="subStructureSection" class="h1--guide">Addons</h1>
+                        <form id="mainForm" method="get" action="udvikling-addons.html">
+                            <!--
+                                ** Datepicker **
+                            -->
+                            <h2 id="subDatePicker" class="h2--guide">DatePicker</h2>
+                            <p><a href="http://freqdec.github.io/datePicker/" target="_blank">DatePicker er en plugin</a>.</p>
+                            <p>DatePicker er <strong>ikke</strong> med pr. default. </p>
+                            <p>Filerne <em>js/calendar.min.js</em> og  <em>css/calendar.min.js</em> eksisterer, men  skal tilføjes til projektet (filerne kan også tilføjes uden <em>.min</em> til debug).</p>
+                            <p>DatePicker har følgende begrænsning pr. default:</p>
+                            <ul>
+                                <li>Range: 01-01-1900 – 01-01-2100</li>
+                                <li>Ingen fremhævet dage (weekend er normalt fremhævet)</li>
+                                <li>Callback til dato validering (beskrevet nedunder)</li>
+                            </ul>
+                            <p>Default datepicker tildeles med klassen <code>skts-date-picker</code>. Feltet <strong>skal</strong> have en <code>id</code>.</p>
+                            <div class="row skts-process-form-section">
+                                <div class="col-sm-12">
+                                    <label for="datePickerTest" id="datePickerTestLabel">Dato</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control skts-date-picker" id="datePickerTest" name="datePickerTest" value="" data-show-type="dkDate" data-validation-event="blur" />
+                                    <div class="skts-error-text" role="alert">Datoen skrives som dd-mm-åååå</div>
+                                </div>
+                            </div>
+<pre class="prettyprint linenums">
+&lt;label for="datePickerTest" id="datePickerTestLabel"&gt;Dato&lt;/label&gt;
+&lt;input type="text" class="form-control skts-date-picker" id="datePickerTest" name="datePickerTest" value=""  data-show-type="dkDate" data-validation-event="blur"/&gt;
+&lt;div class="skts-error-text" role="alert"&gt;Datoen skrives som dd-mm-åååå&lt;/div&gt;
+</pre>
+                            <p>Der er tre alternativ datepicker:</p>
+                            <ul>
+                                <li>
+                                    <code>js-date-picker-fixed-year</code>: hvor brugeren kun kan vælge indenfor det år som er sat i <code>input type="hidden" id="sktsCurrentYear"</code>.
+                                </li>
+                                <li>
+                                    <code>js-date-picker-fixed-start-year</code>: hvor brugeren kun kan vælge <strong>fra</strong> det år som er sat i <code>input type="hidden" id="sktsCurrentYear"</code> (slut datoen er ikke sat).
+                                </li>
+                                <li>
+                                    <code>js-date-picker-with-range</code>: hvor brugeren kun kan vælge fra og til datoer. Værdierne sættes i atributterne <code>data-calendar-start-date</code> og <code>data-calendar-end-date</code>. Kalenderen kan sættes til at starte i en bestemt måned med atributten <code>data-calendar-cursor-start-date</code>.
+                                </li>
+                            </ul>
+                            <p>Default datepicker og de alternative datepickere kan IKKE bruges sammen. Dvs det er ENTEN klassen <code>.js-date-picker-fixed-year, .js-date-picker-fixed-start-year, .js-date-picker-with-range</code> eller <code>.skts-date-picker</code> som skal sættes på feltet.</p>
+                            <p>Følgende js funktioner kan bruges til oprettelse/tilintetgørelse:</p>
+                            <ul>
+                                <li><code>datePickcer.init()</code> - opretter alle datePickers med de ovennævnte klasser
+                                    <ul>
+                                        <li>Denne funktion køres <code>onload</code> når man inkulderer <em>css/calendar.min.js</em> filen</li>
+                                    </ul>
+                                </li>
+                                <li><code>datePicker.create(inputElement, startDate, endDate, cursorStart)</code> - opretter en datePicker på et inputfelt
+                                    <ul>
+                                        <li>@param {Object} input som objekt</li>
+                                        <li>@param {string} dato med formattet: dd-mm-åååå (f.eks 01-01-2016)</li>
+                                        <li>@param {string} dato med formattet: dd-mm-åååå (f.eks 01-01-2016)</li>
+                                        <li>@param {string} dato med formattet: dd-mm-åååå (f.eks 01-01-2016) - optional</li>
+                                    </ul>
+                                </li>
+                                <li><code>datePicker.destroy(datePickerID)</code> -  tilintetgøre en datePicker baseret på feltets <code>id</code>                             
+                                    <ul>
+                                        <li>@param {string} id på input feltet, uden "#"</li>
+                                    </ul>
+                                <li><code>datePicker.destroyAll()</code> - tilintetgøre alle datePickers med de ovennævnte klasser</li>
+                            </ul>
+                            <input type="hidden" value="2016" name="sktsCurrentYear" id="sktsCurrentYear" />
+                            <div class="row skts-process-form-section">
+                                <div class="col-sm-12">
+                                    <label for="datePickerFixedTest" id="datePickerFixedTestLabel">Date i 2016</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control js-fixed-year js-date-picker-fixed-year" id="datePickerFixedTest" name="datePickerTest" value="" data-show-type="dkDate" data-validation-event="blur" />
+                                    <div class="skts-error-text" role="alert">Datoen skrives som som dd-mm-2016</div>
+                                </div>
+                            </div>
+<pre class="prettyprint linenums">
+&lt;input type="hidden" value="2015" name="sktsCurrentYear" id="sktsCurrentYear"/&gt;
+&lt;label for="datePickerFixedTest" id="datePickerFixedTestLabel"&gt;Date i 2016&lt;/label&gt;
+&lt;input type="text" class="form-control js-fixed-year js-date-picker-fixed-year" id="datePickerFixedTest" name="datePickerTest" value="" data-show-type="dkDate" data-validation-event="blur"/&gt;
+&lt;div class="skts-error-text" role="alert"&gt;Datoen skrives som dd-mm-2016&lt;/div&gt;
+</pre>
+                            <div class="row skts-process-form-section">
+                                <div class="col-sm-12">
+                                    <label for="datePickerFixedStartTest" id="datePickerFixedStartTestLabel">Date fra 2016</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control js-date-picker-fixed-start-year" id="datePickerFixedStartTest" name="datePickerTest2" value="" data-show-type="dkDate" data-validation-event="blur" />
+                                    <div class="skts-error-text" role="alert">Datoen skrives som dd-mm-2016</div>
+                                </div>
+                            </div>
+<pre class="prettyprint linenums">
+&lt;input type="hidden" value="2016" name="sktsCurrentYear" id="sktsCurrentYear"/&gt;
+&lt;label for="datePickerFixedStartTest" id="datePickerFixedStartTestLabel"&gt;Date fra 2016&lt;/label&gt;
+&lt;input type="text" class="form-control js-date-picker-fixed-start-year" id="datePickerFixedStartTestLabel" name="datePickerTest2" value="" data-show-type="dkDate" data-validation-event="blur"/&gt;
+&lt;div class="skts-error-text" role="alert"&gt;Datoen skrives som dd-mm-åååå&lt;/div&gt;
+</pre>
+                            <div class="row skts-process-form-section">
+                                <div class="col-sm-12">
+                                    <label for="datePickerInterval">Date fra 01-01-2016 til 31-03-2016 (med eksempel på range validering med facetter (minDate, maxDate)</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control js-date-picker-with-range" id="datePickerInterval" name="datePickerInterval" value="" data-show-type="dkDate" data-show-facets="minDate!!maxDate" data-show-facet-values="01-03-2016!!31-03-2016" data-validation-event="blur" data-calendar-start-date="01-01-2016" data-calendar-end-date="31-03-2016" data-calendar-cursor-start-date="01-01-2016" />
+                                    <div class="skts-error-text" role="alert">Datoen skrives som dd-mm-åååå</div>
+                                    <div class="skts-error-text" role="alert">Du kan ikke vælge en dato der ligger før 01-01-2016</div>
+                                    <div class="skts-error-text" role="alert">Du kan ikke vælge en dato efter 31-03-2016</div>
+                                </div>
+                            </div>
+<pre class="prettyprint linenums">
+&lt;label for="datePickerInterval" id="datePickerInterval"&gt;Date fra 01-01-2016 til 31-03-2016 (med eksempel på range validering (minDate, maxDate)&lt;/label&gt;
+&lt;input type="text" class="form-control js-date-picker-with-range" id="datePickerInterval" name="datePickerInterval" value="" data-show-type="dkDate" data-show-facets="minDate!!maxDate" data-show-facet-values="01-03-2016!!31-03-2016"  data-validation-event="blur" data-validation-event="blur" data-calendar-start-date="01-01-2016" data-calendar-end-date="31-03-2016" data-calendar-cursor-start-date="01-01-2016" /&gt;
+&lt;div class="skts-error-text" role="alert"&gt;Datoen skrives som dd-mm-åååå&lt;/div&gt;
+&lt;div class="skts-error-text" role="alert"&gt;Du kan ikke vælge en dato der ligger før 01-01-2016&lt;/div&gt;
+&lt;div class="skts-error-text" role="alert"&gt;Du kan ikke vælge en dato der ligger efter 31-03-2016&lt;/div&gt;
+</pre> 
+                            <hr/>
+                            <!--
+                                ** Chosen **
+                            -->
+                            <h2 id="subChosen" class="h2--guide">Chosen select</h2>
+                            <p>Chosen select er <strong>ikke</strong> med pr. default. </p>
+                            <p>Filerne <em>js/chosen.min.js</em> og  <em>css/chosen.min.css</em> eksisterer, men skal tilføjes til projektet (js filerne kan også tilføjes uden <em>.min</em> til debug).</p>
+                            <p><a href="https://harvesthq.github.io/chosen/" target="_blank">Chosen select er en plugin</a> som udvider standard <code>select</code> boksen.</p>
+                            <p>Alle <code>select</code> bokse kan omdannes til en chosen select boks ved brug af klassen <code>.chosen-select</code></p>
+                            <div class="bs-docs-example" data-pretty>
+                                <div class="row skts-process-form-section">
+                                    <div class="col-sm-12">
+                                        <label for="testChosen" id="testChosenLabel">Chosen select (påkrævet)</label>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <select class="form-control chosen-select skts-required-val" id="testChosen" name="testChosen" aria-invalid="true" aria-required="true">
+                                            <option value="">Vælg noget</option>
+                                            <option value="1">option 1</option>
+                                            <option value="2">option 2</option>
+                                        </select>
+                                        <div class="skts-error-text" role="alert">Feltet er påkrævet</div>
+                                    </div>
+                                </div>
+                                <div class="row skts-process-form-section">
+                                    <div class="col-sm-12">
+                                        <label for="testChosenMulti" id="testChosenMultiLabel">Chosen select - multi</label>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <select class="form-control chosen-select" multiple="multiple" id="testChosenMulti" name="testChosenMulti">
+                                            <option value="1">option 1</option>
+                                            <option value="2">option 2</option>
+                                            <option value="3">option 3</option>
+                                            <option value="4">option 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <h2 class="h2--guide" id="subTheme">Temaer</h2>
+                            <p>En stylesheet/tema kan testes på denne guide ved at tilføj querystrengen: <code>css</code> og placering/navn på css filen (uden .min eller .css):
+                            </p>    
+                            <ul>
+                                <li><a href="index.html" class="js-no-css">Default</a></li>
+                                <li><a href="index.html?css=sktscommon\css\theme-skts-erhverv-2015">theme-skts-erhverv-2015</a></li>
+                            </ul>
+                            <p>Temaer er ren css og bruges til ændring/justering af SKATs standard design.</p>
+                            <P>Temaet indeholder både nye klasser og overstyret bootstrap klasser/variabler.</p>
+                            <P>Et tema er en less fil som bygges seperat af gulp og bliver lagt i <em>css</em> mappen  .</p>  
+                            <p>Less filen navngives <em>theme-skts-TEMANAVN.less</em> (hvor TEMANAVN beskriver temaets formål, f.eks <em>theme-skts-monbile-moms.less</em>).</p>
+                            
+                        </form>
+						<hr/>
+						<h2>Læs mere</h2>
+                        <div class="well skts-nav-bottom">
+                            <ul class="nav">
+                                <li><a href="udvikling-framework.html">Framework udvikling</a></li>
+                                <li><a href="udvikling-elementer.html">HTML-guide</a></li>
+                                <li><a href="design-elementer.html">Brug af elementer</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="skts-nav-guide hidden-xs hidden-sm skts-top-pad-1">
+                            <h2>Addons</h2>
+                            <ul class="nav">
+                                <li>
+                                    <a href="#subDatePicker">Datepicker</a>
+                                </li>
+                                <li>
+                                    <a href="#subChosen">Chosen select</a>
+                                </li>
+                                <li>
+                                    <a href="#subTheme">Temaer</a>
+                                </li>                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skts-push"></div>
+        </div>
+        <footer>
+            <div class="row">
+                <div class="col-sm-4 text-left hidden-xs" >
+                    <div class="skts-logo-small"><span class="sr-only">SKAT logo</span></div>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <a href="https://www.skat.dk/SKAT.aspx?oId=967" target="_blank">Kontakt SKAT</a>
+                </div>
+                <div class="col-sm-4 text-right hidden-xs"> 
+                    <a target="_blank" href="https://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="sr-only"> Åbner nyt vindue</span></a>
+                </div>
+            </div>
+        </footer>
+    <script src="sktscommon/js/skat.min.js"></script>
+    <script src="sktscommon/js/calendar.min.js"></script>
+    <script src="sktscommon/js/chosen.min.js"></script>
+    <script src="sktscommon/js/prototype-workflows.min.js"></script>
+    <!--ADDED FOR GUIDE PURPOSES ONLY -->
+    <script src="assets/js/prettify.js"></script>
+    <script src="assets/js/guide.js"></script>
+</body>
+</html>

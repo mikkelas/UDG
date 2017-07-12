@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html lang="da"> 
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Udviklings- og designguide - SKAT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link href="sktscommon/css/skat.min.css" rel="stylesheet">
+		<link href="assets/css/guide.css" rel="stylesheet" type="text/css" />
+    </head>
+	<body data-spy="scroll">
+        <div class="skts-wrap">
+        	<header class="container-fluid header-show">
+                <div class="row">
+                    <div class="col-xs-3 text-center skts-bg-main-1">
+                        <div class="skts-header-item">
+                            <button type="button" class="skts-menu-button js-create-nav-modal" data-toggle="modal" data-target="#sktsNavModal" data-nav-link-selector="#sktsTopNavLinks">
+                                <span class="sr-only">Vis/skjul navigation</span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                            </button>
+                            <div class="navbar-collapse hidden" id="sktsTopNavLinks">
+                                 <ul>
+                                    <li><a href="index.html">Forside</a></li>
+		                            <li><a href="design.html">Design</a></li>
+		                            <li><a href="udvikling.html">Udvikling</a></li>
+		                            <li><a href="brugeroplevelser.html">Brugeroplevelser</a></li>
+		                            <li><a href="krav.html" class="active">Non funktionelle krav</a></li>
+		                            <li><a href="changelog.html">Changelog</a></li>
+		                            <li><a href="kontakt.html">Kontakt</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 text-center skts-bg-main-2">
+                        <div class="skts-header-item skts-header-item--logo">
+                            <a class="skts-logo-responsive" href="index.html">
+                                <span class="sr-only">Gå til forside</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 text-center skts-bg-main-4">
+                        <div class="skts-header-item">
+                            <a href="index.html">UDG</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+    		<div class="skts-breadcrumb-container">
+                <ol class="breadcrumb container">
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="krav.html">Krav</a></li>
+                </ol>
+            </div>
+    		<div class="container skts-top-pad-1">
+    			<div class="row">
+    				<div class="col-md-8" id="mainContent">
+    					<h1 class="h1--guide">Tekster</h1>
+						<h2 id="subFormat" class="h2--guide">Formattering</h2>
+                        <h3 class="h3--guide">H1</h3>
+                        <ul>
+                            <li>Bruges til hovedoverskrifter</li>
+                            <li>Alle sider har en overskrift</li>
+                            <li>Brug korte og præcise overskrifter</li>
+                        </ul>
+                        <h3 class="h3--guide">H2</h3>
+                        <ul>
+                            <li>Bruges til underoverskrifter</li>
+                            <li>Brug dem i wizards som beskrivelse for den specifikke side</li>
+                        </ul>
+                        <h3 class="h3--guide">Brødtekst</h3>
+                        <ul>
+                            <li>Bruges som standard med mindre andet er angivet</li>
+                            <li>Kommer i to størrelser 1em standard og 1.3em </li>
+                        </ul>
+                        <h3 class="h3--guide">Fed</h3>
+                        <ul>
+                            <li>Brug <strong>fed</strong> for at fremhæve vigtige ord og for at lægge vægt på begreber</li>
+                        </ul>
+                        <h3 class="h3--guide">Centreret tekst</h3>
+                        <ul>
+                            <li>Bruges oftest i kombination med en knap, fx Ja/Nej radio knapper</li>
+                        </ul>
+                        <h3 class="h3--guide">Vensterstillet tekst</h3>
+                        <ul>
+                            <li>Default formatering</li>
+                        </ul>
+                        <h3 class="h3--guide">Højrestillet tekst</h3>
+                        <ul>
+                            <li>Beløb der ikke kan rettes i selvangivelsen eller på oversigtssider vil være højere stillet</li>
+                            <li>Disse beløb vægter mere end rubrik teksten hvorfor de vil være større</li>
+                            <li>Bruges i særlige situationer fx i "Se hvor beløbet kommer fra" som beskrevet i afsnittet om <strong>Accordions</strong></li>
+                        </ul>
+                        <hr />
+						<h2 id="subPlace" class="h2--guide">Placeholdertekst</h2>
+						<ul>
+                            <li>Skriv beløb</li>
+							<li>Skriv eller vælg dato</li>
+							<li>Skriv din ejerandel</li>
+							<li>Skriv ejendomsnummer</li>
+							<li>Skriv procent</li>
+							<li>Skriv antal</li>
+							<li>Skriv cvr- eller se-nummer</li>
+							<li>Skriv cpr- eller cvr-nummer</li>
+							<li>Skriv cpr-nummer</li>
+                        </ul>
+						<hr />
+                        <h2 id="subButtons" class="h2--guide">Knapnavne</h2>
+						<dl class="dl-horizontal skts-dl-horizontal-left">
+							<dt class="skts-important-text">Knapnavn</dt>
+							<dd class="skts-important-text">Funktion</dd>
+							<dt>Annuller</dt>
+							<dd>Clearer temp basen, sletter indtastet data og går et niveau tilbage</dd>
+							<dt>Næste</dt>
+							<dd>Gemmer data temporært og går et trin fremad</dd>
+							<dt>Tilbage</dt>
+							<dd>Gemmer data temporært og går et trin tilbage</dd>
+							<dt>Ok</dt>
+							<dd>Siger "Ja" til ændringen og går vider</dd>
+							<dt>Fortryd</dt>
+							<dd>Siger "Nej" til ændringen og går tilbage til udgangspunktet</dd>
+							<!-- <dt>Gem</dt>
+							<dd>Gemmer på baggrund af temp basen og den pågældende sides data og går vider</dd> -->
+							<dt>Godkend</dt>
+							<dd>Gemmer på baggrund af temp basen og den pågældende sides data og går videre</dd>
+							<dt>Overfør beløb</dt>
+							<dd>Overfører beløbet til den rigtige rubrik</dd>
+							<dt>Indberet</dt>
+							<dd>Godkender og gemmer indtastninger</dd>
+							<dt>Luk vindue</dt>
+							<dd>Lukker vindue</dd>
+							<dt>Log af</dt>
+							<dd>Logger af og går tilbage til skat.dk/xx</dd>
+						</dl>
+						<!--<p><strong>Gem</strong> og <strong>Godkend</strong> bliver brugt til at gemme data, men Godkend bliver kun brugt hvis der er konsekvens for brugeren</p>-->					
+                        <hr />
+                        <h2 id="subError" class="h2--guide">Fejltekster</h2>
+						<dl class="dl-horizontal skts-dl-horizontal-left">
+							<dt class="skts-important-text">Xsdtyper</dt>
+							<dd class="skts-important-text">Type fejl</dd>
+							<dt>decimal</dt>
+							<dd>Du skal skrive tal med decimaler</dd>
+							<dt>dkDate</dt>
+							<dd>Datoen skrives som dd-mm-åååå</dd>
+							<dt>dkPercent</dt>
+							<dd>Du kan kun skrive tal</dd>
+							<dt>
+								Integer/dkInteger
+							</dt>
+							<dd>
+								Du skal skrive hele tal<br/>
+								Du skal skrive beløbet i hele kr.
+							</dd>
+							<dt>string</dt>
+							<dd>Du har skrevet et specialtegn der ikke kan bruges</dd>
+						</dl>
+						<br/>
+						<dl class="dl-horizontal skts-dl-horizontal-left">
+							<dt class="skts-important-text">Facetdtyper</dt>
+							<dd class="skts-important-text">Facet fejl</dd>
+							<dt>fractionDigits</dt>
+							<dd>Der kan maksimalt være xxx decimaler</dd>
+							<dt>length</dt>
+							<dd>
+								Der kan maksimalt være xxx tegn<br/>
+								Der kan maksimalt være xxx tal
+							</dd>
+							<dt>maxDate</dt>
+							<dd>Du kan ikke vælge en dato efter xxx</dd>
+							<dt>minDate</dt>
+							<dd>Du kan ikke vælge en dato der ligger før xxx</dd>
+							<dt>maxExclusive</dt>
+							<dd>Værdien skal være under xxx</dd>
+							<dt>maxInclusive</dt>
+							<dd>Værdien skal maksimalt være xxx</dd>
+							<dt>minExclusive</dt>
+							<dd>Værdien skal være over xxx</dd>
+							<dt>minInclusive</dt>
+							<dd>Værdien skal mindst være xxx</dd>
+							<dt>maxLength</dt>
+							<dd>
+								Der kan maksimalt være xxx tegn<br/>
+								Der kan maksimalt være xxx tal
+							</dd>
+							<dt>minLength</dt>
+							<dd>
+								Der skal minimum være xxx tegn<br/>
+								Der skal minimum være xxx tal
+							</dd>
+							<dt>pattern</dt>
+							<dd>Det indtastede format er ikke gyldigt</dd>
+							<dt>totalDigits</dt>
+							<dd>Der kan maksimalt være xxx tal</dd>
+							<dt>whiteSpace</dt>
+							<dd>Der kan ikke være mellemrum</dd>
+							<dt>skts-required</dt>
+							<dd>
+								Feltet er påkrævet<br/>
+							</dd>
+							<dt>data-compare</dt>
+							<dd>Indtastningerne er ikke ens</dd>
+						</dl>
+						<br/>
+					</div>
+					<div class="col-md-4">
+						<div class="skts-nav-guide hidden-xs hidden-sm skts-top-pad-1 affix-top">
+							<h2>Tekster</h2>
+							<ul class="nav">
+								<li><a href="#subFormat">Formatering</a></li>
+								<li><a href="#subPlace">Placeholdertekst</a></li>
+								<li><a href="#subButtons">Knapnavne</a></li>
+								<li><a href="#subError">Fejltekster</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+            <div class="skts-push"></div>
+        </div>
+		<footer>
+            <div class="row">
+                <div class="col-sm-4 text-left hidden-xs" >
+                    <div class="skts-logo-small"><span class="sr-only">SKAT logo</span></div>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <a href="https://www.skat.dk/SKAT.aspx?oId=967" target="_blank">Kontakt SKAT</a>
+                </div>
+                <div class="col-sm-4 text-right hidden-xs"> 
+                    <a target="_blank" href="https://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="sr-only"> Åbner nyt vindue</span></a>
+                </div>
+            </div>
+        </footer>
+		<script src="sktscommon/js/vendor/jquery-3.2.1.min.js"></script>
+		<script src="sktscommon/js/skat.min.js"></script>
+		<script src="sktscommon/js/prototype-workflows.min.js"></script>
+		<!--ADDED FOR GUIDE PURPOSES ONLY -->
+		<script src="assets/js/prettify.js"></script>
+		<script src="assets/js/guide.js"></script>
+	</body>
+</html>

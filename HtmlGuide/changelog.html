@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="da"> 
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Udviklings- og designguide - SKAT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+        <meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link href="sktscommon/css/skat.min.css" rel="stylesheet">
+        <link href="assets/css/guide.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body data-spy="scroll">
+        <div class="skts-wrap">
+            <header class="container-fluid header-show">
+                <div class="row">
+                    <div class="col-xs-3 text-center skts-bg-main-1">
+                        <div class="skts-header-item">
+                            <button type="button" class="skts-menu-button js-create-nav-modal" data-toggle="modal" data-target="#sktsNavModal" data-nav-link-selector="#sktsTopNavLinks">
+                                <span class="sr-only">Vis/skjul navigation</span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                            </button>
+                            <div class="navbar-collapse hidden" id="sktsTopNavLinks">
+                                 <ul>
+                                    <li><a href="index.html">Forside</a></li>
+                                    <li><a href="design.html">Design</a></li>
+                                    <li><a href="udvikling.html">Udvikling</a></li>
+                                    <li><a href="brugeroplevelser.html">Brugeroplevelser</a></li>
+                                    <li><a href="krav.html">Non funktionelle krav</a></li>
+                                    <li><a href="changelog.html" class="active">Changelog</a></li>
+                                    <li><a href="kontakt.html">Kontakt</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 text-center skts-bg-main-2">
+                        <div class="skts-header-item skts-header-item--logo">
+                            <a class="skts-logo-responsive" href="index.html">
+                                <span class="sr-only">Gå til forside</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 text-center skts-bg-main-4">
+                        <div class="skts-header-item">
+                            <a href="index.html">UDG</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="skts-breadcrumb-container">
+                <ol class="breadcrumb container">
+                    <li><a href="index.html">Forside</a></li>
+                </ol>
+            </div>
+            <div class="container skts-top-pad-1">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1" id="mainContent">
+                        <h1 class="h1--guide" id="subAbout">Changelog</h1>
+							<div class="alert alert-info">
+							<p>Brug denne chagngelog til ændringer, opdateringer, justeringer. En subsection per version, dette skal med i hver release.</p>
+							<ul>
+								<li>Angiv release date</li>
+								<li>Lav grupperinger under disse kategorier.</li>
+								<li><code>Added</code> for nye features.</li>
+								<li><code>Changed</code> for ændringer i eksisterende funktionalitet.</li>
+								<li><code>Deprecated</code> for features der bliver fjernet i fremtidlige releases.</li>
+								<li><code>Removed</code> for deprecated features der er fjernet fra denne release.</li>
+								<li><code>Fixed</code> bug fixes.</li>
+								<li><code>Security</code> to invite users to upgrade in case of vulnerabilities.</li>
+							</ul>
+						</div>
+                        <h2 id="rev2092" class="h2--guide">Revision 2092: 07-07-2017</h2>
+                        <ul>
+                            <li><code>Fixed</code> Tilføjet data-target til body på udvikling-elementer.html så ScrollSpy kun bruges til højre menuen</li>
+                        </ul>
+                        <h2 id="rev2091" class="h2--guide">Revision 2091: 07-07-2017</h2>
+                        <ul>
+                            <li><code>Changed</code> Style ændringer på brødkrummer</li>
+                        </ul>
+                        <h2 id="rev2089" class="h2--guide">Revision 2089: 31-05-2017</h2>
+                        <ul>
+                            <li><code>Changed</code> Alle links til skat.dk i prototypen er nu med https</li> 
+                            <li><code>Added</code> Tilføjet jQuery versioner: <em>jquery-3.2.1.min.js</em> (som SKAL bruges i alle løsninger) og <em>jquery-1.12.4.min</em> (i tilfælde af understøttelse af ældre browsers)</li>
+                        </ul>
+                        <h2 id="rev2077" class="h2--guide">Revision 2077: 24-03-2017</h2>
+                        <ul>
+                            <li><code>Changed</code> Små design justeringer</li> 
+                        </ul>
+                        <h2 id="rev2074" class="h2--guide">Revision 2074: 17-03-2017</h2>
+                        <ul>
+                            <li><code>Fixed</code> <a href="udvikling-elementer.html#subFormsSubmit">Submit funktionerne</a> lukker kun modal vinduet hvis IKKE der er straksvalideringsfejl ved de evt. input felter i vinduet</li> 
+                        </ul>
+                        <h2 id="rev2073" class="h2--guide">Revision 2073: 03-03-2017</h2>
+                        <ul>
+                            <li><code>Fixed</code> resetSearch funktion virker nu på single select som ikke bruger chosen plugin</li> 
+                        </ul>
+                        <h2 id="rev2040" class="h2--guide">Revision 2064: 20-02-2017</h2>
+                        <ul>
+                            <li><code>Fixed</code> Knapper i modal vinduer (som har en submit klasse), skjuler modal vinduet og viser loader.</li> 
+                        </ul>
+                        <h2 id="rev2040" class="h2--guide">Revision 2040: 15-12-2016</h2>
+                        <ul>
+                            <li><code>Fixed</code>Radio knapper har nu label med <code>for</code> tag og er lagt i <code>fieldset</code> med <code>legend</code></li> 
+                        </ul>
+                        <h2 id="rev2028" class="h2--guide">Revision 2028: 09-12-2016</h2>
+                        <ul>
+                            <li><code>Fixed</code> @param datoformat på datepicker. Er nu sat til dd-mm-åååå som der står i <a href="udvikling-addons.html#subDatePicker">Addons</a></li> 
+                        </ul>
+                        <h2 id="rev2018" class="h2--guide">Revision 2018: 08-11-2016</h2>
+                        <ul>
+                            <li><code>Changed</code> Modal menu passer med det nye header</li> 
+                            <li><code>Changed</code> Muliighed for 2 <code>.skts-transport-box</code></li> 
+                            <li><code>Added</code> Ny footer exempel på UDG</li>
+                            <li><code>Added</code> Ny header exempel på UDG</li>    
+                                                  
+                        </ul>
+                        <h2 id="rev2016" class="h2--guide">Revision 2016: 14-10-2016</h2>
+                        <ul>
+                            <li><code>Fixed</code> fokus på <code>input</code> elementer ved brug af <code>data-focus-element</code> attributten bliver sat med delay når feltet er i en modal</li>
+                            <li><code>Changed</code> fokus sættes nu på radio knapper ved straksvalidering</li> 
+                            <li><code>Added</code> ikoner til søg og luk</li>
+                            <li><code>Added</code> global search som modal</li>                           
+                        </ul>
+                        
+                        <h2 id="rev2010" class="h2--guide">Revision 2010-11: 12-10-2016</h2>
+                        <ul>
+                            <li><code>Removed</code> alle fonts undtagen opensans</li>
+                            <li><code>Removed</code> fallback til <em>.png</em> for <em>.svg</em> filer</li>
+                            <li><code>Removed</code> <code>modernizer.js</code> da den kun blev brugt til svg fallback som ikke er relevant efter ændring af browser scope</li>
+                            <li><code>Removed</code> alle kode (css, html og js) vedr. søgning i rubrikker</li>
+                            <li><code>Removed</code> deprecated supplemental js filer (<em>befordringMain.js, calenderhandling.js, googleDistance.js</em>)</li>
+                            <li><code>Changed</code> opensans font ligger nu lokalt KUN som <em>.woff</em></li>
+                            <li><code>Changed</code> browser scope i UDG</li>                            
+                            <li><code>Added</code> jQuery 3.1.1 som standard</li>
+                            <li><code>Added</code> mulighed for download af ikoner som enten <em>.png</em> eller <em>.svg</em> i UDG</li>
+                            <li><code>Added</code> addons sektion til UDG under Udvikling</li>
+                        </ul>
+						<h2 id="rev2007" class="h2--guide">Revision 2007: 10-10-2016</h2>
+                        <ul>
+                            <li><code>Added</code> ektra optioner til <a href="udvikling-addons.html#subDatePicker">datePicker</a> (attributten <code>data-calendar-cursor-start-date</code> sætter den dato som kalenderen åbner i). <code>.js-date-picker-fixed-year</code> og <code>js-date-picker-fixed-year-start</code> åbner nu kalenderen fast i januar måned</li>
+                        </ul>
+                        <h2 id="rev2002" class="h2--guide">Revision 2002: 03-10-2016</h2>
+                        <ul>
+                            <li><code>Added</code> ektra optioner til <a href="udvikling-addons.html#subDatePicker">datePicker</a> (<code>.js-date-picker-with-range</code> og mulighed for oprettelse/tilintetgørelse med js kald)</li>
+                        </ul>
+                        <h2 id="rev2001" class="h2--guide">Revision 2001: 20-09-2016</h2>
+                        <ul>
+                            <li><code>Added</code> manglende faceter til <code>types</code> i <code>xsdMatrix</code></li>
+                            <li><code>Added</code> <code>facettypen: integer</code> tillader "+" og "-" tegn</li>
+                            <li><code>Changed</code> autoformattering af <code>dkInteger</code>. Tillader ikke forkert placering af tusindtalsseparator (punktum) eller komma</li>
+                        </ul>
+                        <h2 id="rev2000" class="h2--guide">Revision 2000: 23-09-2016</h2>
+                        <ul>
+                            <li><code>Added</code> mulighed for en ikke stiplet <code>.skts-block-table</code> med klassen <code>.skts-block-table--plain</code> </li>
+                            <li><code>Changed</code> tabel headers i <code>.skts-block-table</code> vises med fed skrift som standard på de små skærme</li>
+                        </ul>
+                        <h2 id="rev1999" class="h2--guide">Revision 1999: 22-09-2016</h2>
+                        <ul>
+                            <li><code>Removed</code> <em>legacy.js</em> fra mappen <em>Assets\js\custom</em> </li>
+                            <li><code>Added</code> <em>legacy.js</em> til mappen <em>Assets\js\supplemental</em></li>
+                            <li><code>Added</code> transport links (<code>.skts-transport-box skts-transport-box--large</code>) til css og UDG</li>
+                        </ul>
+					</div>
+                </div>
+            </div>
+            <div class="skts-push"></div>
+        </div>
+        <footer>
+            <div class="row">
+                <div class="col-sm-4 text-left hidden-xs" >
+                    <div class="skts-logo-small"><span class="sr-only">SKAT logo</span></div>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <a href="https://www.skat.dk/SKAT.aspx?oId=967" target="_blank">Kontakt SKAT</a>
+                </div>
+                <div class="col-sm-4 text-right hidden-xs"> 
+                    <a target="_blank" href="https://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="sr-only"> Åbner nyt vindue</span></a>
+                </div>
+            </div>
+        </footer>
+        <script src="sktscommon/js/vendor/jquery-3.2.1.min.js"></script>
+        <script src="sktscommon/js/skat.min.js"></script>
+        <script src="sktscommon/js/prototype-workflows.min.js"></script>
+        <!--ADDED FOR GUIDE PURPOSES ONLY -->
+        <script src="assets/js/prettify.js"></script>
+        <script src="assets/js/guide.js"></script>
+    </body>
+</html>

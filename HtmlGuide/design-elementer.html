@@ -1,0 +1,1134 @@
+﻿<!DOCTYPE html>
+<html lang="da"> 
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Udviklings- og designguide - SKAT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link href="sktscommon/css/skat.min.css" rel="stylesheet">
+		<link href="sktscommon/css/chosen.min.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/guide.css" rel="stylesheet" type="text/css" />
+    </head>
+	<body data-spy="scroll">
+        <div class="skts-wrap">
+            <header class="container-fluid header-show">
+                <div class="row">
+                    <div class="col-xs-3 text-center skts-bg-main-1">
+                        <div class="skts-header-item">
+                            <button type="button" class="skts-menu-button js-create-nav-modal" data-toggle="modal" data-target="#sktsNavModal" data-nav-link-selector="#sktsTopNavLinks">
+                                <span class="sr-only">Vis/skjul navigation</span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                            </button>
+                            <div class="navbar-collapse hidden" id="sktsTopNavLinks">
+                                 <ul>
+                                    <li><a href="index.html">Forside</a></li>
+                                    <li><a href="design.html" class="active">Design</a></li>
+                                    <li><a href="udvikling.html">Udvikling</a></li>
+                                    <li><a href="brugeroplevelser.html">Brugeroplevelser</a></li>
+                                    <li><a href="krav.html">Non funktionelle krav</a></li>
+                                    <li><a href="changelog.html">Changelog</a></li>
+                                    <li><a href="kontakt.html">Kontakt</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 text-center skts-bg-main-2">
+                        <div class="skts-header-item skts-header-item--logo">
+                            <a class="skts-logo-responsive" href="index.html">
+                                <span class="sr-only">Gå til forside</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 text-center skts-bg-main-4">
+                        <div class="skts-header-item">
+                            <a href="index.html">UDG</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="skts-breadcrumb-container">
+                <ol class="breadcrumb container">
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="design.html">Design</a></li>
+                </ol>
+            </div>
+    		<div class="container skts-top-pad-1">
+    			<div class="row">
+    				<div class="col-md-8" id="mainContent">
+    					<h1 class="h1--guide">Brug af elementer</h1>
+						<h2 class="h2--guide" id="subHeaders">Headers</h2>
+                        <ul>
+                            <li>SKATs websider har alle den samme header med centreret logo og mulighed for at logge på/af TastSelv miljøerne. </li>
+                            <li>SKATs logo linker <strong>altid</strong> tilbage til forsiden af det givne domæne, fx forsiden af skat.dk, TastSelv Borger (TSB) eller TastSelv Erhverv (TSE).</li>
+                           <li>Log på/af er <strong>altid</strong> placeret til højre i headeren med et hængelås-ikon.</li>
+                        </ul>
+                        <h4 class="h4--guide">For undermoduler/wizards i selvbetjeningsløsningerne gælder følgende</h4>
+                        <ul>
+                            <li>Undermoduler og wizards åbner op i samme side, men headeren skifter udseende.</li>
+                            <li>Logo og log af har samme placering.</li>
+                            <li>Til venstre i headeren skal der være en tilbage-funktion, som tager brugeren tilbage til foregående side/trin, læs mere i næste afsnit.</li>
+                            <li>Log af skal ligge på <strong>alle</strong> sider i modulerne, da alle moduler åbner i samme side.</li>
+                            <li>SKAT-ikonet er <strong>ikke</strong> klikbart i undermoduler.</li>
+                        </ul>
+                        <h3 id="subHeaderSearch" class="h3--guide">Global search</h3>
+                        <p>Link til global search placeres i header og kalder på et modal vindue.</p>
+                        <em>Header med global search</em>
+                        <header>
+                            <div class="skts-logo"><a href="index.html"><br/><span class="sr-only">Gå til forsiden</span></a></div>
+                            <a class="skts-login pull-right" href="/borger/logout">Log af</a>
+                            <a href="#" class="pull-right skts-header-link" data-focus-element="siteSearch" data-toggle="modal" data-target="#searchModal">
+                              <span class="skts-icon skts-icon--soeg-hvid skts-icon--large"></span><span class="hidden-xs">Søg</span>
+                            </a>
+                        </header>
+                        <div class="modal fade" tabindex="-1" role="dialog" id="searchModal">
+                            <div class="modal-dialog modal-md">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Luk"><span aria-hidden="true"></span></button>
+                                    </div>
+                                    <div class="modal-body skts-search-modal">
+                                        <form>                      
+                                            <div class="input-group">
+                                                <label class="sr-only" for="siteSearch">Hvad søger du?</label>
+                                                <input type="text" id="siteSearch" class="form-control" placeholder="Hvad søger du?">
+                                                <span class="input-group-btn">
+                                                    <button class="btn skts-icon skts-icon--soeg-hvid skts-icon--large" type="button"><span class="sr-only">Søg</span></button>
+                                                </span>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						<hr/>
+                        <h2 class="h2--guide" id="subNav">Navigation</h2>
+                        <h3 class="h3--guide" id="subNavBurger">Burger menu</h3>
+                        <p><em>Burger menu</em></p>
+                        <header>
+                            <div class="navbar navbar-default" role="navigation">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle skts-show-menu js-create-nav-modal" data-toggle="modal" data-target="#sktsNavModalTest" data-nav-link-selector="#sktsTopNavLinksTest">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="hidden-xs">Menu</span>
+                                    </button>
+                                </div>
+                                <div class="navbar-collapse hidden" id="sktsTopNavLinksTest">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="../Generelt/forside.html">Forside</a></li><li ><a class="active" href="../aarsop_laes.html">Årsopgørelse</a></li><li><a href="../Forskud/forskud_ret.html">Forskudsopgørelse</a></li><li><a href="/borger/link?appl=betalrestskat">Betaling</a></li><li><a href="/borger/r75">Skatteoplysninger</a></li><li><a href="/borger/motormenu">Motor</a></li>
+                                    </ul>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li><a href="/borger/kontaktskat">Kontakt</a></li><li><a href="/borger/link?appl=profil">Profil</a></li><li><a href="#">Hjælp<span class="sr-only"> åbner nyt vindue</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </header>
+                        <h3 class="h3--guide" id="subNavBread">Breadcrumb</h3>
+                        <p><em>Breadcrumb</em></p>
+                        <div class="skts-breadcrumb-container">
+                            <ol class="breadcrumb container">
+                                <li><a href="index.html">Forside</a></li>
+                                <li><a href="ux.html">UX</a></li>
+                            </ol>
+                        </div>
+
+                        <h3 class="h3--guide" id="subNavTransport">Transport links</h3>
+
+                        <p>Transport links kan laves med og uden undertekster</p>
+                        <p><em>Transport link uden undertekst</em></p>
+
+                        <a href="#" class="skts-transport-box">
+                            <h2>Link header</h2>
+                        </a>
+                        <p><em>Transport link med undertekst</em></p>
+
+                        <a href="#" class="skts-transport-box skts-transport-box--large">
+                            <h2>Link header</h2>
+                            <p>Her er link beskrivelsen </p>
+                        </a>
+                        
+                        <h3 class="h3--guide" id="subNavBack">Back (wizards og undermoduler)</h3>
+                        <ul>
+                            <li>Tilbage-funktionen i headeren, er identisk med tilbage-knappen og går altid et trin tilbage.</li>
+                            <li>Tilbage-funktionen bliver primært brugt i undermoduler/wizards.</li>
+                            <li>Tilbage-funktionen er en hjælp for de brugere, der har brug for at komme et trin tilbage, uden at de har scrollet ned på siden.</li>
+                            <li>I selvbetjeningsmiljøerne skal brugerne ikke benytte sig af browserens tilbage-funktion, da brugeren så bliver smidt af miljøet.</li>
+                        </ul>
+                        <br/>
+                        <p><em>Back navigation</em></p>
+                        <header>
+                            <a href="#" class="skts-back">Tilbage</a>
+                            <div class="skts-logo">
+                                <a href="../../index.html">
+                                    <span class="sr-only">Gå til forside</span>
+                                </a>
+                            </div>
+                            <ul class="skts-focus-links">
+                                <li><a href="#skts-skip-link-target-indhold">Gå til indhold</a></li>
+                            </ul>
+                            <a class="skts-login pull-right" href="https://www.skat.dk/SKAT.aspx?oId=69534">Log af</a>
+                        </header>
+                        <h3 class="h3--guide" id="subNavProgress">Progress bar</h3>
+                        <ul>
+                            <li>Viser antallet af trin i et flow.</li>
+                            <li>I mobilvisninger vises kun tallet. I større visninger vises underoverskriften på siden, se nedenfor.</li>
+                            <li>Placering, første element underside overskrift.</li>
+                            <li>Når wizarden kun har én indtastningsside, vises ikke en progress bar (en wizard skal altså have minimum to sider/skridt, før der vises en progress bar).</li>
+                            <li>En progress bar må max have 6 trin.</li>
+                            <li>En progress bar må aldrig gå ned i to rækker – den skal kunne ses på en 320px skærm, uden at den breaker.</li>
+                            <li>Når progress baren overstiger 6 trin, vises det i form af en TrackBar.</li>
+                        </ul>
+                        <br/>
+                        <p><em>Progress bar (3 trin)</em></p>
+                        <ul class="skts-navbar-wizard">
+                            <li class="active"><span>Første trin</span></li>
+                            <li><span>Anden trin</span></li>
+                            <li><span>Trejde trin</span></li>
+                        </ul>
+                        <br/>
+                        <p><em>Progress bar (6 trin)</em></p>
+                        <ul class="skts-navbar-wizard">
+                            <li class="active"><span>1</span></li>
+                            <li><span>2</span></li>
+                            <li><span>3</span></li>
+                            <li><span>4</span></li>
+                            <li><span>5</span></li>
+                            <li><span>6</span></li>
+                        </ul>
+                        <h3 class="h3--guide" id="subNavTabs">Tabs </h3>
+                         <p><em>Tabs</em></p>
+                        <div class="navbar">
+                            <ul class="nav nav-tabs">
+                                <li class=""><a href="">2015<span class="sr-only">Se årsopgørelsen for 2015 </span></a></li>
+                                <li><a href="">2014<span class="sr-only">Se forskudsopgørelsen for 2014 </span></a></li>
+                                <li><a href="">Tidligere<span class="sr-only">Se forskudsopgørelsen for tidligere år </span></a></li>
+                            </ul>
+                        </div>
+                        <hr/>
+                        <h2 class="h2--guide" id="subButtons">Buttons</h2>
+                        <ul>
+							<li>Knapper anvendes, når brugeren skal kunne udføre en funktionalitet på en side, fx gemme, beregne, fortryde eller sende.</li>
+                            <li>Hvis en knap er sidste trin i en proces, skal der, efter brugeren har trykket på knappen, komme en ny side, som bekræfter over for brugeren, at handlingen bag knappen er gennemført.</li>
+							<li>Knapper skal navngives konsistent på tværs af SKAT løsninger. For information om navngivning se afsnit om tekster.</li>
+                            <li>Knapper, der ikke er sidestillet, har altid en fast størrelse på 17 em – i dette tilfælde er det redaktøren/UX’eren, der sørger for, at teksten på knappen passer.</li>
+                        </ul>
+                        
+                        <h3 class="h3--guide" id="subButtonsDefault">Default button</h3>
+                        <ul>
+                            <li>Bruges til knapper der ikke er placeret som navigation i et flow.</li>
+                            <li>Kort og præcis navngivning.</li>
+                        </ul>
+                        <br/>
+                        <p><em>Default button</em></p>
+                        <p><input type="button" value="Beregner" class="btn btn-default"></p>
+                        <h3 class="h3--guide" id="subButtonsPrimary">Primary button</h3>
+                        <ul>
+                            <li>Placeres altid til højre.</li>
+                            <li>Har altid samme farve, som er den mest dominerende farve.</li>
+                            <li>
+                                Navngivning
+                                <ul>
+                                    <li>Næste – går et trin frem.</li>
+                                    <li>Godkend – godkender de indtastede oplysninger.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <br/>
+                        <p><em>Primary button</em></p>
+                        <p><input type="submit" value="Gem" class="btn btn-primary"></p>
+                        <h3 class="h3--guide" id="subButtonsSecondary">Secondary button</h3>
+                        <ul>
+                            <li>Placeres altid til venstre.</li>
+                            <li>Adskiller sig i farven fra primærknap.</li>
+                            <li>
+                                Navngivning
+                                <ul>
+                                    <li>Annuller, ligger oftest som første trin i et flow, funktionsmæssig afbryder den flowet og sletter indtastninger</li>
+                                    <li>Tilbage, går altid et trin tilbage.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <br/>
+                        <p><em>Secondary button</em></p>
+                        <p><input type="button" value="Annuller" class="btn skts-btn-secondary"></p>
+                        <h3 class="h3--guide" id="subButtonsFull">Full width button</h3>
+                        <ul>
+                            <li>Kan formateres som alle andre knapper afhængig af formålet.</li>
+                            <li>Bruges typisk i en wizard, hvor brugeren skal vælge, hvilket flow brugeren skal igennem.</li>
+                            <li>Navngivningen er kort og præcis.</li>
+                        </ul>
+                        <br/>
+                        <p><em>Full width button</em></p>
+                        <p><button type="button" class="btn btn-default skts-full-width">Full width button</button></p>
+                        <h3 class="h3--guide" id="subButtonsGroup">Button groups</h3>
+                        <ul>
+                            <li>Primære og sekundære knapper sidestilles og placeres hhv. til højre (primær) og venstre (sekundær).</li>
+                            <li>Når primær og sekundær knapper står sammen som navigation, kommer primær knappen altid før sekundær knappen i HTML. Det sikrer, at primær knappen får fokus før sekundær knappen, når tastaturet bruges til felt navigering.</li>
+                            <li>Knapper, der sidestilles har samme størrelse, fx 40% af real estate.</li>
+                        </ul>
+                        <br/>
+                        <p><em>Kombination af primary (til højre) og secondary (venstre) buttons</em></p>
+                        <div class="clearfix skts-standard-buttons">
+                            <input type="submit" value="Gem" class="btn btn-primary pull-right">
+                            <input type="button" value="Annuller" class="btn skts-btn-secondary pull-left">
+                        </div>
+						<h3 class="h3--guide" id="sublinks">Links vs. buttons</h3>
+						<ul>
+							<li>Når brugeren ledes til en ny side ved at klikke, skal der anvendes et link.</li>
+							<li>Når brugeren får udført funktionalitet ved at klikke, skal der anvendes en knap. En knap kan godt samtidigt lede til en ny side.</li>
+						</ul>
+                        <p><a href="krav-tekster.html">Læs om knappernes funktion under afsnittet tekster</a></p>
+                        <hr/>
+                        <h2 class="h2--guide" id="subForm">Form elements</h2>
+                        <p>Tæller en række elementer, der samlet set udgør et indberetningsfelt (TastSelv).</p>
+                        <h3 class="h3--guide" id="subFormInput">Input felt</h3>
+                        <ul>
+                            <li>Et input felt står altid sammen med et label.</li>
+                            <li>Kan have en prædefineret værdi.</li>
+                            <li>Input felter kan være uden værdier. I de tilfælde vil der altid være en sigende placeholder-tekst.</li>
+                            <li>Fokus skal ikke automatisk sættes i et felt, med mindre siden indsendes med <a href="#subFormValidation">clientside validation</a>.</li>
+                            <li>Den prædefinerede værdi vises under feltet med teksten "Rettet fra:", når værdien ændres af slutbrugeren.</li>
+                        </ul>
+
+
+
+
+                        <h3 class="h3--guide" id="subFormPlaceholder">Placeholder text</h3>
+                        <ul>
+                            <li>Alle input felter har en placeholder-tekst.</li>
+                            <li>Placeholder-tekst er sigende for feltet, se afsnittet tekster.</li>
+                        </ul>
+
+                        <h3 class="h3--guide" id="subFormPostfix">Postfix</h3>
+                        <ul>
+                            <li>Input felter med værdier har <strong>altid</strong> et postfix, fx kr., som ses i eksemplet.</li>
+                            <li>Alle postfix (dage, kr., år osv.) har en lige margin.</li>
+                        </ul>
+                        <br/>
+                        <p><em>Input felt med label, placeholder text (når beløbet slettes) og postfix</em></p>
+                        <div class="well">
+                            <div class="row skts-process-form-section">
+                                <div class="col-sm-6 col-md-8">
+                                    <label for="rub_15a" id="rub_15aLabel">
+                                        Anden personlig indkomst, fx fra privat dagpleje
+                                    </label>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="skts-postfix-kr">
+                                        <input type="text" id="rub_15a" value="3.000" class="form-control" data-show-type="dkInteger" data-show-facets="minInclusive!!maxInclusive" data-show-facet-values="0!!25500" autocomplete="off" placeholder="Skriv beløb">
+                                        <div class="skts-input-msg" aria-describedby="rub_15">Rettet fra: <span class="skts-input-msg-value skts-postfix-kr skts-postfix-text">3.000</span></div>
+                                        <div class="skts-error-text" role="alert">Du skal skrive beløbet i hele kr.</div>
+                                        <div class="skts-error-text" role="alert">Værdien skal mindst være 0</div>
+                                        <div class="skts-error-text" role="alert">Værdien skal maksimalt være 25.500</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="h3--guide" id="subFormBeloebsfelt">Beløbsfelt</h3>
+                        <ul>
+                            <li>Der er ingen begrænsninger på hvilke inputtyper der kan anvendes.</li>
+                            <li>Hvis brugeren skriver komma, eller bogstav, vises en fejlbesked under feltet (on blur). Beskeden vises senest når brugeren forlader feltet, men kan også vises mens der stadig skrives (key up).</li>
+                            <li>Tusindetalspunktum er det eneste punktum som tillades. Det bruges til at adskille tusinder i store tal. Hvis et tal har mere end fire cifre, sættes der punktum efter det tredje ciffer, som de tælles bagfra. Hvis tallet har mere end seks cifre sættes der endnu et punktum efter ciffer nummer seks og så fremdeles. Hvis brugeren har sat punktum på anden måde, vises fejlbesked, når brugeren forlader feltet.</li>
+                            <li>Hvis brugeren ikke har sat nogen punkttummer selv, indsættes tusindetalspunkttum når brugeren forlader feltet (on blur). Dette er den eneste form for rettelse som systemet automatisk foretager.</li>
+                        </ul>
+                        <h3 class="h3--guide" id="subFormExtra">Add ons</h3>
+                        <ul>
+                            <li>"Vis beregning" viser mere information ved brug af en collaps.</li>
+                            <li>Mulighed for at overføre et beløb.</li>
+                            
+                            <li>Runde ikoner med et "?" kombineret med et link bruges til at vise, at der findes en vejledning. Vejledningen åbner op i et nyt faneblad.</li>
+                        </ul>
+                        
+                        <br/>
+                        <p><em>Input elementer</em></p>
+                        <div class="well">
+                            <div class="row skts-process-form-section">
+                                <div class="col-sm-6 col-md-8">
+                                    <p>
+                                        Renteudgifter - bank
+                                    </p>
+                                    <p>
+                                        <span class="skts-rounded-icon">?</span>
+                                        <a href="#" target="_blank"><span class="skts-section-nr">Rubrik 41</span></a>
+                                    </p>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <p class="skts-text-right-fixed">
+                                        <span class="skts-postfix-kr skts-postfix-text skts-row-underline skts-important-text">3.000</span>
+                                    </p>
+                                    <p class="skts-text-right-fixed"><a href="#"><span class="skts-transfer-icon"><br></span>Overfør renter</a></p>
+                                    <div class="skts-text-right-fixed skts-collapse skts-collapse-arrow">
+                                        <a aria-expanded="false" href="#">Se overført beløb</a>
+                                    </div>
+                                    <div class="skts-wizard-white hidden">
+                                        <div class="row">
+                                            <div class="col-xs-6">Danske Bank</div>
+                                            <div class="col-xs-6 skts-text-right-fixed skts-postfix-kr skts-postfix-text">500</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6">Lån&amp;Spar</div>
+                                            <div class="col-xs-6 skts-text-right-fixed skts-postfix-kr skts-postfix-text">500</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6">Nordea</div>
+                                            <div class="col-xs-6 skts-text-right-fixed skts-postfix-kr skts-postfix-text">1000</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6">Nykredit</div>
+                                            <div class="col-xs-6 skts-text-right-fixed skts-postfix-kr skts-postfix-text">1000</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="h3--guide" id="subFormRequired">Required fields</h3>
+                        <ul>
+                            <li>Siden skal først tjekke, at obligatoriske felter er udfyldt, når brugeren trykker <em>Næste</em> eller <em>Godkend</em>, ikke når brugeren klikker ud af feltet.</li>
+                            <li>Det skal afklares med forretningen, hvornår et felt skal være obligatorisk.</li>
+                            <li>Klassisk tegn (rød stjerne).</li>
+                            <li>Fejltekster skal cleares med forretning/redaktør.</li>
+                            <li>Fejlteksten skal understøtte feltet – det er ikke nok at skrive, at “feltet er påkrævet”.</li>
+                        </ul>
+                        <br/>
+
+                        <p><em>Select boks som påkrævet</em></p>
+                        <div class="well">
+                            <div class="row skts-process-form-section skts-required has-error">
+                                <div class="col-sm-12">
+                                    <label for="fpCountry" id="fpCountryaLabel">Land</label>
+                                </div>
+                                <div class="col-sm-12">
+                                    <select class="form-control skts-required-val" id="fpCountrya" name="fpCountrya" aria-invalid="true" aria-required="true">
+                                        <option value="">Vælg land</option>
+                                        <option value="AF">Afghanistan</option>
+                                        <option value="AL">Albanien</option>
+                                    </select>
+                                    <div class="skts-error-text show" role="alert">Feltet er påkrævet</div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="h3--guide" id="subFormValidation">Clientside validation</h3>
+                        <ul>
+                            <li>Straksvalidering igangsættes normalt, når slutbrugeren taster i feltet. Dato og cpr-nr. skal dog først valideres, når brugeren går væk fra feltet.</li>
+                            <li>Fejl i toppen af siden (<a href="#subBoxes">Fejl besked</a>) sætter først fokus på fejl-feltet, når brugeren klikker på felt-linket.</li>
+                            <li>Skal bruges på alle felter, der kræver validering.</li>
+                            <li>Fejltekster skal cleares med forretning/redaktør.</li>
+                            <li>Type, størrelse osv.</li>
+                        </ul>
+                        <p><a href="krav-tekster.html#subError">Læs om fejlekster</a></p>
+                        <p><em>Eksempel på felt validering</em></p>
+                        <div class="well">
+                            <div class="row skts-process-form-section has-error">
+                                <div class="col-sm-8">
+                                    <div class="skts-postfix-kr">
+                                        <input type="text" id="rub_15" value="30.000" class="form-control" data-show-type="dkInteger" data-show-facets="minInclusive!!maxInclusive" data-show-facet-values="0!!25500" autocomplete="off" placeholder="Skriv beløb" aria-invalid="true">
+                                        <div class="skts-error-text" role="alert">Du skal skrive beløbet i hele kr.</div>
+                                        <div class="skts-error-text" role="alert">Værdi skal mindst være 0</div>
+                                        <div class="skts-error-text show" role="alert">Værdien skal maksimalt være 25.500</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="h3--guide" id="subFormRadioButtons">Radio buttons</h3>
+                        <ul>
+                            <li>En mulighed udelukker en anden (som udgangspunkt er der en prævalgt).</li>
+                            <li>I nogle situationer vil det dog være nødvendigt, at der ikke er nogen prævalgt mulighed (dette kræver afklaring med forretningen).</li>
+                            <li>Mange gange kan det være en god idé at have en neutral mulighed med.</li>
+                        </ul>
+                        <br/>
+                        <p><em>Radio button med en prævalgt</em></p>
+                        <div class="well">
+                            <div class="skts-process-form-section skts-row-seperator">
+                                <fieldset>
+                                    <legend>
+                                        Ønsker du, at tab i rubrik 86 skal modregnes i gevinst på aktier optaget til handel på et reguleret marked?
+                                    </legend>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <p>
+                                                <span class="skts-rounded-icon">?</span>
+                                                <a href="https://www.skat.dk/SKAT.aspx?oID=2169654&amp;layout=353121" target="_blank"><span class="skts-section-nr">Rubrik 87</span></a>
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="btn-group-vertical" data-toggle="buttons">
+                                                <div class="btn skts-btn-radio active">
+                                                    <input type="radio" id="rubrik87_1a" name="rubrik87" value="modregnesIkke" checked="checked">
+                                                    <label for="rubrik87_1a">
+                                                        Tab modregnes ikke
+                                                    </label>
+                                                </div>
+                                                <div class="btn skts-btn-radio">
+                                                    <input type="radio" id="rubrik87_2a" name="rubrik87" value="modregnesEgen">
+                                                    <label for="rubrik87_2a">
+                                                        Tab modregnes i egen indkomst
+                                                    </label>
+                                                </div>
+                                                <div class="btn skts-btn-radio">
+                                                    <input type="radio" id="rubrik87_3a" name="rubrik87" value="modregnesAegte">
+                                                    <label for="rubrik87_3a">
+                                                        Tab modregnes i ægtefælles indkomst
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="skts-input-msg" aria-describedby="rub_87Label">Rettet fra: <span class="skts-input-msg-value">Tab modregnes ikke</span></div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <h3 class="h4--guide">Button groups (Ja/nej)</h3>
+                        <ul>
+                            <li>Disse bruges ofte for at skjule elementer på siden eller trigge elementer, der bliver vist på andre sider i et flow/wizard.</li>
+                            <li>Som udgangspunkt er der prævalgt en værdi, men som beskrevet oven for kan der være situationer, hvor det ikke er muligt.</li>
+                            <li>Vær opmærksom på, at Ja/nej-knapper kun skal bruges i tilfælde af, at brugeren skal tage stilling til en af de givne svarmuligheder (de kan ikke deselecte).</li>
+                        </ul>
+                        <br/>
+                        <p><em>Ja/nej radio button group</em></p>
+                        <div class="well">
+                            <div class="text-center skts-process-form-section skts-row-seperator">
+                                <fieldset>
+                                    <legend>
+                                        Bruger du kapitalafkastordningen?
+                                    </legend>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="btn-group" data-toggle="buttons">
+                                                <div class="btn skts-btn-radio">
+                                                    <input type="radio" id="virkCap_1" name="virkCap" value="1">
+                                                    <label for="virkCap_1">Ja</label>
+                                                </div>
+                                                <div class="btn skts-btn-radio active">
+                                                    <input type="radio" id="virkCap_2" name="virkCap" value="0" checked="checked">
+                                                    <label for="virkCap_2">Nej</label>
+                                                </div>
+                                            </div>
+                                            <div class="skts-input-msg">Rettet fra: <span class="skts-input-msg-value">Nej</span></div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>  
+                        <h4 class="h4--guide">Button groups vertical expand</h4>
+                        <ul>
+                            <li>Afhængig af, hvilken mulighed der vælges, vil der folde en række forskellige rubrikker ud under den sidste mulighed.</li>
+                            <li>Der er en adskilning fra radio button elementet til det indhold, der kommer nedenunder (i eksemplet ses 1px hvid).</li>
+                            <li>Når en bruger klikker fra en mulighed til en anden, blankes de rubrikker, som brugeren måtte have indtastet under den forrige mulighed. Dette er en forretningsafklaring, da det er knyttet op på forholdet med underleverandørerne.</li>
+                        </ul>
+                        <br/>
+                        <p><em>Button group (prævalgt) med vertical expand af rubrikker</em></p>
+                        <div class="well">
+                            <div class="skts-process-form-section skts-row-seperator">
+                                <fieldset>
+                                    <legend>Beskrivelse her</legend>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="btn-group-vertical" data-toggle="buttons">
+                                                <div class="btn skts-btn-radio active">
+                                                    <input type="radio" id="igangVirksomhed" name="rubrik71" value="igangVirksomhed" checked="checked" data-show-group-for="companyTerminationGroup" data-show-for="companyExtraInfo" />
+                                                    <label for="igangVirksomhed">Jeg har igangværende virksomhed, inkl. solcelleanlæg og lign</label>
+                                                </div>
+                                                <div class="btn skts-btn-radio">
+                                                    <input type="radio" id="ophortTidligere2015" name="rubrik71" value="ophortTidligere2015" data-show-group-for="companyTerminationGroup" data-show-for="null" />
+                                                    <label for="ophortTidligere2015">Jeg har en ikke-erhversmæssig virksomhed eller er din viriksomhed ophørt tidligere end 2015</label>
+                                                </div>
+                                            </div>
+                                            <div class="skts-input-msg">Rettet fra: <span class="skts-input-msg-value">Jeg har igangværende virksomhed, inkl. solcelleanlæg og lign</span></div>
+                                        </div>
+                                    </div>                                    
+                                </fieldset>
+                            </div>
+                            <div class="hidden" data-show-group-id="companyTerminationGroup" data-show-id="companyExtraInfo">
+                                <br />
+                                <!-- rub 111 start -->
+                                <div class="row skts-process-form-section">
+                                    <div class="col-sm-6 col-md-8">
+                                        <label for="rub_111" id="rub_111Label">
+                                            Overskud af selvstændig virksomhed før beløb overført til medarbejdende ægtefælle, før AM-bidrag og før renter
+                                        </label>
+                                        <p>
+                                            <span class="skts-rounded-icon">?</span>
+                                            <a href="https://www.skat.dk/SKAT.aspx?oID=2169711&amp;layout=353121" target="_blank"><span class="skts-section-nr">Rubrik 111</span></a>
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="skts-postfix-kr">
+                                            <input type="text" id="rub_111" value="" class="form-control" data-show-type="dkInteger" data-show-facets="minInclusive!!maxInclusive" data-show-facet-values="0!!99999999" autocomplete="off" placeholder="Skriv beløb">
+                                            <div class="skts-error-text" role="alert">Du skal skrive beløbet i hele kr.</div>
+                                            <div class="skts-error-text" role="alert">Værdi skal mindst være 0</div>
+                                            <div class="skts-error-text" role="alert">Værdien skal maksimalt være 99.999.999</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- rub 111 end -->
+                            </div> 
+                        </div>
+                        <h3 class="h3--guide" id="subFormCheckboxes">Checkboxes vertical (mangler)</h3>
+
+                        <h3 class="h3--guide" id="subFormSelect">Dropdown</h3>
+                        <ul>
+                            <li>Brug dropdowns, når det drejer sig om en liste på over fem muligheder (henvis til radiobuttons afsnit).</li>
+                            <li>Under fem punkter bruger vi radio buttons.</li>
+                            <li>Vi viser op til 10 punkter. Herefter er der en scrollbar i listen.</li>
+                        </ul>
+                        <h3 class="h3--guide" id="subFormChosen">Chosen select</h3>
+                        <ul>
+                            <li>Giver mulighed for at søge i listen.</li>
+                            <li>Bruges når det er lange lister, fx ved valg af land.</li>
+                        </ul>
+                        <select class="form-control chosen-select skts-required-val" id="fpCountry" name="fpCountry">
+                            <option value="">Vælg land</option>
+                            <option value="AF">Afghanistan</option>
+                            <option value="AL">Albanien</option>
+                            <option value="DZ">Algeriet</option>
+                            <option value="AS">Amerikansk Samoa</option>
+                            <option value="AD">Andorra</option>
+                            <option value="AO">Angola</option>
+                            <option value="AI">Anguilla</option>
+                            <option value="AG">Antigua og Barbuda</option>
+                            <option value="AR">Argentina</option>
+                            <option value="AM">Armenien</option>
+                            <option value="AW">Aruba</option>
+                            <option value="AU">Australien</option>
+                            <option value="AZ">Azerbajdjan</option>
+                            <option value="BS">Bahama-Øerne</option>
+                            <option value="BH">Bahrain</option>
+                            <option value="BD">Bangladesh</option>
+                            <option value="BB">Barbados</option>
+                            <option value="BY">Belarus</option>
+                            <option value="BE">Belgien</option>
+                            <option value="BZ">Belize</option>
+                            <option value="BJ">Benin</option>
+                            <option value="BT">Bhutan</option>
+                            <option value="BO">Bolivia</option>
+                            <option value="BA">Bosnien-Herzegovina</option>
+                            <option value="BW">Botswana</option>
+                            <option value="BR">Brasilien</option>
+                            <option value="IO">British Indian Ocean Territory</option>
+                            <option value="VG">Britiske Jomfruøer</option>
+                            <option value="BN">Brunei Darussalem</option>
+                            <option value="BG">Bulgarien</option>
+                            <option value="BF">Burkina Faso</option>
+                            <option value="BI">Burundi</option>
+                            <option value="KH">Cambodia</option>
+                            <option value="CM">Cameroun</option>
+                            <option value="CA">Canada</option>
+                            <option value="CV">Cap Verde</option>
+                            <option value="KY">Caymanøerne</option>
+                            <option value="CL">Chile</option>
+                            <option value="CO">Colombia</option>
+                            <option value="KM">Comorerne</option>
+                            <option value="CK">Cook Islands</option>
+                            <option value="CR">Costa Rica</option>
+                            <option value="CU">Cuba</option>
+                            <option value="CY">Cypern</option>
+                            <option value="CD">Den Demo.Rep.Congo</option>
+                            <option value="PS">Det palæstinensiske selvstyreområde</option>
+                            <option value="DJ">Djibouti</option>
+                            <option value="DM">Dominica</option>
+                            <option value="DO">Dominikanske Rep</option>
+                            <option value="EC">Ecuador</option>
+                            <option value="EG">Egypten</option>
+                            <option value="SV">El Salvador</option>
+                            <option value="CI">Elfenbenskysten</option>
+                            <option value="ER">Eritrea</option>
+                            <option value="EE">Estland</option>
+                            <option value="ET">Etiopien</option>
+                            <option value="FK">Falklandsøerne</option>
+                            <option value="FJ">Fiji</option>
+                            <option value="PH">Filippinerne</option>
+                            <option value="FI">Finland</option>
+                            <option value="AE">Foren.Arab.Emirater</option>
+                            <option value="F2">Frankrig ejendom købt efter 28/11 2007</option>
+                            <option value="F1">Frankrig ejendom købt før 29/11 2007</option>
+                            <option value="FO">Færøerne</option>
+                            <option value="GA">Gabon</option>
+                            <option value="GM">Gambia</option>
+                            <option value="GE">Georgien</option>
+                            <option value="GH">Ghana</option>
+                            <option value="GI">Gibraltar</option>
+                            <option value="GL">Grønland</option>
+                            <option value="GD">Grenada</option>
+                            <option value="GR">Grækenland</option>
+                            <option value="GP">Guadeloupe</option>
+                            <option value="GU">Guam</option>
+                            <option value="GT">Guatemala</option>
+                            <option value="GG">Guernsey</option>
+                            <option value="GN">Guinea</option>
+                            <option value="GW">Guinea Bissau</option>
+                            <option value="GY">Guyana</option>
+                            <option value="HT">Haiti</option>
+                            <option value="HM">Heard- og McDonald-øerne</option>
+                            <option value="AN">Hollandske Antiller</option>
+                            <option value="HN">Honduras</option>
+                            <option value="HK">Hong Kong</option>
+                            <option value="IN">Indien</option>
+                            <option value="ID">Indonesien</option>
+                            <option value="IQ">Irak</option>
+                            <option value="IR">Iran</option>
+                            <option value="IE">Irland</option>
+                            <option value="IS">Island</option>
+                            <option value="IM">Isle of Man</option>
+                            <option value="IL">Israel</option>
+                            <option value="IT">Italien</option>
+                            <option value="JM">Jamaica</option>
+                            <option value="JP">Japan</option>
+                            <option value="JE">Jersey</option>
+                            <option value="JO">Jordan</option>
+                            <option value="CX">Juleøen</option>
+                            <option value="KZ">Kazakhstan</option>
+                            <option value="KE">Kenya</option>
+                            <option value="CN">Kina</option>
+                            <option value="KG">Kirgizstan</option>
+                            <option value="KI">Kiribati</option>
+                            <option value="CC">Kokos-øerne</option>
+                            <option value="KP">Korea,Demo.Folkerep</option>
+                            <option value="KR">Korea,Rep</option>
+                            <option value="HR">Kroatien</option>
+                            <option value="KW">Kuwait</option>
+                            <option value="LA">Laos</option>
+                            <option value="LS">Lesotho</option>
+                            <option value="LV">Letland</option>
+                            <option value="LB">Libanon</option>
+                            <option value="LR">Liberia</option>
+                            <option value="LY">Libyen</option>
+                            <option value="LI">Liechtenstein</option>
+                            <option value="LT">Litauen</option>
+                            <option value="LU">Luxembourg</option>
+                            <option value="MO">Macao</option>
+                            <option value="MG">Madagascar</option>
+                            <option value="MK">Makedonien</option>
+                            <option value="MW">Malawi</option>
+                            <option value="MY">Malaysia</option>
+                            <option value="MV">Maldiverne</option>
+                            <option value="ML">Mali</option>
+                            <option value="MT">Malta</option>
+                            <option value="MA">Marokko</option>
+                            <option value="MH">Marshall-Øerne</option>
+                            <option value="MR">Mauretanien</option>
+                            <option value="MU">Mauritius</option>
+                            <option value="MX">Mexico</option>
+                            <option value="FM">Mikronesien</option>
+                            <option value="MD">Moldova</option>
+                            <option value="MC">Monaco</option>
+                            <option value="MN">Mongoliet</option>
+                            <option value="ME">Montenegro</option>
+                            <option value="MZ">Mozambique</option>
+                            <option value="MM">Myanmar (Burma)</option>
+                            <option value="NA">Namibia</option>
+                            <option value="NR">Nauru</option>
+                            <option value="NL">Nederlandene</option>
+                            <option value="NP">Nepal</option>
+                            <option value="NZ">New Zealand</option>
+                            <option value="NI">Nicaragua</option>
+                            <option value="NE">Niger</option>
+                            <option value="NG">Nigeria</option>
+                            <option value="NU">Niue</option>
+                            <option value="NF">Norfolk Island</option>
+                            <option value="NO">Norge</option>
+                            <option value="OM">Oman</option>
+                            <option value="PK">Pakistan</option>
+                            <option value="PW">Palau</option>
+                            <option value="PA">Panama</option>
+                            <option value="PG">Papua New Guinea</option>
+                            <option value="PY">Paraguay</option>
+                            <option value="PE">Peru</option>
+                            <option value="PL">Polen</option>
+                            <option value="PT">Portugal</option>
+                            <option value="PR">Puerto Rico</option>
+                            <option value="QA">Qatar</option>
+                            <option value="CG">Republik Congo</option>
+                            <option value="RO">Rumænien</option>
+                            <option value="RU">Rusland</option>
+                            <option value="RW">Rwanda</option>
+                            <option value="SB">Salomon-Øerne</option>
+                            <option value="WS">Samoa</option>
+                            <option value="SM">San Marino</option>
+                            <option value="ST">Sao Tome og Principe</option>
+                            <option value="SA">Saudi Arabien</option>
+                            <option value="CH">Schweiz</option>
+                            <option value="SN">Senegal</option>
+                            <option value="RS">Serbien</option>
+                            <option value="SC">Seychellerne</option>
+                            <option value="SL">Sierra Leone</option>
+                            <option value="SG">Singapore</option>
+                            <option value="SK">Slovakiet</option>
+                            <option value="SI">Slovenien</option>
+                            <option value="SO">Somalia</option>
+                            <option value="ES">Spanien</option>
+                            <option value="LK">Sri Lanka</option>
+                            <option value="VC">St Vincent og Grenad</option>
+                            <option value="KN">St.Christop.og Nevis</option>
+                            <option value="LC">St.Lucia</option>
+                            <option value="GB">Storbritannien</option>
+                            <option value="SD">Sudan</option>
+                            <option value="SR">Suriname</option>
+                            <option value="SE">Sverige</option>
+                            <option value="SZ">Swaziland</option>
+                            <option value="ZA">Sydafrikanske Rep</option>
+                            <option value="GS">Sydgeorgien og Sydsandwichøerne</option>
+                            <option value="SY">Syrien</option>
+                            <option value="TJ">Tadzhikistan</option>
+                            <option value="TW">Taiwan</option>
+                            <option value="TZ">Tanzania</option>
+                            <option value="TD">Tchad</option>
+                            <option value="TH">Thailand</option>
+                            <option value="CZ">Tjekkiet</option>
+                            <option value="TG">Togo</option>
+                            <option value="TO">Tonga</option>
+                            <option value="TT">Trinidad og Tobago</option>
+                            <option value="TN">Tunesien</option>
+                            <option value="TM">Turkmenistan</option>
+                            <option value="TV">Tuvalu</option>
+                            <option value="TR">Tyrkiet</option>
+                            <option value="DE">Tyskland</option>
+                            <option value="UG">Uganda</option>
+                            <option value="UA">Ukraine</option>
+                            <option value="HU">Ungarn</option>
+                            <option value="UY">Uruguay</option>
+                            <option value="UZ">Uzbekistan</option>
+                            <option value="US">USA</option>
+                            <option value="VU">Vanuatu</option>
+                            <option value="VA">Vatikanstaten</option>
+                            <option value="VE">Venezuela</option>
+                            <option value="EH">Vestsahara</option>
+                            <option value="VN">Vietnam</option>
+                            <option value="YE">Yemen,Demo.Folkerep</option>
+                            <option value="ZM">Zambia</option>
+                            <option value="ZW">Zimbabwe</option>
+                            <option value="GQ">Ækvatorial Guinea</option>
+                            <option value="AT">Østrig</option>
+                            <option value="TL">Østtimor</option>
+                            <option value="AX">Åland</option>
+                        </select>
+                        <hr/>
+                        <h2 class="h2--guide" id="subCollapse">Collapse</h2>
+                        <ul>
+                            <li>Pakker rubrikker sammen for at minimere kognitiv belastning.</li>
+                            <li>Brug dem for at målrette brugernes behov.</li> 
+                            <li>Og for at give brugerne et bedre overblik over, hvilke rubrikker som er mere eller mindre relevante.</li>
+                            <li>Når der er tastet indhold i et felt, vil feltet altid være synligt.</li>
+                            <li>Vi kan ikke godkende noget, der ikke står på siden.</li>
+                        </ul>
+                        <br/>
+                        <p><em>Denne er lukket, pilen peger ned og indikerer logisk retning for at folde ud</em></p>
+                        <div class="well skts-well--collapse">
+                            <div class="skts-collapse skts-collapse-arrow skts-header-section" id="list005a">
+                                <a href="#" aria-expanded="false"><h2>Fradrag</h2></a>
+                            </div>
+                            <div class="skts-hidden-form-section">
+                                <div class="row skts-process-form-section hidden">
+                                    <div class="col-sm-6 col-md-8">
+                                        <label for="rub_25" id="rub_25Label">
+                                            Fradragsberettiget andel af indbetalinger foretaget før 1. januar 2010 omfattet af overgangsreglerne for ratepensioner og ophørende alderspension
+                                        </label>
+                                        <p>
+                                            <span class="skts-rounded-icon">?</span>
+                                            <a href="#" target="_blank"><span class="skts-section-nr">Rubrik 25</span></a>
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="skts-postfix-kr">
+                                            <input type="text" id="rub_25" value="" class="form-control" data-show-type="dkInteger" data-show-facets="minInclusive!!maxInclusive" data-show-facet-values="0!!99999999" autocomplete="off" placeholder="Skriv beløb">
+                                            <div class="skts-error-text" role="alert">Du skal skrive beløbet i hele kr.</div>
+                                            <div class="skts-error-text" role="alert">Værdi skal mindst være 0</div>
+                                            <div class="skts-error-text" role="alert">Værdien skal maksimalt være 99.999.999</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <p><em>Eksempel på åbent (expanderet) element, pilen peger op for at indikere at et klik herpå vil lukke elementet</em></p>
+                        <div class="well skts-well--collapse">
+                            <div class="skts-collapse skts-collapse-arrow skts-header-section skts-expanded" id="list006">
+                                <a href="#" aria-expanded="true"><h2>Indkomster</h2></a>
+                            </div>
+                            <div class="skts-hidden-form-section">
+                                <div class="row skts-process-form-section">
+                                    <div class="col-sm-6 col-md-8">
+                                        <label for="rub_32" id="rub_32Label">
+                                            Gevinst/tab på obligationer, der er optaget til handel på et reguleret marked
+                                        </label>
+                                        <p>
+                                            <span class="skts-rounded-icon">?</span>
+                                            <a href="#" target="_blank"><span class="skts-section-nr">Rubrik 32</span></a>
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="skts-postfix-kr">
+                                            <input type="text" id="rub_32" value="" class="form-control" data-show-type="dkInteger" data-show-facets="minInclusive!!maxInclusive" data-show-facet-values="0!!99999999" autocomplete="off" placeholder="Skriv beløb">
+                                            <div class="skts-error-text" role="alert">Du skal skrive beløbet i hele kr.</div>
+                                            <div class="skts-error-text" role="alert">Værdi skal mindst være 0</div>
+                                            <div class="skts-error-text" role="alert">Værdien skal maksimalt være 99.999.999</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <hr/>
+
+                        <h2 class="h2--guide" id="subAlerts">Alerts</h2>
+                        <p>Dette er elementer, der bliver brugt for at skabe ekstra opmærksomhed omkring en handling eller en fejlmeddelelse, fx en vigtig meddelelse fra SKAT som skal tydeliggøres. Alerts er opdelt i tre klasser.</p>
+                        <h3 class="h3--guide" id="subAlertsInfo">Info</h3>
+                        <ul>
+                            <li>bruges primært for at give brugerne en vigtig besked, fx husk at overføre beløbet længere ned på siden.</li>
+                        </ul>
+                         <br/>
+                        <p><em>Info besked</em></p>
+                        <div class="alert alert-info">
+                            <h2>Vær opmærksom på</h2>
+                            <p>at vi nu har slettet din indberetning af private renter til 100270-0406 på <span class="skts-postfix-kr skts-postfix-text">5.000</span></p>
+                        </div>
+                        <h3 class="h3--guide" id="subAlertsWarning">Warning</h3>
+                        <ul>
+                            <li>aktiveres først, når brugerne går videre i løsningen, og der er fejl eller mangler på indtastningssiden, fx et obligatorisk felt der ikke er udfyldt.</li>
+                            <li>Er typisk en advarsel, der aktiveres på serveren.</li>
+                        </ul>
+                        <br/>
+                        <p><em>Warning besked</em></p>
+                        <div class="alert alert-warning">
+                            <h2>Vi har opdateret tallene i din forskudsopgørelse</h2>
+                            <p>Stemmer tallene ikke med dine forhold i 2015, kan du rette dem og beregne et nyt skattekort.</p>
+                        </div>
+                        <h3 class="h3--guide" id="subAlertsDanger">Danger</h3>
+                        <ul>
+                            <li>aktiveres først, når brugerne går videre i løsningen, og der er fejl eller mangler på indtastningssiden, fx et obligatorisk felt der ikke er udfyldt.</li>
+                            <li>Er typisk en fejl, der aktiveres på serveren.</li>
+                        </ul>
+                        <br/>
+                        <p><em>Danger besked</em></p>
+                        <div class="alert alert-danger">
+                            <h2>Det ser ud som om noget ikke stemmer.</h2>
+                            <p id="sec_243Error">
+                            Beløberne i "Jubilæums gratiale mv." (#568) og "Tingsgaver" (#569) er tilsammen højere end "Jubilæumsgratiale/fratrædelsesgodtgørelse" (#243).
+                            </p><p>Rubrikerne som  du gerne må  tjekke, er markeret med rødt</p>
+                            <p>Gå til: <a href="#">rubrik  243<span class="sr-only"> Gå til rubrik</span></a>, <a href="#" >rubrik 568<span class="sr-only"> Gå til rubrik</span></a> eller <a href="#" >rubrik 569<span class="sr-only"> Gå til rubrik</span></a></p>
+                        </div>
+                        <hr/>
+    					<h2 class="h2--guide" id="subWizards">Wizard elements</h2>
+    					<h3 class="h3--guide" id="subWizardsStart">Wizard indgang</h3>
+    					<ul>
+    						<li>Indgangen bygges op med følgende: ikon, overskrift, undertekst, rubriknummer og beløb.</li>
+                            <li>Ikonet skal understøtte teksten, og vi bruger altid gængse ikoner for at undgå misforståelser, se ikon-biblioteket.</li>
+                            <li>Det skal være tydeligt, at indgangen er klikbar.</li>
+                            <li>Brug evt. 5px runde hjørner.</li>
+    					</ul>
+    					<br/>
+    					<p><em>Indgang til wizards i ret årsopgørelsen </em></p>
+    					<div class="row">
+    						<div class="col-md-6">
+    							<a href="../2015Renter/rente.html" class="skts-highlighted-box">
+    								<div class="skts-css-table skts-css-table--icon-text">
+    									<div class="skts-t-col hidden-xs">
+    										<div class="skts-theme-icon skts-icon-oevrige-renter"></div>
+    									</div>
+    									<div class="skts-t-col">
+    										<h2>Øvrige renter</h2>
+    										<p>indberet eller ret i dine renteforhold (44)</p>
+    										<h2 class="skts-postfix-kr skts-postfix-text">0</h2>
+    									</div>
+    								</div>
+    							</a>
+    						</div>
+    						<div class="col-md-6">
+    							<a href="../2015Underhold/oversigt.html" class="skts-highlighted-box">
+    								<div class="skts-css-table skts-css-table--icon-text">
+    									<div class="skts-t-col hidden-xs">
+    										<div class="skts-theme-icon skts-icon-underhold"></div>
+    									</div>
+    									<div class="skts-t-col">
+    										<h2>Underholdsbidrag</h2>
+    										<p>til tidl. ægtefælle, børnebidrag (56)</p>
+    										<h2 class="skts-postfix-kr skts-postfix-text">12.000</h2>
+    									</div>
+    								</div>
+    							</a>
+    						</div>
+    					</div>
+    					<h3 class="h3--guide" id="subWizardsHeader">Wizard header</h3>
+    					<ul>
+                            <li>Når brugeren trykker på en wizard, skiftes headeren ud, og menuen erstattes med et tilbage link.</li>
+                            <li>Formålet er, at vi vil fastholde brugerne i flowet.</li>
+                            <li>Vi ønsker ikke at invitere brugerne til at forvirre sig ud på forskellige sider.</li>
+                        </ul>
+    					<p><em>Wizard header med tilbage knap</em></p>
+    					<header style="position: relative">
+    			            <a href="#" class="skts-back">Tilbage</a>
+    			            <div class="skts-logo">
+    			                <a href="../../index.html">
+    			                    <span class="sr-only">Gå til forside</span>
+    			                </a>
+    			            </div>
+    			            <ul class="skts-focus-links">
+    			                <li><a href="#skts-skip-link-target-indhold">Gå til indhold</a></li>
+    			            </ul>
+    			            <a class="skts-login pull-right" href="https://www.skat.dk/SKAT.aspx?oId=69534">Log af</a>
+    				    </header>
+    					<h3 class="h3--guide" id="subWizardsOverview">Oversigtsside i Wizards</h3>
+    					<ul>
+    						<li>Oversigtssiden er den sidste side i SKATs wizards. Den er ikke en del af progress baren, da det i mange tilfælde er startsiden for et flow/indberetning. Dette gælder især for TastSelv-løsningerne, hvor SKAT ofte i forvejen har modtaget oplysninger om brugernes skatteforhold.</li>
+    						<li>Alle oversigtssider er opbygget i afgrænsede områder med et område per type. Hvis en bruger fx har to forskellige udenlandske pensioner, vil der være to forhold på siden.</li>
+    						<li>Her fremgår de vigtigste informationer i prioriteret rækkefølge, beløb bliver fremhævede.</li>
+    						<li>Ved hvert forhold kan brugeren slette eller rette i oplysningerne, se eksempel nedenfor.</li>
+    						<li>Når brugeren trykker på <em>Ret</em>, bliver brugeren sendt tilbage i flowet, og progress baren starter på ny. Det fremgår tydeligt af overskriften, at brugeren er i gang med at rette i oplysningerne.</li>
+    						<li>Når brugeren trykker <em>Slet</em>, kommer der et modalvindue frem, som en ekstra sikring for at brugeren vælger at slette forholdet, se eksempel nedenfor.</li>
+    					</ul>
+    					<br/>
+    					<p><em>Oversigtsside til wizards</em></p>
+    					<div class="well">
+    						<div class="clearfix">
+    							<span class="pull-left">
+    								<span class="skts-important-text">Social pension</span>
+    								<br/>
+    								Sverige
+    							</span>
+    							<span class="pull-right skts-row-underline skts-important-text skts-postfix-kr skts-postfix-text">78.000</span>
+    						</div>
+    						<p class="clearfix">
+    							<span class="pull-left">Betal skat</span>
+    							<span class="pull-right skts-postfix-kr skts-postfix-text">5.000</span>
+    						</p>
+    						<div class="clearfix skts-wizard-buttons">
+    							<button type="button" class="btn btn-default pull-left">Slet</button>
+    							<button type="button" class="btn btn-default pull-right">Ret</button>
+    						</div>
+    					</div>
+                        <h2 class="h2--guide" id="subModal">Modals</h2>
+                        <ul>
+                            <li>Modalvinduer er en form for feedback, der bliver brugt for at sikre, at brugeren er helt sikker på, at brugeren fx vil slette en indberetning.</li>
+                            <li>Modalvinduer bliver også brugt til søg og trigges ved, at brugeren trykker på søg i headeren.</li>
+                        </ul>
+    					<br/>
+    					<p><em>Modalvindue der kommer frem efter brugeren klikker på “slet”</em></p>
+    					<div class="modal-content">
+    						<div class="modal-header">
+    							<button type="button" class="close" data-dismiss="modal" aria-label="Luk"><span aria-hidden="true"></span></button>
+    							<h2 class="modal-title js-modal-title">Slet pension</h2>
+    						</div>
+    						<div class="modal-body">
+    							<div class="js-modal-body"></div>
+    							<p>Vær opmærksom på at vi nu sletter din indberetning</p>
+    							<input type="hidden" name="eraseSectionId" id="eraseSectionId" value="transport_001_erase">
+    						</div>
+    						<div class="modal-footer">
+                                <div class="clearfix skts-wizard-buttons">
+                                    <input type="submit" class="btn btn-primary pull-right" value="Ok">
+                                    <input type="button" class="btn skts-btn-secondary pull-left" value="Fortryd" data-dismiss="modal">
+                                </div>
+                            </div>
+    					</div>
+    					<br/>
+    					<hr/>
+						<h2>Læs mere</h2>
+                        <div class="well skts-nav-bottom">
+                            <ul class="nav">
+                                <li><a href="design-principper.html">Designprincipper</a></li>
+                                <li><a href="krav-tekster.html">Tekster</a></li>
+                                <li><a href="udvikling-elementer.html">HTML-guide</a></li>
+                            </ul>
+                        </div>
+    				</div>
+    				<div class="col-md-4">
+    					<div class="skts-nav-guide hidden-xs hidden-sm skts-top-pad-1 affix-top">
+                            <h2>Elementer</h2>
+    						<ul class="nav">
+                                <li>
+                                    <a href="#subHeaders">Headers</a>
+                                    <ul class="nav level-2">
+                                        <li><a href="#subHeaderSearch">Global search</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#subNav">Navigation</a>
+                                    <ul class="nav level-2">
+                                        <li><a href="#subNavBurger">Burger menu</a></li>
+                                        <li><a href="#subNavBread">Breadcrumb</a></li>
+                                        <li><a href="#subNavTransport">Transport links</a></li>
+                                        <li><a href="#subNavBack">Back (wizards og undermoduler)</a></li>
+                                        <li><a href="#subNavProgress">Progress bar</a></li>
+                                        <li><a href="#subNavTabs">Tabs</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#subButtons">Buttons</a>
+                                    <ul class="nav level-2">
+                                        <li><a href="#subButtonsDefault">Default button</a></li>
+                                        <li><a href="#subButtonsPrimary">Primary button</a></li>
+                                        <li><a href="#subButtonsSecondary">eScondary button</a></li>
+                                        <li><a href="#subButtonsFull">Full width button</a></li>
+                                        <li><a href="#subButtonsGroup">Button groups</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#subForm">Form elements</a>
+                                    <ul class="nav level-2">
+                                        <li><a href="#subFormInput">Input felt</a></li>
+                                        <li><a href="#subFormPlaceholder">Placeholder text</a></li>
+                                        <li><a href="#subFormPostfix">Postfix</a></li>
+                                        <li><a href="#subFormBeloebsfelt">Beløbsfelt</a></li>
+                                        <li><a href="#subFormExtra">Add ons</a></li>
+                                        <li><a href="#subFormRequired">Required fields</a></li>                               
+                                        <li><a href="#subFormValidation">Clientside validation</a></li>
+                                        <li><a href="#subFormRadioButtons">Radio buttons</a></li>
+                                        <li><a href="#subFormCheckboxes">Checkboxes vertical</a></li>
+                                        <li><a href="#subFormSelect">Dropdown</a></li>
+                                        <li><a href="#subFormChosen">Chosen select</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#subCollapse">Collapse</a>
+                                </li>
+                                <li>
+                                    <a href="#subAlerts">Alerts</a>
+                                    <ul class="nav level-2">
+                                        <li><a href="#subAlertsInfo">Info</a></li>
+                                        <li><a href="#subAlertsWarning">Warning</a></li>
+                                        <li><a href="#subAlertsDanger">Danger</a></li>
+                                    </ul>
+                                </li>
+    							<li>
+    								<a href="#subWizards">Wizard elements</a>
+    								<ul class="nav level-2">
+    									<li><a href="#subWizardsStart">Wizard indgang</a></li>
+    									<li><a href="#subWizardsHeader">Wizard header</a></li>
+    									<li><a href="#subWizardsOverview">Oversigt side i wizards</a></li>
+    								</ul>
+    							</li>
+                                <li><a href="#subModal">Modals</a></li>
+    						</ul>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+            <div class="skts-push"></div>
+        </div>
+        <footer>
+            <div class="row">
+                <div class="col-sm-4 text-left hidden-xs" >
+                    <div class="skts-logo-small"><span class="sr-only">SKAT logo</span></div>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <a href="https://www.skat.dk/SKAT.aspx?oId=967" target="_blank">Kontakt SKAT</a>
+                </div>
+                <div class="col-sm-4 text-right hidden-xs"> 
+                    <a target="_blank" href="https://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="sr-only"> Åbner nyt vindue</span></a>
+                </div>
+            </div>
+        </footer>
+		<script src="sktscommon/js/vendor/jquery-3.2.1.min.js"></script>
+		<script src="sktscommon/js/skat.min.js"></script>
+		<script src="sktscommon/js/chosen.min.js"></script>
+		<script src="sktscommon/js/prototype-workflows.min.js"></script>
+		<!--ADDED FOR GUIDE PURPOSES ONLY -->
+		<script src="assets/js/prettify.js"></script>
+		<script src="assets/js/guide.js"></script>
+	</body>
+</html>

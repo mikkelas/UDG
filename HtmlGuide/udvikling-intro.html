@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="da"> 
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Udviklings- og designguide - SKAT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link href="sktscommon/css/skat.min.css" rel="stylesheet">
+		<link href="assets/css/guide.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body data-spy="scroll">
+        <div class="skts-wrap">
+            <header class="container-fluid header-show">
+                <div class="row">
+                    <div class="col-xs-3 text-center skts-bg-main-1">
+                        <div class="skts-header-item">
+                            <button type="button" class="skts-menu-button js-create-nav-modal" data-toggle="modal" data-target="#sktsNavModal" data-nav-link-selector="#sktsTopNavLinks">
+                                <span class="sr-only">Vis/skjul navigation</span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                            </button>
+                            <div class="navbar-collapse hidden" id="sktsTopNavLinks">
+                                 <ul>
+                                    <li><a href="index.html">Forside</a></li>
+                                    <li><a href="design.html">Design</a></li>
+                                    <li><a href="udvikling.html" class="active">Udvikling</a></li>
+                                    <li><a href="brugeroplevelser.html">Brugeroplevelser</a></li>
+                                    <li><a href="krav.html">Non funktionelle krav</a></li>
+                                    <li><a href="changelog.html">Changelog</a></li>
+                                    <li><a href="kontakt.html">Kontakt</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 text-center skts-bg-main-2">
+                        <div class="skts-header-item skts-header-item--logo">
+                            <a class="skts-logo-responsive" href="index.html">
+                                <span class="sr-only">Gå til forside</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 text-center skts-bg-main-4">
+                        <div class="skts-header-item">
+                            <a href="index.html">UDG</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="skts-breadcrumb-container">
+                <ol class="breadcrumb container">
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="udvikling.html">Udvikling</a></li>
+                </ol>
+            </div>
+            <div class="container skts-top-pad-1">
+                <div class="row">
+                    <div class="col-md-8" id="mainContent">
+                        <h1 class="h1--guide" id="subTheme">Introduktion</h1>
+                        <p>Denne guide er tiltænkt udviklere, der står overfor, at skulle udvikle eller opdatere løsninger til SKATs websites.</p>
+                        <p>Guiden behandler både de overordnede designprincipper, men også formateringen af enkelte HTML-elementer.</p>
+                        <p>Alle løsninger er baseret på <a href="http://getbootstrap.com/getting-started/" target="_blank">Twitter Bootstrap</a> (v3.3.1). Filen <em>button.js</em> er dog blevet opgraderet til v3.3.5</p>
+                        <hr />
+                        <h2 id="subHelp" class="h2--guide">Hjælp</h2>
+                        <p>I guidens tekster formateres teknisk indhold, hovedsageligt CSS-klassenavne og HTML-tags således: <code>.css-klassenavn</code> og filnavne skrives således: <em>skts.less</em>.</p>
+                        <p>Længere kodestumper vil være formaterede i blokke:</p>
+                        <div data-pretty class="bs-docs-example">
+                            <p>
+                                Penge tilbage: <span class="pull-right">1000</span>
+                            </p>
+                        </div>
+                        <p>Guiden bruger <em>skat.min.css</em> som stylesheet og alle &aelig;ndringer til dette stylesheet reflekteres direkte i denne guide.</p>
+                        <hr />
+                        <h2 id="subAdjust" class="h2--guide">Tilpasninger</h2>
+                        <p>HTML-kode skal være valid html. Det skal være velformet og semantisk korrekt.</p>
+                        <p>Eventuelle tilpasninger kan tilføjes i tilfælde hvor der ønskes funktionalitet, som ikke understøttes af guiden. Tilpasninger skal visuelt have samme ’look and feel’, som de øvrige elementer.</p>
+                        <p>Tilpasninger skal laves i et separat stylesheet, skrevet i less. Alle stylessheets sammens&aelig;ttes til <em>skat.min.css</em></p>
+                        <hr />
+                        <h2 class="h2--guide" id="subGuidelines">Retningslinjer</h2>
+                        <p>HTML-kode skal v&aelig;re valid html og v&aelig;re velformet og semantisk korrekt.</p>
+                        <p>I det omfang det er muligt og giver mening, er det dog tilladt at berige integrationer med Javascript, så længe det ikke indvirker negativt på brugeroplevelsen og guidens øvrige principper.</p>
+                        <p>JQuery indeholder en række komponenter og javascriptbibliotekter, der er kompatible ud af boksen, hvorfor det er hensigtsmæssigt at tage udgangspunkt i disse.</p>
+                        <p>Javascript tilf&oslash;jes til <em>skat.min.js</em>, som inkluderes i bunden af HTML siden.</p>
+						<hr/>
+						<h2>Læs mere</h2>
+						<div class="well skts-nav-bottom">
+							<ul class="nav">
+								<li><a href="udvikling-framework.html">Framework udvikling</a></li>
+								<li><a href="udvikling-elementer.html">HTML-guide</a></li>
+							</ul>
+						</div>	
+                    </div>
+					<div class="col-md-4">
+						<div class="skts-nav-guide hidden-xs hidden-sm skts-top-pad-1 affix-top">
+							<h2>Introduktion</h2>
+							<ul class="nav">
+								<li><a href="#subHelp">Hjælp</a></li>
+								<li><a href="#subAdjust">Tilpasninger</a></li>
+								<li><a href="#subGuidelines">Retningslinjer</a></li>
+							</ul>
+						</div>
+					</div>
+                </div>
+            </div>
+            <div class="skts-push"></div>
+        </div>
+        <footer>
+            <div class="pull-left"><a href="https://www.skat.dk/SKAT.aspx?oId=967" target="_blank">Kontakt SKAT</a></div>
+            <div class="pull-right">
+                <a target="_blank" href="https://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="sr-only"> Åbner nyt vindue</span></a>
+            </div>
+	    </footer>
+        <script src="sktscommon/js/vendor/jquery-3.2.1.min.js"></script>
+        <script src="sktscommon/js/skat.min.js"></script>
+        <script src="sktscommon/js/prototype-workflows.min.js"></script>
+        <!--ADDED FOR GUIDE PURPOSES ONLY -->
+        <script src="assets/js/prettify.js"></script>
+        <script src="assets/js/guide.js"></script>
+    </body>
+</html>

@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="da"> 
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Udviklings- og designguide - SKAT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link href="sktscommon/css/skat.min.css" rel="stylesheet">
+		<link href="assets/css/guide.css" rel="stylesheet" type="text/css" />
+    </head>
+	<body data-spy="scroll">
+        <div class="skts-wrap">
+            <header class="container-fluid header-show">
+                <div class="row">
+                    <div class="col-xs-3 text-center skts-bg-main-1">
+                        <div class="skts-header-item">
+                            <button type="button" class="skts-menu-button js-create-nav-modal" data-toggle="modal" data-target="#sktsNavModal" data-nav-link-selector="#sktsTopNavLinks">
+                                <span class="sr-only">Vis/skjul navigation</span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                            </button>
+                            <div class="navbar-collapse hidden" id="sktsTopNavLinks">
+                                 <ul>
+                                    <li><a href="index.html">Forside</a></li>
+                                    <li><a href="design.html" class="active">Design</a></li>
+                                    <li><a href="udvikling.html">Udvikling</a></li>
+                                    <li><a href="brugeroplevelser.html">Brugeroplevelser</a></li>
+                                    <li><a href="krav.html">Non funktionelle krav</a></li>
+                                    <li><a href="changelog.html">Changelog</a></li>
+                                    <li><a href="kontakt.html">Kontakt</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 text-center skts-bg-main-2">
+                        <div class="skts-header-item skts-header-item--logo">
+                            <a class="skts-logo-responsive" href="index.html">
+                                <span class="sr-only">Gå til forside</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 text-center skts-bg-main-4">
+                        <div class="skts-header-item">
+                            <a href="index.html">UDG</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="skts-breadcrumb-container">
+                <ol class="breadcrumb container">
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="design.html">Design</a></li>
+                </ol>
+            </div>
+    		<div class="container skts-top-pad-1">
+    			<div class="row">
+    				<div class="col-md-8" id="mainContent">
+    					<h1 class="h1--guide">Designprincipper</h1>
+                        <h2 class="h2--guide" id="subUser">Vi sætter brugeren i centrum</h2>
+                        <p>I SKAT tager vi udgangspunkt i brugernes virkelighed for at kunne designe services, der skaber værdi. Ved at arbejde tæt sammen med brugerne i designfasen.Gennem co-creation, konceptafklaringer og løbende tests, bliver deres behov fundamentet for vores løsninger.</p>
+                        <hr/>
+    					<h2 class="h2--guide" id="subMobile">Mobile first</h2>
+    					<p>SKATs løsninger skal designes ud fra et mobile-first princip. Når løsningerne skal fungere på små skærme, stiller det store krav til prioriteringen af indholdet på siden. Tag derfor udgangspunkt i en mobilvisning, når du bygger siden op. Indholdet skal være kort og præcist og hurtigt gøre det klart, hvad formålet er med siden.</p>
+    					<p>Elementer og trykflader skal være mobilvenlige. Google anbefaler en højde på mindst 48px for knapper og call-to-action (CTA).</p>
+    					<hr/>
+    					<h2 class="h2--guide" id="subPerson">Personalisering</h2>
+    					<p>SKATs løsninger skal designes med fokus på personalisering. Især når brugeren er logget på, skal brugeren kun præsenteres for relevant indhold. Alle felter og rubrikker, der ikke er relevante for brugeren skal pakkes væk.</p>
+    					<hr/>
+						<h2 class="h2--guide" id="subFeedback">Feedback</h2>
+    					<p>For at skabe tryghed og understøtte brugernes handlinger anbefales løbende feedback i løsningerne. Feedbacken skal være venlig, imødekommende og behjælpelig. Eksempler på feedback muligheder:</p>
+						<ul>
+							<li>Clientside validation</li>
+							<li>Modals</li>
+							<li>Alerts, vælg mellem info, warning og danger</li>
+						</ul>
+						<a href="design-elementer.html">Læs mere i afsnittet om brug af elementer</a>
+    					<hr/>
+    					<h2 class="h2--guide" id="subWizards">Wizards</h2>
+    					<p>Wizards er små moduler eller løsninger, der skridt for skridt guider brugeren igennem en opgave, fx at beregne kørselsfradrag eller et indberetnings flow.</p>
+						<p>Vi tilstræber os på at lave målrettede og fokuserede wizards med op til seks trin. På indberetningssider kan det blive svært  Her er det indholdet i rubrikkerne, der er afgørende for wizardens udformning. Den kan eventuelt afklares med forretningen/procesejeren</p>
+						<ul>
+							<li>En wizard skal gøre det let for brugeren at gennemføre en kompleks opgave ved at bryde opgaven ned i overskuelige trin.</li>
+							<li>Hvert trin skal stille brugeren overfor et eller få simple valg.</li>
+							<li>Tænk logik ind i wizarden, så du minimerer brugerens kognitive belastning.</li>
+							<li>Lav hellere flere trin  frem for at stille brugeren over for mange valg på samme side.</li>
+							<li>Gør det tydeligt, hvad formålet er med wizarden, og gør det tydeligt, hvornår brugeren skal gå til næste trin.</li>
+							<li>Lad wizarden åbne op på samme side, som den er placeret.</li>
+							<li>Giv altid brugeren mulighed for at gå tilbage i eller ud af wizarden.</li>
+						</ul>
+						<a href="design-elementer.html">Læs om wizards i brug af elementer</a>
+    					<hr/>
+    					<h2 class="h2--guide" id="subLang">Brugervenligt sprog</h2>
+    					<p>Sproget i SKATs løsninger skal være forståeligt for alle brugere. Tekniske, skattefaglige og systemfagligke termer skal derfor så vidt muligt omskrives til almindeligt sprogbrug. For at sikre dette og et ensartet sprog på tværs af SKATs løsninger, anbefales det, at sproget i løsningerne gennemskrives af en redaktør fra Digital kommunikation og design.
+    					<hr/>
+    					<h2 class="h2--guide" id="subResDes">Responsivt design</h2>
+						<ul>
+							<li>Alle SKATs kundevendte løsninger skal være responsive.</li> 
+							<li>For alle st&oslash;rrelser der angives i stylesheets skal dette angives med <code>em</code>.</li>
+							<li>Der skal s&aring; vidt som muligt bruges bootstraps markup.</li>
+							<li>Der m&aring; ikke bruges inline styling eller JavaScript. Altstyling og JavaScript skal angives i eksterne css og js filer.</li>
+						</ul>
+						<hr/>
+						<h2 class="h2--guide" id="subkrav">Fællesoffentlige krav</h2>
+						<p>SKAT løsninger skal så vidt muligt overholde fællesoffentlige krav og anbefalinger som beskrevet i ”Udviklingsvejledning for selvbetjeningsløsninger”. Dog har kravene i denne guide forrang, hvis der er modstridende krav. SKAT arbejder på at optage fællesoffentlige krav til design i SKATs Udviklings- og designguide, så SKATs leverandører ikke selv skal forholde sig til de fællesoffetnlige designguidelines.</p>
+						<p><a href="http://arkitekturguiden.digitaliser.dk/godselvbetjening">Læs om ”Udviklingsvejledninger for selvbetjeningsløsninger” i Arkitekturguiden</a></p>
+						<hr/>
+					    <h2>Læs mere</h2>
+                        <div class="well skts-nav-bottom">
+                            <ul class="nav">
+                                <li><a href="design-elementer.html">Brug af elementer</a></li>
+                                <li><a href="krav-tekster.html">Tekster</a></li>
+                                <li><a href="udvikling-elementer.html">HTML-guide</a></li>
+                            </ul>
+                        </div>
+    				</div>
+                    <div class="col-md-4">
+                        <div class="skts-nav-guide hidden-xs hidden-sm skts-top-pad-1 affix-top">
+                            <h2>Designprincipper</h2>
+                            <ul class="nav">
+                                <li><a href="#subUser">Brugeren i centrum</a></li>
+                                <li><a href="#subMobile">Mobile first</a></li>
+                                <li><a href="#subPerson">Personalisering</a></li>
+                                <li><a href="#subFeedback">Feedback</a></li>
+                                <li><a href="#subWizards">Wizards</a></li>
+                                <li><a href="#subLang">Brugervenligt sprog</a></li>
+                                <li><a href="#subResDes">Responsivt design</a></li>
+								<li><a href="#subkrav">Fællesoffentlige krav</a></li>
+                            </ul>
+                        </div>
+                    </div>
+    			</div>
+                
+    		</div>
+            <div class="skts-push"></div>
+        </div>
+        <footer>
+            <div class="row">
+                <div class="col-sm-4 text-left hidden-xs" >
+                    <div class="skts-logo-small"><span class="sr-only">SKAT logo</span></div>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <a href="https://www.skat.dk/SKAT.aspx?oId=967" target="_blank">Kontakt SKAT</a>
+                </div>
+                <div class="col-sm-4 text-right hidden-xs"> 
+                    <a target="_blank" href="https://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="sr-only"> Åbner nyt vindue</span></a>
+                </div>
+            </div>
+        </footer>
+		<script src="sktscommon/js/vendor/jquery-3.2.1.min.js"></script>
+		<script src="sktscommon/js/skat.min.js"></script>
+		<script src="sktscommon/js/prototype-workflows.min.js"></script>
+		<!--ADDED FOR GUIDE PURPOSES ONLY -->
+		<script src="assets/js/prettify.js"></script>
+		<script src="assets/js/guide.js"></script>
+	</body>
+</html>

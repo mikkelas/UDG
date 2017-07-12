@@ -1,0 +1,1968 @@
+﻿<!DOCTYPE html>
+<html lang="da"> 
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Udviklings- og designguide - SKAT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link href="sktscommon/css/skat.min.css" rel="stylesheet">
+		<link href="assets/css/guide.css" rel="stylesheet" type="text/css" />
+		<script src="sktscommon/js/vendor/jquery-3.2.1.min.js"></script>
+    </head>
+    <body data-spy="scroll" data-target=".skts-nav-guide">
+        <div class="skts-wrap">
+            <header class="container-fluid header-show">
+                <div class="row">
+                    <div class="col-xs-3 text-center skts-bg-main-1">
+                        <div class="skts-header-item">
+                            <button type="button" class="skts-menu-button js-create-nav-modal" data-toggle="modal" data-target="#sktsNavModal" data-nav-link-selector="#sktsTopNavLinks">
+                                <span class="sr-only">Vis/skjul navigation</span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                            </button>
+                            <div class="navbar-collapse hidden" id="sktsTopNavLinks">
+                                 <ul>
+                                    <li><a href="index.html">Forside</a></li>
+                                    <li><a href="design.html">Design</a></li>
+                                    <li><a href="udvikling.html" class="active">Udvikling</a></li>
+                                    <li><a href="brugeroplevelser.html">Brugeroplevelser</a></li>
+                                    <li><a href="krav.html">Non funktionelle krav</a></li>
+                                    <li><a href="changelog.html">Changelog</a></li>
+                                    <li><a href="kontakt.html">Kontakt</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 text-center skts-bg-main-2">
+                        <div class="skts-header-item skts-header-item--logo">
+                            <a class="skts-logo-responsive" href="index.html">
+                                <span class="sr-only">Gå til forside</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 text-center skts-bg-main-4">
+                        <div class="skts-header-item">
+                            <a href="index.html">UDG</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="skts-breadcrumb-container">
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="udvikling.html">Udvikling</a></li>
+                </ol>
+            </div>
+            <div class="container skts-top-pad-1">
+                <div class="row">
+                    <div class="col-md-8" id="mainContent">
+                        <h1 id="subStructureSection" class="h1--guide">HTML-guide</h1>
+                        <h2 id="subStructureLess" class="h2--guide">Setup</h2>
+                        <h3 class="h3--guide">Less filer</h3>
+                        <ul>
+                            <li><em>custom_bootstrap/panels-skts.less</em></li>
+                            <li><em>custom_bootstrap/type-skts.less</em></li>
+                            <li><em>custom_bootstrap/variables-skts.less</em></li>
+                            <li><em>custom/skts-general.less</em></li>
+                        </ul>
+                        <h3 id="subStructurePageStructure" class="h3--guide">Page setup</h3>
+                        <p>Et element centreres ved brug af <code>.container</code>. Elementet fylder hele skærmen, når det ikke er i en <code>.container</code>.</p>
+                        <p>Et eksempel er denne guide. <code>header</code> og <code>footer</code> er ikke i en <code>.container</code>, men det er menuen og alt indhold.</p>
+                        <p><code>footer</code> "låses" til bunden af siden (hvis indholdet ikke er længere end browserens vindue) ved at sætte alle elmenter (undtagen <code>footer</code>) i en container med klassen <code>.skts-wrap</code>. Et <code>div</code> element med klassen <code>.skts-push</code> skal indsættes lige før <code>.skts-wrap</code> container afsluttes.</p>
+<pre class="prettyprint linenums">
+&lt;div class="skts-wrap"&gt;
+    &lt;header&gt;
+        &lt;div class="container"&gt;Header med logo, evt. global menu og log af&lt;/div&gt;
+    &lt;/header&gt;
+    &lt;div class="navbar navbar-default" role="navigation"&gt;
+        &lt;div class="container"&gt;Top menu og evt. søgeboks&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="container"&gt;Indhold og evt. venstre menu&lt;/div&gt;
+    &lt;div class="skts-push"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;footer&gt;
+    &lt;div class="container"&gt;Footer info&lt;/div&gt;
+&lt;/footer&gt;</pre>
+                        <hr />
+                        <!--
+                            ** Header **
+                        -->
+                        <h2 id="subHeaderSection" class="h2--guide">Header</h2>
+                        <h3 class="h3--guide" id="subHeaderLess">Less filer</h3>
+                        <ul>
+                            <li><em>custom_bootstrap/skts-general.less</em></li>
+                            <li><em>custom_bootstrap/skts-header-items.less</em></li>
+                        </ul>
+                        <h3 id="subHeaderLogo" class="h3--guide">SKAT logo</h3>
+                        <p>SKAT logoet laves som en svg baggrund, med en png fallback til de browsere, som ikke understøtter svg (detection via Modernizr).</p>
+                        <p>
+                            <code>.skts-logo</code> bruges til opsætning af logoet. Et <code>a</code> element sættes i <code>.skts-logo</code>,
+                            som linker til forsiden (husk <code>.sr-only</code> beskrivelsen til skærmlæserne).
+                        </p>
+                        <p>Logoet er <strong>altid</strong> centreret på alle skærme (store, mellem, små og ekstra små skærme). Logoets størrelse sættes ned på de ekstra små skærme og teksten "SKAT" fjernes således at logoet står alene.</p>
+                        <p>
+                            Logoet sættes for sig selv eller i andre bootstrap elementer. Her vises den i en <code>header</code> og <code>.container</code>
+                            (<code>header</code> sørger for baggrund og <code>.container</code> sørger for at det flugter med det øvrige indhold).
+                        </p>
+                        <div class="bs-docs-example" data-pretty>
+                            <header>
+                                <div class="skts-logo">
+                                    <a href="../../index.html"><br /></a>
+                                </div>
+                            </header>
+                        </div>
+                        <h3 id="subHeaderLogIn" class="h3--guide">Log on/off</h3>
+                        <p><code>.skts-logged-in</code> tilføjes til <code>body</code> når en bruger er logget på.</p>
+                        <p><code>.skts-logged-out</code> tilføjes til <code>body</code> når en bruger er logget af.</p>
+                        <p>Når en bruger er logget på, vises linket <code>.skts-login</code>. Den placeres i <code>header</code>. Linket placeres også i en <code>.container</code> (hvis den skal flugte med resten af indholdet).</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <header>
+                                <div class="skts-logo">
+                                    <a href="../../index.html"><br /></a>
+                                </div>
+                                <ul class="skts-focus-links">
+                                    <li><a href="#skts-skip-link-target-indhold">Gå til indhold</a></li>
+                                </ul>
+                                <a class="skts-login pull-right" href="/borger/logout">Log af</a>
+                            </header>
+                        </div>
+                        <h3 id="subHeaderSearch" class="h3--guide">Global search</h3>
+                        <p>Link til global search placeres i header og kalder på et modal vindue
+                        </p>
+                        <div class="bs-docs-example" data-pretty>
+                            <header>
+                                <div class="skts-logo"><a href="index.html"><br/><span class="sr-only">Gå til forsiden</span></a></div>
+                                <a class="skts-login pull-right" href="/borger/logout">Log af</a>
+                                <a href="#" class="pull-right skts-header-link" data-focus-element="siteSearch" data-toggle="modal" data-target="#searchModal">
+                                  <span class="skts-icon skts-icon--soeg-hvid skts-icon--large"></span><span class="hidden-xs">Søg</span>
+                                </a>
+                            </header>
+                            <div class="modal fade" tabindex="-1" role="dialog" id="searchModal">
+                                <div class="modal-dialog modal-md">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Luk"><span aria-hidden="true"></span></button>
+                                        </div>
+                                        <div class="modal-body skts-search-modal">
+                                            <form>                      
+                                                <div class="input-group">
+                                                    <label class="sr-only" for="siteSearch">Hvad søger du?</label>
+                                                    <input type="text" id="siteSearch" class="form-control" placeholder="Hvad søger du?">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn skts-icon skts-icon--soeg-hvid skts-icon--large" type="button"><span class="sr-only">Søg</span></button>
+                                                    </span>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <!--
+                            ** Navigation **
+                        -->
+                        <h2 id="subMenusSection" class="h2--guide">Navigation</h2>
+                        <h3 id="subMenusLess" class="h3--guide">Less filer</h3>
+                        <ul>
+                            <li><em>custom_bootstrap/navbar-skts.less</em> -  top, venstre og global menu</li>
+                            <li><em>custom_bootstrap/navs-skts.less</em> - Tabs</li>
+                            <li><em>custom/skts-header-items.less</em> -  global menu</li>
+                            <li><em>custom/skts-general.less</em> -  venstre  menu</li>
+                            <li><em>custom/skts-wizard.less</em> -  wizard  menu</li>
+                        </ul>
+                        <h3 id="subMenusBurgerMenu" class="h3--guide">Burger menu</h3>
+                        <p>Burger menuen bruger den samme menu button (<code>.navbar-toggle</code>) som Top navbar. Forskellen er at den vises også på de store skærme og kalder en dialog boks. Menuen vises på alle skærme ved at sætte klassen <code>.skts-show-menu</code> på <code>.navbar-toggle</code> elementet. Burger menuen kaldes ved at sætte klassen <code>.js-create-nav-modal</code> på <code>navbar-toggle</code>. Attributterne <code>data-target</code> og <code>data-toggle</code> skal sættes som normalt når en bootstrap dialog skal kaldes. </p>
+                        <p>Links til visning i menuen skal ligge i et skjult element med en <code>id</code> svarende til attributten <code>data-nav-link-selector</code> som også sættes på <code>.navbar-toggle elementet.</code></p>
+                        <div class="bs-docs-example" data-pretty>
+                            <header>
+                                <div class="navbar navbar-default" role="navigation">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle skts-show-menu js-create-nav-modal" data-toggle="modal" data-target="#sktsNavModalTest" data-nav-link-selector="#sktsTopNavLinksTest">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="hidden-xs">Menu</span>
+                                        </button>
+                                    </div>
+                                    <div class="navbar-collapse hidden" id="sktsTopNavLinksTest">
+                                        <ul class="nav navbar-nav">
+                                            <li><a href="../Generelt/forside.html">Forside</a></li><li ><a class="active" href="../aarsop_laes.html">Årsopgørelse</a></li><li><a href="../Forskud/forskud_ret.html">Forskudsopgørelse</a></li><li><a href="/borger/link?appl=betalrestskat">Betaling</a></li><li><a href="/borger/r75">Skatteoplysninger</a></li><li><a href="/borger/motormenu">Motor</a></li>
+                                        </ul>
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li><a href="/borger/kontaktskat">Kontakt</a></li><li><a href="/borger/link?appl=profil">Profil</a></li><li><a href="#">Hjælp<span class="sr-only"> åbner nyt vindue</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </header>
+                        </div>
+                        <h3 id="subMenusTopMenu" class="h3--guide">Top navbar</h3>
+                        <p>Topmenu bruges p&aring; alle sider og er opbygget som en liste. Menuen skal være i en <code>.navbar .navbar-default</code> container.</p>
+                        <p>
+                            Elementet <code>.navbar-header</code> med den underordnede <code>.navbar-toggle</code> <code>button</code> skal også inkluderes.
+                            Dette er til, når menuen er foldet sammen (collapsed) på de små og ekstra små skærme.
+                        </p>
+                        <p>
+                            Menulisten er i en <code>.navbar-collapse .collapse</code> container og inddelt i en venstre side: <code>.nav .navbar-nav</code> og i en h&oslash;jre side: <code>.nav .navbar-nav .navbar-right</code>, som begge er <code>ul</code>.
+                            Hvert menupunkt er et <code>li</code> inden for disse.
+                        </p>
+                        <p>Menupunkterne kan enten v&aelig;re standard markeret: <code>.active</code> (sættes på <code>a</code>) eller inaktivt: <code>.disabled</code> (sættes på <code>li</code>).</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="navbar navbar-default" role="navigation">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span>Menu</span>
+                                    </button>
+                                </div>
+                                <div class="navbar-collapse collapse">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="">Forside</a></li>
+                                        <li><a class="active" href="">Årsopgørelse</a></li>
+                                        <li><a href="">Forskudsopgørelse</a></li>
+                                        <li class="disabled"><a href="">Betaling</a></li>
+                                    </ul>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li><a href="">Kontakt</a></li>
+                                        <li><a href="">Profil</a></li>
+                                        <li><a href="">Hjælp<span class="sr-only"> åbner nyt vindue</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 id="subMenusBreadcrumb" class="h3--guide">Breadcrumb</h3>
+                        <p>Breadcrumb bruger standard Bootstrap metoden. Den skal placeres i en  <code>.skts-breadcrumb-container</code></p>
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="skts-breadcrumb-container">
+                                <ol class="breadcrumb">
+                                    <li><a href="index.html">Forside</a></li>
+                                    <li><a href="udvikling.html">Udvikling</a></li>
+                                    <li class="active">HTML-guide</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <h3 id="subMenusTransport" class="h3--guide">Transport links</h3>
+                        <p>Transport links bruges når et link skal kalde en ny side. Klassen <code>.skts-transport-box</code> sættes på <code>a</code> elementet.</p>
+                        <p>En undertekst kan sættes på ved at bruge klassen <code>.skts-transport-box--large</code> </p>
+                        <div class="bs-docs-example" data-pretty>
+                            <a href="#" class="skts-transport-box">
+                                <h2>Link header unden undertekst</h2>
+                            </a>
+                            <a href="#" class="skts-transport-box skts-transport-box--large">
+                                <h2>Link headermed undertekst</h2>
+                                <p>Her er link beskrivelsen </p>
+                            </a>
+                        </div>
+                        
+
+                        
+                        <h3 id="subMenusWizard" class="h3--guide">Progress bar</h3>
+                        <p>Progress bar bruges til at vise forskellige trin i et forløb (maks. seks trin).</p>
+                        <p>Teksterne erstattes af tal på de små og ekstra små skærme.</p>
+                        <p>Det aktive trin markeres med klassen <code>.active</code>.</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <ul class="skts-navbar-wizard">
+                                <li><span>Et punkt</span></li>
+                                <li class="active"><span>Et andet punkt</span></li>
+                                <li><span>Endnu et punkt</span></li>
+                                <li><span>Sidste punkt</span></li>
+                            </ul>
+                        </div>
+                        <h3 id="subMenusTabs" class="h3--guide">Tabs</h3>
+                        <p>Tabs bruges ved opdeling af information. Den kan fx bruges ved opdeling af &aring;rsopg&oslash;relsen i forskellige &aring;r.</p>
+                        <p>Tabs er opbygget som en liste.</p>
+                        <p>Markeringen af et aktivt faneblad foretages med klassen <code>.active</code> på <code>li</code>.</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="navbar">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="">2015<span class="sr-only">Se årsopgørelsen for 2015 </span></a></li>
+                                    <li><a href="">2014<span class="sr-only">Se forskudsopgørelsen for 2014 </span></a></li>
+                                    <li><a href="">Tidligere<span class="sr-only">Se forskudsopgørelsen for tidligere år </span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                          
+                        <hr />
+                        <!--
+                            ** Buttons **
+                        -->
+                        <h2 id="subBtsSection" class="h2--guide">Buttons</h2>
+                        <h3 id="subBtsLess" class="h3--guide">Less filer</h3>
+                        <ul>
+                            <li><em>custom_bootstrap/buttons-skts.less</em></li>
+                            <li><em>custom/skts-forms.less</em> -  nem id knap</li>
+                        </ul>
+                        <h3 id="subBtsTypes" class="h3--guide">Button types</h3>
+                        <h4 class="h4--guide">Default button</h4>
+                        <div class="bs-docs-example" data-pretty>
+                            <button type="button" class="btn btn-default">Default button</button>
+                        </div>
+                        <h4 class="h4--guide">Primary button</h4>
+                        <div class="bs-docs-example" data-pretty>
+                            <button type="button" class="btn btn-primary">Primary button</button>
+                        </div>
+                        <h4 class="h4--guide">Secondary button</h4>
+                        <div class="bs-docs-example" data-pretty>
+                            <button type="button" class="btn btn-default skts-btn-secondary">Secondary button</button>
+                        </div>
+                        
+                        <p><code>.skts-standard-buttons</code> bruges til visning af lige buttons side om side (sammen med <code>.pull-left</code> og <code>.pull-right</code>.</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="clearfix skts-standard-buttons">
+                                <input type="submit" id="prevStep1" class="btn btn-primary pull-right" value="Næste">
+                                <button type="button" id="nextStep1" class="btn pull-left skts-btn-secondary" value="Annuller" onclick="window.history.back()">Tilbage</button>
+                            </div>
+                        </div>
+                        <h4 class="h4--guide">Full width button</h4>
+                        <p><code>.skts-full-width</code> sætter et element til at være 100% i bredden</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <p><button type="button" class="btn btn-default skts-full-width">Full width button</button></p>
+                        </div>
+                        <hr />
+                        <!--
+                            ** Forms **
+                        -->
+                        <form id="mainForm" method="get" action="index.html#/skts-formular">
+                            <h2 id="subFormsSection" class="h2--guide">Forms</h2>
+                            <p>Alle <code>input type="text|password"</code>, <code>select</code> og <code>textarea</code> elementer tildeles bootstrap klassen <code>.form-control</code>.</p>
+                            <h3 id="subFormsLess" class="h3--guide">Less filer</h3>
+                            <ul>
+                                <li><em>custom_bootstrap/forms-skts.less</em></li>
+                                <li><em>custom_bootstrap/mixins-skts.less</em></li>
+                                <li><em>custom/skts-forms.less</em></li>
+                            </ul>
+                            <h3 id="subFormsSubmit" class="h3--guide">Form submit</h3>
+                            <p>Der er 4 klasser til submit af formular:</p>
+                            <ul>
+                                <li><code>.js-form-submit</code> - sender parent form medmindre <code>data-skat-form-id</code> er sat til <code>id</code> af en anden form. Felterne valideres IKKE.</li>
+                                <li><code>.js-form-submit-validate</code> - sender parent form medmindre <code>data-skat-form-id</code> er sat til <code>id</code> af en anden form. Felterne valideres før indsendelse. Evt fejl vises.</li>
+                                <li><code>.js-form-validate</code> - sætter <code>preventDefault()</code> på knappen (stopper submit), hvis der er validerings fejl. Evt fejl vises.</li>
+                                <li><code>.js-form-no-submit-validate</code> - sætter <code>preventDefault()</code> på knappen (stopper submit) altid. Felterne valideres og evt fejl vises.</li>
+                            </ul>
+                            <p>En form kan også valideres ved at bruge funktionen <code>skts.api.formValidated(e)</code> (hvor <code>e</code> er et element i den pågældende form). Funktionen viser fejl i GUI og returnere <code>true||false</code>.</p>
+                            <h3 id="subFormsPostfix" class="h3--guide">Postfix</h3>
+                            <code>input type=text</code> tildeles en postfix (endelse) med:
+                            <ul>
+                                <li><code>.skts-postfix-days</code></li>
+                                <li><code>.skts-postfix-km</code></li>
+                                <li><code>.skts-postfix-kr</code></li>
+                                <li><code>.skts-postfix-kr-month</code></li>
+                                <li><code>.skts-postfix-kr-year</code></li>
+                                <li><code>.skts-postfix-procent</code></li>
+                                <li><code>.skts-postfix-times</code></li>
+                                <li><code>.skts-postfix-mb</code></li>
+                            </ul>
+                            <p>Feltet palceres i en container, fordi den bruger <code>:after</code> psuedo-elementet, som ikke tillades på et <code>input</code> felt.</p>
+                            <p>Teksten i alle postfix felter er højrestillet.</p>
+                            <p>Et felt vises som "markeret" med <code>.skts-input-info</code>. Psuedo-elementet <code>:before</code> bruges til formålet og klassen sættes på en container.</p>
+                            <div class="bs-docs-example" data-pretty>
+                                <div class="skts-postfix-days">
+                                    <input type="text" value="40" class="form-control" />
+                                </div>
+                                <br />
+                                <div class="skts-postfix-km">
+                                    <input type="text" value="10.000" class="form-control" />
+                                </div>
+                                <br />
+                                <div class="skts-postfix-kr">
+                                    <input type="text" value="400.000" class="form-control" />
+                                </div>
+                                <br />
+                                <div class="skts-postfix-kr-month">
+                                    <input type="text" value="400.000" class="form-control" />
+                                </div>
+                                <br />
+                                <div class="has-info">
+                                    <div class="skts-postfix-kr-year skts-input-info">
+                                        <input type="text" value="500.000" class="form-control" />
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="skts-postfix-procent">
+                                    <input type="text" value="10,00" class="form-control" />
+                                </div>
+                                <br />
+                                <div class="skts-postfix-times">
+                                    <input type="text" value="10" class="form-control" />
+                                </div>
+                                <br />
+                                <div class="skts-postfix-mb">
+                                    <input type="text" value="100" class="form-control" />
+                                </div>
+                            </div>
+                            <p>Postfix kan tilføjes til ren tekst ved brug af <code>.skts-postfix-*</code> klasserne og klassen <code>.skst-postfix-text</code>. Hvis et felt skal stå på linje (alignes) med indhold fra input feltene, skal klassen <code>.skts-postfix-text--align</code> tilføjes (sammen med <code>.skts-postfix-text</code>).</p>
+                            <div class="bs-docs-example" data-pretty>
+                                <div class="clearfix">
+                                    <div class="pull-left">
+                                        Label text
+                                    </div>
+                                    <div class="pull-right">
+                                        <span class="skts-postfix-days skts-postfix-text">40</span>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="clearfix">
+                                    <div class="pull-left">
+                                        Label text
+                                    </div>
+                                    <div class="pull-right">
+                                        <span class="skts-postfix-km skts-postfix-text">10.000</span>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="clearfix">
+                                    <div class="pull-left">
+                                        Label text
+                                    </div>
+                                    <div class="pull-right">
+                                        <span class="skts-postfix-kr skts-postfix-text">400.000</span>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="clearfix">
+                                    <div class="pull-left">
+                                        Label text
+                                    </div>
+                                    <div class="pull-right">
+                                        <span class="skts-postfix-kr-month skts-postfix-text">400.000</span>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="clearfix">
+                                    <div class="pull-left">
+                                        Label text
+                                    </div>
+                                    <div class="pull-right">
+                                        <span class="skts-postfix-kr-year skts-postfix-text">500.000</span>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="clearfix">
+                                    <div class="pull-left">
+                                        Label text
+                                    </div>
+                                    <div class="pull-right">
+                                        <span class="skts-postfix-procent skts-postfix-text">10,00</span>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="clearfix">
+                                    <div class="pull-left">
+                                        Label text med kr. helt til højre
+                                    </div>
+                                    <div class="pull-right">
+                                        <span class="skts-postfix-kr skts-postfix-text">400.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 id="subFormsClientVal" class="h3--guide">Clientside validation</h3>
+                            <p>Clientside validation er en validering, som sker imens brugeren taster/sletter/vælger/fravælger en værdi i et <code>input</code>/<code>select</code>felt.</p>
+                            <p>Feltet valideres <strong>kun</strong> når den er i en <code>.skts-process-form-section</code> container.</p>
+                            <p>Alle tekst felter kan valideres imod XSD types og facet types</p>
+                            <h4 class="h4--guide">XSD types</h4>
+                            <p>XDS types sættes med attributten <code>data-show-type</code>.</p>
+                            <p>Følgende XSDtyper er defineret:</p>
+                            <ul>
+                                <li><code>decimal</code>: tillader cifre med decimal (ingen tusindtalsseparator og decimal med ".")</li>
+                                <li><code>dkDate</code>: tillader dato som beskrevet ovenfor</li>
+                                <li><code>dkDecimal</code>: tillader cifre med tusindtalsseparator (".") og decimal (",")</li>
+                                <li><code>dkInteger</code>: tillader kun heltal med tusindtalsseparator (".")</li>
+                                <li><code>dkPercent</code>: tillader cifre med decimal (","). Skal valideres onblur</li>
+                                <li><code>integer</code>: tillader kun heltal uden tusindtalsseparator</li>
+                                <li><code>string</code>: tillader alle tegn</li>
+                            </ul>
+                            <h4 class="h4--guide">Facet types</h4>
+                            <p>Facets bruges til validering udover XSD types. De sættes med attributten <code>data-show-facets</code> og <code>data-show-facet-values</code>. Facets må <strong>ikke</strong> sættes uden en XSDType (<code>data-show-type</code>).</p>
+                            <p>Følgende Facet types er defineret:</p>
+                            <ul>
+                                <li><code>fractionDigits</code> - Sætter antal af decimaler </li>
+                                <li><code>length</code> - Sætter antal af tegn</li>
+                                <li><code>maxDate</code> - Formattet er 24-12-2015</li>
+                                <li><code>maxExclusive</code> - Sætter en maksimum værdi (eksklusiv værdien)</li>
+                                <li><code>maxInclusive</code> - Sætter en maksimum værdi (inklusiv værdien)</li>
+                                <li><code>maxLength</code> - Sætter en maksimum antal tegn</li>
+                                <li><code>minDate</code> - Formattet er 24-12-2015</li>
+                                <li><code>minExclusive</code>  - Sætter en minimum værdi (eksklusiv værdien)</li>
+                                <li><code>minInclusive</code>  - Sætter en minimum værdi (inklusiv værdien)</li>
+                                <li><code>minLength</code> - Sætter en minimums længde</li>
+                                <li><code>pattern</code> - Sætter en RegEx begrænsning (RegEx skal starte og slutte med / - f.eks "/[0-9]/")</li>
+                                <li><code>totalDigits</code> - Sætter en maksimum antal cifre</li>
+                                <li><code>whiteSpace</code> - Tillader ikke whitespace hvis <code>data-show-facet-types="collapse"</code></li>
+                            </ul>
+                            <h4 class="h4--guide">Required fields</h4>
+                            <p>Et felt sættes som påkrævet ved at tilføje klassen <code>.skts-required-val</code> på <code>input || select</code>.</p>
+                            <p>Et påkrævet felt bruger også <code>aria-required="true"</code> og <code>aria-invalid="true|false"</code> attributterne.</p>
+                            <p>Husk altid at sætte <code>aria-invalid="true|false"</code> på serveren.</p>
+                            <p>Fejlbeskeden (<code>.skts-error-text</code>) sættes <strong>altid</strong> til sidst i rækken.</p>
+                            <p>Første felt med fejl får automatisk fokus. Dog får radio knapper ikke fokus pga. fejlvisning sammen med <code>.btn-group</code> klassen.</p>
+                            <h4 class="h4--guide">Compare fields</h4>
+                            <p>Felternes værdier sammenlignes ved at tilføje attributterne <code>data-compare</code> og <code>data-compare-error-index</code> på <code>input</code> feltet.</p>
+                            <p><code>data-compare</code> skal være en jQuery selector og pege på feltet, der skal sammenlignes med.</p>
+                            <p><code>data-compare-error-index</code> er den fejlbesked, som skal vises (baseret på en nulindekseret liste af <code>.skts-error-text</code> straks efter feltet).</p>
+                            <p>Husk reglerne for <code>.skts-error-text</code>:</p>
+                            <ul>
+                                <li>Den første <code>.skts-error-text</code> er altid til <code>data-show-type</code> (hvis den findes)</li>
+                                <li>Efterfølgende <code>.skts-error-text</code> er til de evt. <code>data-show-facets</code></li>
+                                <li>Sammenlignings <code>.skts-error-text</code> tilføjes efter evt. <code>data-show-facets || data-show-type</code></li>
+                                <li><code>.skts-error-text</code> til påkrævede felter (<code>.skts-required-val</code>) er altid til sidst</li>
+                            </ul>
+                            <h4 class="h4--guide">Validation event</h4>
+                            <p><code>input type="text"</code> valideres på <code>keyup</code> (dog ikke med "tab").</p>
+                            <p>Validation eventet overstyres med <code>data-validation-event="EVENTTYPE"</code>.</p>
+                            <p> <code>data-validation-event="null"</code> sættes når et felt ikke skal clientside valideres (feltet bliver stadig valideret når form indsendes, hvis submit knappen har klassen <code>.skts-validate</code>).</p>
+                            <p>Påkrævede felter med <code>blur</code> event valideres <strong>ikke</strong> med clientside validation.</p>
+                            <h4 class="h4--guide">Validation combinations</h4>
+
+                            <p><code>data-show-facets</code> kan modtage en <code>!!</code> separeret liste af facet types. <code>data-show-facet-values</code> og <code>skts-error-text</code> skal være i samme rækkefølge som <code>data-show-facets</code></p>
+                            <p><strong>OBS:</strong></p>
+                            <ul>
+                                <li>Man må ikke sætte en facet type (<code>data-show-facets</code> og <code>data-show-facet-values</code>) uden en XSDtype (<code>data-show-type</code>)</li>
+                                <li>Den første fejl er <strong>altid</strong> til XSDtypen (<code>  data-show-type</code>)</li>
+                            </ul>
+                            <h4 class="h4--guide">Error discription</h4>
+                            <p>
+                                Fejlteksten sættes på serveren, og placeres straks efter den pågældende <code>input</code>. Fejlteksten skjules som default og skrives med <code>.skts-error-text</code>.
+                                Attributten <code>role="alert"</code> sættes, af hensyn til skærmlæserne. Hvis der er flere fejltekster, sættes de under hinanden (husk at de skal være i samme rækkefølge som fejltyperne i <code>data-validation-type</code>)
+                            </p>
+                        </form>
+                        <form id="mainForm1" method="get" action="index.html#/skts-formular">
+                            <div class="bs-docs-example" data-pretty>
+                                <div class="row skts-process-form-section skts-required">
+                                    <div class="col-sm-12">
+                                        <label for="fpCountry" id="fpCountryLabel">Påkrævet select</label>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <select class="form-control skts-required-val" id="fpCountry" name="fpCountry" aria-invalid="true" aria-required="true">
+                                            <option value="">Vælg noget</option>
+                                            <option value="1">option 1</option>
+                                            <option value="2">option 2</option>
+                                        </select>
+                                        <div class="skts-error-text" role="alert">Feltet er påkrævet</div>
+                                    </div>
+                                </div>
+                                <div class="row skts-process-form-section">
+                                    <div class="col-sm-12">
+                                        <label for="string1" id="string1Label">Type: <strong>string</strong>, facets: <strong>length = 6 !! pattern = email regex</strong></label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input class="form-control" id="string1" type="text" data-show-type="string" data-show-facets="length!!pattern" data-show-facet-values='6!!/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/' placeholder="Type:string, " autocomplete="off">
+                                        <div class="skts-error-text" role="alert">Du har skrevet et specialtegn der ikke kan bruges</div>
+                                        <div class="skts-error-text" role="alert">Den kan maksimalt være 5 tegn</div>
+                                        <div class="skts-error-text" role="alert">Det indtastede format er ikke gyldigt</div>
+                                    </div>
+                                </div>
+                                <div class="row skts-process-form-section">
+                                    <div class="col-sm-12">
+                                        <label for="string1a" id="string1aLabel">Type: <strong>string</strong>, facets: <strong>length = 6 !! pattern = email regex</strong></label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input class="form-control" id="string1a" type="text" data-show-type="string" data-show-facets="length!!pattern" data-show-facet-values='6!!/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/' placeholder="Type:string, " autocomplete="off">
+                                        <div class="skts-error-text" role="alert">Du har skrevet et specialtegn der ikke kan bruges</div>
+                                        <div class="skts-error-text" role="alert">Den kan maksimalt være 5 tegn</div>
+                                        <div class="skts-error-text" role="alert">Det indtastede format er ikke gyldigt</div>
+                                    </div>
+                                </div>
+                                <div class="row skts-process-form-section">
+                                    <div class="col-sm-12">
+                                        <label for="string2" id="string2Label">Type: <strong>string</strong>, facets: <strong>whitespace = collapse !! maxLength = 10 !! minLength = 1</strong></label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" id="string2" type="text" data-show-type="string" data-show-facets="whiteSpace!!maxLength!!minLength" data-show-facet-values="collapse!!10!!1" autocomplete="off">
+                                        <div class="skts-error-text" role="alert">Du har skrevet et specialtegn der ikke kan bruges</div>
+                                        <div class="skts-error-text" role="alert">Der kan ikke være mellemrum</div>
+                                        <div class="skts-error-text" role="alert">Der kan maksimalt være 10 tegn</div>
+                                        <div class="skts-error-text" role="alert">Der skal minimum være 1 tegn</div>
+                                    </div>
+                                </div>
+                                <div class="row skts-process-form-section">
+                                    <div class="col-sm-12">
+                                        <label for="integer" id="integerLabel">Type: <strong>integer</strong>, facets: <strong>totalDigits = 4 !! maxInclusive = 5555</strong></label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input class="form-control" id="integer" type="text" data-show-type="integer" data-show-facets="totalDigits!!maxInclusive" data-show-facet-values="4!!5555" autocomplete="off">
+                                        <div class="skts-error-text" role="alert">Du kan kun skrive hele tal</div>
+                                        <div class="skts-error-text" role="alert">Der kan maksimalt være 4 tal</div>
+                                        <div class="skts-error-text" role="alert">Værdien skal maksimalt være 5.555</div>
+                                    </div>
+                                </div>
+                                <div class="row skts-process-form-section">
+                                    <div class="col-sm-12">
+                                        <label for="dkInteger1" id="dkInteger1Label">Type: <strong>dkInteger</strong>, facets: <strong>minInclusive = 500 !! totalDigits = 6</strong></label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input class="form-control" id="dkInteger1" type="text" data-show-type="dkInteger" data-show-facets="minInclusive!!totalDigits" data-show-facet-values="500!!6" autocomplete="off">
+                                        <div class="skts-error-text" role="alert">Du skal skrive beløbet i hele kr.</div>
+                                        <div class="skts-error-text" role="alert">Værdien skal mindst være 500</div>
+                                        <div class="skts-error-text" role="alert">Der kan maksimalt være 6 tal</div>
+                                    </div>
+                                </div>
+                                <div class="row skts-process-form-section">
+                                    <div class="col-sm-12">
+                                        <label for="dkInteger2" id="dkInteger2Label">Type: <strong>dkInteger</strong>, facets: <strong>minExclusive = 50 !! maxExclusive = 50.000</strong></label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input class="form-control" id="dkInteger2" type="text" data-show-type="dkInteger" data-show-facets="minExclusive!!maxExclusive" data-show-facet-values="50!!50000" autocomplete="off">
+                                        <div class="skts-error-text" role="alert">Du skal skrive beløbet i hele kr.</div>
+                                        <div class="skts-error-text" role="alert">Værdien skal mindst være 50</div>
+                                        <div class="skts-error-text" role="alert">Værdien skal maksimalt være 49.999</div>
+                                    </div>
+                                </div>
+                                <div class="row skts-process-form-section">
+                                    <div class="col-sm-12">
+                                        <label for="decimal" id="decimalLabel">Type: <strong>dkDecimal</strong>, facets: <strong>fractionDigits = 2 !! maxInclusive = 100 !! minInclusive = 10</strong></label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input class="form-control" id="decimal" type="text" data-show-type="dkDecimal" data-show-facets="fractionDigits!!maxInclusive!!minInclusive" data-show-facet-values="2!!100!!10" autocomplete="off">
+                                        <div class="skts-error-text" role="alert">Du skal skrive tal med decimaler</div>
+                                        <div class="skts-error-text" role="alert">Der kan maksimalt være 2 decimaler</div>
+                                        <div class="skts-error-text" role="alert">Værdien skal maksimalt være 100</div>
+                                        <div class="skts-error-text" role="alert">Værdien skal mindst være 10</div>
+                                    </div>
+                                </div>
+                                <div class="row skts-process-form-section">
+                                    <div class="col-sm-12">
+                                        <label for="dkDecimal" id="dkDecimalLabel">Type: <strong>dkDecimal</strong>, facets: <strong>fractionDigits = 4 !! maxInclusive = 2000 !! minInclusive = 100</strong></label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input class="form-control" id="dkDecimal" type="text" data-show-type="dkDecimal" data-show-facets="fractionDigits!!maxInclusive!!minInclusive" data-show-facet-values="4!!2000!!100" autocomplete="off">
+                                        <div class="skts-error-text" role="alert">Du skal skrive tal med decimaler</div>
+                                        <div class="skts-error-text" role="alert">Der kan maksimalt være 4 decimaler</div>
+                                        <div class="skts-error-text" role="alert">Værdien skal maksimalt være 2000</div>
+                                        <div class="skts-error-text" role="alert">Værdien skal mindst være 100</div>
+                                    </div>
+                                </div>
+                                <div class="row skts-process-form-section">
+                                    <div class="col-sm-12">
+                                        <label for="dkPercent" id="dkPercentLabel">Type: <strong>dkPercent</strong>, facets: <strong>maxInclusive = 50 !! minInclusive = 10</strong></label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="skts-postfix-procent">
+                                            <input class="form-control" id="dkPercent" type="text" data-show-type="dkPercent" data-show-facets="maxInclusive!!minInclusive" data-show-facet-values="50!!10" data-validation-event="blur" autocomplete="off">
+                                            <div class="skts-error-text" role="alert">Du kan kun skrive tal</div>
+                                            <div class="skts-error-text" role="alert">Værdien skal maksimalt være 50%</div>
+                                            <div class="skts-error-text" role="alert">Værdien skal mindst være 10%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row skts-process-form-section">
+                                    <div class="col-sm-12">
+                                        <label for="compareEmail1" id="compareEmail1Label">Type: <strong>string</strong>, facet: <strong>pattern (email)</strong>, event: <strong>blur</strong></label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="compareEmail1" name="compareEmail1" class="form-control" value="" data-show-type="string" data-validation-event="blur" data-show-facets="pattern" data-show-facet-values='/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/' aria-required="true" aria-invalid="true" />
+                                        <div class="skts-error-text" role="alert">Du har skrevet et specialtegn der ikke kan bruges (fejlen er til data-show-type = string)</div>
+                                        <div class="skts-error-text" role="alert">Det indtastede format er ikke gyldigt</div>
+                                    </div>
+                                </div>
+                                <div class="row skts-process-form-section">
+                                    <div class="col-sm-12">
+                                        <label for="compareEmail2" id="compareEmail2Label">Type: <strong>string</strong>, facet: <strong>pattern (email)</strong>, event: <strong>blur</strong>, <strong>sammenlignes med feltet ovenpå</strong></label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" id="compareEmail2" name="compareEmail2" class="form-control" value="" data-compare="#compareEmail1" data-validation-event="blur" data-compare-error-index="2" data-show-type="string" data-show-facets="pattern" data-show-facet-values='/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/' aria-required="true" aria-invalid="true" />
+                                        <div class="skts-error-text" role="alert">Du har skrevet et specialtegn der ikke kan bruges (fejlen er til data-show-type = string)</div>
+                                        <div class="skts-error-text" role="alert">Det indtastede format er ikke gyldigt</div>
+                                        <div class="skts-error-text" role="alert">Indtastningerne er ikke ens</div>
+                                    </div>
+                                </div>
+                                <input type="submit" class="btn btn-primary js-form-submit-validate" value="Test indsendelse" />
+                            </div>
+                            <p><a href="krav-tekster.html#subPlace">Læs mere om standard placeholder tekster</a></p>
+                            <h3 id="subFormsReqLabel" class="h3--guide">Required</h3>
+                            <p>Et påkrævet felt vises med <span class="skts-required-info">*</span> efter <code>label</code>. Klassen <code>.skts-required</code> tildeles en container. Alle <code>label</code> under containeren får et  <span class="skts-required-info">*</span>.</p>
+                            <p>Forklaring af  <span class="skts-required-info">*</span> opnås ved brug af <code>.skts-required-info</code> som placeres i toppen af siden.</p>
+                            <p>Visning af fejl i et påkrævet felt beskrives under <a href="#/skts-formular/#subClientVal">Clientside validation</a>.</p>
+                            <div class="bs-docs-example" data-pretty>
+                                <h3 class="pull-left">Side overskrift</h3><div class="pull-right small skts-required-info">* skal udfyldes</div>
+                                <div class="row skts-process-form-section skts-required">
+                                    <div class="col-sm-12">
+                                        <label id="testLabel" for="testReq">Påkrævet felt</label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="skts-postfix-kr-year">
+                                            <input type="text" class="form-control skts-required-val" data-show-type="dkInteger" id="testReq" value="1.250.000" aria-required="true" data-validation-type="req" aria-invalid="false" />
+                                            <div class="skts-error-text" role="alert">Du har skrevet et specialtegn der ikke kan bruges</div>
+                                            <div class="skts-error-text" role="alert">Feltet er påkrævet</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 id="subFormsRadio" class="h3--guide">Radio buttons</h3>
+                            <h4 class="h4--guide">Gruppering af radio buttons</h4>
+                            <p>Knapper med flere muligheder vises med klassen <code>.skts-btn-radio</code>.</p>
+                            <p>Den valgte radio knap skal <strong>både</strong> have <code>checked="checked"</code> attributten på sig selv og klassen <code>.active</code> på dens <code>label</code>.</p>
+                            <div class="bs-docs-example" data-pretty>
+                                <div class="text-center">
+                                    <fieldset>
+                                        <legend>
+                                            Beskrivelse her
+                                        </legend>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <div class="btn skts-btn-radio active">
+                                                <input type="radio" name="pre98" checked="checked" id="pre98Yes">
+                                                <label for="pre98Yes">Ja</label>
+                                            </div>
+                                            <div class="btn skts-btn-radio">
+                                                <input type="radio" name="pre98" id="pre98N">
+                                                <label for="pre98N">Nej</label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                        <form id="mainForm2" method="get" action="index.html#/skts-formular">
+                            <h4 class="h4--guide">Required radio buttons</h4>
+                            <p>Optionerne laves påkrævet med klassen <code>.js-option-required</code>.</p>
+                            <p>Fejlbeskeden til påkrævet radio knapper kan tilføjes på normal vis (vises under alle radio knapper ved fejl), eller  som en samlet fejlbesked efter alle knapperne.</p>
+                            <p>Hvis fejlbeskeden samles, skal alle radio knapper være i en container med klassen <code>.skts-process-options</code>. Beskeden placeres <strong>efter</strong> <code>.skts-process-option</code> med klassen <code>.skts-option-error-text</code>.</p>
+                            <div class="bs-docs-example" data-pretty>
+                                <fieldset>
+                                    <legend>
+                                        Beskrivelse her
+                                    </legend>
+                                    <div class="btn-group-vertical skts-process-options" data-toggle="buttons">
+                                        <div class="btn skts-btn-radio">
+                                            <input type="radio" class="js-option-required" name="testRadio" id="testRadio_1" value="option1" aria-required="true" aria-invalid="true" />
+                                            <label for="testRadio_1"></label>
+                                            Radio option 1
+                                        </div>
+                                        <div class="btn skts-btn-radio">
+                                            <input type="radio" class="js-option-required" id="testRadio_2" name="testRadio" value="option2" aria-required="true" aria-invalid="true" />
+                                            <label for="testRadio_2">Radio option 2</label>
+                                        </div>
+                                    </div>
+                                    <div class="skts-option-error-text" role="alert">En radio knap skal vælges</div>
+                                </fieldset>
+                                <br/>
+                                <p><input type="submit" class="btn btn-primary js-form-submit-validate" value="Test indsendelse" /></p>
+                            </div>
+                        </form>
+                        <form id="mainForm3" method="get" action="index.html#/skts-formular">
+                            <h4 class="h4--guide">Grupperede radio buttons/checkbokse/select boxes/tekstfelter til visning af specifikke skjulte sektioner</h4>
+                            <p>Grupperinger kan bruges til at vise/skjule specifikke undersektioner, som indeholder andre form elementer.</p>
+                            <p>De fire data attributer, som skal sættes er:</p>
+                            <ul>
+                                <li><code>data-show-group-for</code> - angiver id på den gruppe, som indeholder de skjulte sektioner. Den skal sættes på de <code>input</code> som skal show/hide sektioner  </li>
+                                <li><code>data-show-group-id</code> - id på de sektioner, som er angivet i <code>data-show-group-for</code>. De skal sættes på den specifikke skjulte sektion, som hører til de grupperede radio knapper/checkbokse</li>
+                                <li><code>data-show-for</code> - angiver id af den specifikke sektion, som skal vises når radio knappen/checkbokse vælges. Den skal sættes på hver af de grupperede radio knapper/checkbokse og skal have en tilsvarende sektion med <code>data-show-id</code>. <strong>Husk</strong> at sætte <code>data-show-for="null"</code> hvis radio knappen/checkboksen ikke har en tilsvarende skjult sektion</li>
+                                <li><code>data-show-id</code> - id på den specifikke sektion, som er angivet i <code>data-show-for</code>. Den sættes på den specifikke skjulte sektion</li>
+                            </ul>
+                            <p><code>data-show-id</code> sektionerne er skujlte som default. Kun felter i den specifikke skjulte sektion vises og enables når radio knappen/checkboksen/select boksen/tekstfeltet med <code>data-show-for</code> vælges/skrives i.</p>
+                            <p>Alle felter (<code>input, select, textarea</code>) nulstilles på submit når et felt er skjult med <code>data-show-*</code>. Dette kan dog forhindres ved at sætte klassen <code>.js-stop-clear</code> på et container element (f.eks <code>form</code>).</p>
+                            <div class="bs-docs-example" data-pretty>
+                                <fieldset>
+                                    <legend>
+                                        Beskrivelse her
+                                    </legend>
+                                    <div class="btn-group-vertical" data-toggle="buttons">
+                                        <div class="btn skts-btn-radio active">
+                                            <input type="radio" name="visElem" id="visElem_1" value="1" data-show-group-for="container1" data-show-for="elem1" checked="checked">
+                                            <label for="visElem_1">Vis 1</label>
+                                        </div>
+                                        <div class="btn skts-btn-radio">
+                                            <input type="radio" name="visElem" id="visElem_2" value="2" data-show-group-for="container1" data-show-for="elem2">
+                                            <label for="visElem_2">Vis 2</label>
+                                        </div>
+                                        <div class="btn skts-btn-radio ">
+                                            <input type="radio" name="visElem" id="visElem_3" value="3" data-show-group-for="container1" data-show-for="elem3">
+                                            <label for="visElem_3">Vis 3</label>
+                                        </div>
+                                        <div class="btn skts-btn-radio ">
+                                            <input type="radio" name="visElem" id="visElem_4" value="null" data-show-group-for="container1" data-show-for="null">
+                                            <label for="visElem_4">Vis ingen</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="hidden" data-show-group-id="container1" data-show-id="elem1">
+                                        <div class="row skts-process-form-section skts-required">
+                                            <div class="col-sm-12">
+                                                <label for="groupRadioHidden">Vis form element (radio 1)</label>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <input class="form-control skts-required-val" id="groupRadioHidden" type="text" name="groupRadioHidden" data-show-type="dkPercent" data-show-facets="maxInclusive!!minInclusive" data-show-facet-values="100!!5" data-validation-event="blur" placeholder="Type:dkPercent Facets:  maxInclusive = 50, minInclusive = 10" autocomplete="off">
+                                                <div class="skts-error-text" role="alert">Du skal skrive beløbet i hele kr.</div>
+                                                <div class="skts-error-text" role="alert">Værdien skal maksimalt være 100%</div>
+                                                <div class="skts-error-text" role="alert">Værdien skal mindst være 5%</div>
+                                                <div class="skts-error-text" role="alert">Feltet er påkrævet</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hidden" data-show-group-id="container1" data-show-id="elem2">
+                                        Her er teksten til Radio "Vis 2"
+                                    </div>
+                                    <div class="hidden" data-show-group-id="container1" data-show-id="elem3">
+                                        Her er teksten til Radio "Vis 3"
+                                    </div>
+                                </fieldset>
+                                <br />
+                                <label>
+                                    <input type="checkbox" value="1" data-show-group-for="container2" data-show-for="elemCheck1" checked="checked">Vis checkboks 1
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="2" data-show-group-for="container2" data-show-for="elemCheck2" checked="checked">Vis checkboks 2
+                                </label>
+                                <br />
+                                <div class="hidden" data-show-group-id="container2" data-show-id="elemCheck1">
+                                    <div class="row skts-process-form-section skts-required">
+                                        <div class="col-sm-12">
+                                            <label for="groupRadioHidden2">Vis form element (checkboks 1)</label>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <input class="form-control skts-required-val" id="groupRadioHidden2" type="text" name="groupRadioHidden" data-show-type="dkPercent" data-show-facets="maxInclusive!!minInclusive" data-show-facet-values="100!!5" data-validation-event="blur" placeholder="Type:dkPercent Facets:  maxInclusive = 50, minInclusive = 10" autocomplete="off">
+                                            <div class="skts-error-text" role="alert">Du skal skrive beløbet i hele kr.</div>
+                                            <div class="skts-error-text" role="alert">Værdien skal maksimalt være 100%</div>
+                                            <div class="skts-error-text" role="alert">Værdien skal mindst være 5%</div>
+                                            <div class="skts-error-text" role="alert">Feltet er påkrævet</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden" data-show-group-id="container2" data-show-id="elemCheck2">
+                                    Her er teksten til Checkboks "Vis checkboks 2"
+                                </div>
+                                <p><input type="submit" class="btn btn-primary skts-validate" value="Test indsendelse" /></p>
+                            </div>
+                            <h3 id="subFormsMsg" class="h3--guide">Input message</h3>
+                            <p>En input message vises under et felt, når en bruger taster/sletter/vælger/fravælger værdien i feltet. Beskeden indsættes ved brug af <code>.skts-input-msg</code>.</p>
+                            <p>
+                                Input message kan indeholde en værdi til sammenligning med feltværdien.
+                                Værdien til sammenligning placeres i den sidste <code>.skts-input-msg</code> med klassen <code>.skts-input-msg-value</code>. Input message skjules igen hvis feltværdien og <code>.skts-input-msg-value</code> er lige. Sammenligning køres når siden loades og på <code>keyup|change</code> event.
+                            </p>
+                            <p>Input message kan vises fra start ved tilføjelse af <code>.show</code>.</p>
+                            <p>Hvis feltet er en <code>select</code>, sammenlignes den valgte <code>option</code> tekst med <code>.skts-input-msg-value</code>.</p>
+                            <p>Input message til checkboksen vises baseret på <code>checked</code> attributten. Værdien til sammenligning er enten <code>true</code> eller <code>false</code> og sættes som skjult.</p>
+                            <p>Alle <code>label</code> elementer skal have en <code>id</code>. Den bruges til <code>aria-describedby</code> på input message.</p>
+                            <div class="bs-docs-example" data-pretty>
+                                <div class="row skts-process-form-section">
+                                    <div class="col-sm-8">
+                                        <label for="testInputMsg" id="testInputMsgLabel">Lønindkomst</label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="skts-postfix-kr-year">
+                                            <input type="text" value="300.000" class="form-control" data-show-type="dkInteger" id="testInputMsg" />
+                                            <div class="skts-input-msg" aria-describedby="testInputMsgLabel">Rettet fra: <span class="skts-input-msg-value skts-postfix-kr skts-postfix-text">300.000</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row skts-process-form-section has-info">
+                                    <div class="col-sm-8">
+                                        <label for="testInputMsg2" id="testInputMsgLabel2">Autoforskud på lønindkomst</label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="skts-postfix-kr-year skts-input-info">
+                                            <input type="text" value="400.000" class="form-control" data-show-type="dkInteger" id="testInputMsg2" />
+                                            <div class="skts-input-msg skts-postfix-kr skts-postfix-text" aria-describedby="testInputMsgLabel2">Rettet fra: 300.000</div>
+                                            <div class="skts-input-msg" aria-describedby="testInputMsgLabel2">Forslag: <span class="skts-input-msg-value skts-postfix-kr skts-postfix-text">400.000</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row skts-process-form-section skts-required">
+                                    <div class="col-sm-12">
+                                        <label for="testInputMsg3" id="testInputMsgLabel3">Select sammenligning</label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <select class="form-control skts-required-val" id="testInputMsg3" aria-required="true" aria-invalid="false">
+                                            <option value="">Vælg en Option</option>
+                                            <option selected="selected" value="1">Option 1</option>
+                                            <option value="2">Option 2</option>
+                                        </select>
+                                        <div class="skts-error-text" role="alert">Feltet er påkrævet</div>
+                                        <div class="skts-input-msg" aria-describedby="testInputMsgLabel3">Rettet fra: <span class="skts-input-msg-value">Option 1</span></div>
+                                    </div>
+                                </div>
+                                <div class="text-center skts-process-form-section skts-row-seperator">
+                                    <fieldset>
+                                        <legend>
+                                            Test radio input message
+                                        </legend>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="btn-group" data-toggle="buttons">
+                                                    <div class="btn skts-btn-radio">
+                                                        <input type="radio" name="RdoTest1" value="0" id="testInputMsg4a"/> 
+                                                        <label for="testInputMsg4a" id="testInputMsgLabel4a">Ja</label>
+                                                    </div>
+                                                    <div class="btn skts-btn-radio active">
+                                                        <input checked="checked" type="radio" name="RdoTest1" value="1" id="testInputMsg4b" /> 
+                                                        <label for="testInputMsg4b" id="testInputMsgLabel4b">Nej</label>
+                                                    </div>
+                                                </div>
+                                                <div class="skts-input-msg">Rettet fra: <span class="skts-input-msg-value">Nej</span></div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="row skts-process-form-section">
+                                    <div class="col-sm-12">
+                                        <input type="checkbox" value="Nej" id="testCheck2" checked="checked" /> <label id="testCheck2Label" for="testCheck2">Nej</label>
+                                        <div class="skts-input-msg" aria-describedby="testCheck2Label">Rettet fra: Nej<span class="skts-input-msg-value hidden">true</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p><a href="krav-tekster.html#subError">Læs mere om standard fejltekster</a></p>
+                            <h3 id="subFormsServerError" class="h3--guide">Server error</h3>
+                            <p>Ikke alle fejl fanges ved clientside validation. Disse fejl markeres med <code>.skts-has-error-server</code> på den container, som indeholder feltet. Fejlmarkering fjernes ikke hvis en clientside validation vises/skjules på feltet.</p>
+                            <p>Server error vises sammen men en <code>.alert</code> boks på toppen af siden. Boksen indeholder en beskrivelse af fejlen, samt link til feltet med fejlen. Linket sætter fokus på feltet med fejlen ved brug af attributten <code>data-focus-element</code> (skal være enten <code>id</code> eller <code>name</code> på feltet, som skal have focus). Fejl beskrivelsens <code>id</code> sættes som <code>aria-describedby</code> på <code>input</code>/<code>select</code> feltet.</p>
+                            <p>Et skjult link til fejlen, som kun aktiveres med <code>focus</code> (via tabbing) indsættes i <code>header</code> ved siden af linket til indholdet.</p>
+                            <div class="bs-docs-example" data-pretty>
+                                <header>
+                                    <ul class="skts-focus-links">
+                                        <li><a id="skts-skip-til-indhold" href="#skts-skip-link-target-indhold">Gå til indhold</a></li>
+                                        <li><a href="#skts-skip-link-target-fejl1">Gå til fejlbesked</a></li>
+                                    </ul>
+                                </header>
+                                <div class="alert alert-danger" role="alert">
+                                    <a id="skts-skip-link-target-fejl1" class="sr-only" tabindex="-1">Start af fejl</a>
+                                    <h3>Det ser ud som om noget ikke stemmer.</h3>
+                                    <p>
+                                        Der er fejl i felterne (#1) og (#2). Felt #2 må ikke være mindre end felt #1
+                                    </p>
+                                    <p>Felterne som  du gerne må  tjekke, er markeret med rødt</p>
+                                    <p>
+                                        Gå til  <a  href="#" data-focus-element="testServerFejl">felt #1</a>
+                                        eller
+                                        <a id="testServerFejlErrorDesc"  href="#" data-focus-element="testServerFejl2">felt #2</a>
+                                    </p>
+                                </div>
+                                <div class="row skts-process-form-section skts-has-error-server">
+                                    <div class="col-sm-12">
+                                        <label for="testServerFejl" id="testServerFejlLabel">Her er et felt med en server error <span class="skts-section-nr"><span class="sr-only">felt nummer </span>(1)</span></label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" data-show-type="dkInteger" value="9.999" aria-describedby="testServerFejlErrorDesc" id="testServerFejl" />
+                                        <div class="skts-error-text" role="alert">Feltet indholder fejl</div>
+                                    </div>
+                                </div>
+                                <div class="row skts-process-form-section skts-has-error-server">
+                                    <div class="col-sm-12">
+                                        <label for="testServerFejl2" id="testServerFejl2Label">Her er et felt med en server error og clientside validation <span class="skts-section-nr"><span class="sr-only">felt nummer </span>(2)</span></label>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input class="form-control" data-show-type="dkInteger" value="9.000" type="text" id="testServerFejl2" aria-describedby="testServerFejlErrorDesc" data-show-facets="maxInclusive" data-show-facet-values="10000" />
+                                        <div class="skts-error-text" role="alert">Feltet indholder fejl</div>
+                                        <div class="skts-error-text skts-postfix-kr skts-postfix-text" role="alert">Værdien skal maksimalt være 10.000</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 id="subFormsLoading" class="h3--guide">Page loading</h3>
+                            <p>Felterne laves readOnly og advisering vises ved kald af <code>page.showLoader</code> i JavaScript. Denne funktion har et tekst parameter til visning i advisering.</p>
+                            <p>Advisering forsvinder først, når siden genindlæses/videreføres.</p>
+                            <div class="bs-docs-example" data-pretty>
+                                <button class="btn btn-primary" id="testLoader">Test page loading</button>
+                                <script type="text/javascript">
+                                    $(document).on("click", "#testLoader", function (e) {
+                                        e.preventDefault();
+                                        page.showLoader("Vent venligst. Det tager maks. 20 sekunder...");
+                                    });
+                                </script>
+                            </div>
+                        </form>
+                        <hr />
+                        
+                        <!--
+                            ** Tables **
+                        -->
+                        <style type="text/css">
+                            @media (max-width: 768px) {
+                                .skts-collapsed-table td:nth-of-type(1) {
+                                    color: #999;
+                                }
+
+                                .skts-collapsed-table td:nth-of-type(2) {
+                                    font-weight: bold;
+                                }
+
+                                .skts-collapsed-table td:nth-of-type(3):before {
+                                    content: "Løn";
+                                }
+
+                                .skts-collapsed-table td:nth-of-type(4):before {
+                                    content: "Pesion, dagpenge, SU";
+                                }
+
+                                .skts-collapsed-table td:nth-of-type(5):before {
+                                    content: "A-skat";
+                                }
+                            }
+                        </style>
+                        <h2 id="subTablesSection" class="h2--guide">Tables</h2>
+                        <h3 id="subTablesLess" class="h3--guide">Less filer</h3>
+                        <ul>
+                            <li><em>custom_bootstrap/table-skts.less</em> - Overstyrer responsive tabel</li>
+                            <li><em>custom/skts-tables.less</em> - CSS og blok tabeller</li>
+                        </ul>
+                        <h3 id="subTablesCss" class="h3--guide">CSS table</h3>
+                        <p><code>.skts-css-table</code> bruges når to kolonner flugter med hinanden (efterligner en <code>table</code>).</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="skts-css-table">
+                                <div class="skts-t-col well">
+                                    <h2 class="skts-heading-link"><a href="aarsop_laes.html">Årsopgørelse<span class="sr-only"> Gå til årsopgørelse</span></a></h2>
+                                    <ul class="list-unstyled">
+                                        <li><a class="skts-icon-right-open-big" href="aarsop_laes.html">Se årsopgørelsen for 2014</a></li>
+                                        <li><a class="skts-icon-right-open-big" href="#">Ret årsopgørelsen for 2014</a></li>
+                                        <li><a class="skts-icon-right-open-big" href="#">Betal restskat</a></li>
+                                    </ul>
+                                </div>
+                                <div class="skts-t-col skts-spacing-col"><br></div>
+                                <div class="skts-t-col well">
+                                    <h2 class="skts-heading-link"><a href="forskud_ret.html">Forskudsopgørelse<span class="sr-only"> Gå til Forskudsopgørelse</span></a></h2>
+                                    <ul class="list-unstyled">
+                                        <li><a class="skts-icon-right-open-big">Forskudsopgørelsen for 2015</a></li>
+                                        <li><a class="skts-icon-right-open-big" href="#">Søg i indkomstoplysninger</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 id="subTablesCssList" class="h3--guide">List icon table</h3>
+                        <p><code>.skts-t-col--alt</code> har mindre afstand imellem de to kolonner end <code>.skts-t-col</code>.</p>
+                        <p><code>.skts-css-table--icon-text</code> Bruges til opsætning af ikonet og teksten.</p>
+                        <p>En tabel som kun har én kolonne er tilladt, men den sidste tomme kolonne (<code>&lt;div&gt;&lt;br&gt;&lt;/div&gt;</code>) <strong>skal</strong> tilføjes.</p>
+                        <p>Tabellens spacing ændres med variablen <code>@alt-table-gutter</code>.</p>
+                        <p>
+                            Følgende klasser findes til icons:
+                        </p>
+                        <ul>
+                            <li><code>.skts-icon-koersel</code></li>
+                            <li><code>.skts-icon-underhold</code></li>
+                            <li><code>.skts-icon-oevrige-renter</code></li>
+                            <li><code>.skts-icon-io</code></li>
+                            <li><code>.skts-icon-ue</code></li>
+                            <li><code>.skts-icon-up </code></li>
+                            <li><code>.skts-icon-ul</code></li>
+                            <li><code>.skts-icon-ua</code></li>
+                            <li><code>.skts-icon-uv</code></li>
+                            <li><code>.skts-icon-ai </code></li>
+                            <li><code>.skts-icon-rf</code></li>
+                        </ul>
+                        
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a href="../2015Renter/rente.html" class="skts-highlighted-box">
+                                        <div class="skts-css-table skts-css-table--icon-text">
+                                            <div class="skts-t-col hidden-xs">
+                                                <div class="skts-theme-icon skts-icon-oevrige-renter"></div>
+                                            </div>
+                                            <div class="skts-t-col">
+                                                <h3>Øvrige renter</h3>
+                                                <p>indberet eller ret i dine renteforhold (44)</p>
+                                                <h3 class="skts-postfix-kr skts-postfix-text">0</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="../2015Underhold/oversigt.html" class="skts-highlighted-box">
+                                        <div class="skts-css-table skts-css-table--icon-text">
+                                            <div class="skts-t-col hidden-xs">
+                                                <div class="skts-theme-icon skts-icon-underhold"></div>
+                                            </div>
+                                            <div class="skts-t-col">
+                                                <h3>Underholdsbidrag</h3>
+                                                <p>til tidl. ægtefælle, børnebidrag (56)</p>
+                                                <h3 class="skts-postfix-kr skts-postfix-text">12.000</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 id="subTablesBlock" class="h3--guide">Block table</h3>
+                        <p><code>.skts-block-table</code> bruges når en tabel skal vises som blok på de små skærme.</p>
+                        <p>Tabellen er stiplet pr. default men kan laves uden ved at tilføje klassen <code>.skts-block-table--plain</code></p>
+                        <p>Overskrifterne skal sættes i toppen af siden til de små skærme via inline styles. Overskrifterne kan undlades eller styles efter behov.</p>
+                        <p>Kolonnerne vises som default med tekst under headeren på de små skærme. Hvis header og tekst skal være side om side skal klassen <code>.skts-block-table--2-col</code> bruges.</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <style type="text/css">
+                                .skts-block-table th {width: 25%;}
+                                @media (max-width: 768px) {
+                                    .skts-block-table td:nth-of-type(1):before { content: "Dato";}
+                                    .skts-block-table td:nth-of-type(2):before { content: "Indberetning";}
+                                    .skts-block-table td:nth-of-type(3):before { content: "Periode";}
+                                    .skts-block-table td:nth-of-type(4):before { content: "Kvittering";}
+                                }
+                            </style>
+                            <table class="table skts-block-table">
+                                <thead>
+                                    <tr>
+                                        <th>Dato</th>
+                                        <th>Indberetning</th>
+                                        <th>Periode</th>
+                                        <th>Kvittering</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01-01-2016</td>
+                                        <td><a href="#">Hent filnavn_7.xml</a></td>
+                                        <td>1. januar - 30. september</td>
+                                        <td><a href="#">Kvittering (01-01-2016)</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01-12-2016</td>
+                                        <td><a href="#">Hent filnavn_6.xml</a></td>
+                                        <td>1. januar - 30. september</td>
+                                        <td><a href="#">Kvittering (01-12-2015)</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01-11-2016</td>
+                                        <td><a href="#">Hent filnavn_5.xml</a></td>
+                                        <td>1. januar - 30. juni</td>
+                                        <td><a href="#">Kvittering (01-11-2015)</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01-10-2016</td>
+                                        <td><a href="#">Hent filnavn_4.xml</a></td>
+                                        <td>Hele året</td>
+                                        <td><a href="#">Kvittering (01-10-2015)</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="bs-docs-example" data-pretty>
+                            <style type="text/css">
+                                .skts-block-table th {width: 25%;}
+                                @media (max-width: 768px) {
+                                    .skts-block-table td:nth-of-type(1):before { content: "Dato";}
+                                    .skts-block-table td:nth-of-type(2):before { content: "Indberetning";}
+                                    .skts-block-table td:nth-of-type(3):before { content: "Periode";}
+                                    .skts-block-table td:nth-of-type(4):before { content: "Kvittering";}
+                                }
+                            </style>
+                            <table class="table skts-block-table skts-block-table--plain skts-block-table--2-col">
+                                <thead>
+                                    <tr>
+                                        <th>Dato</th>
+                                        <th>Indberetning</th>
+                                        <th>Periode</th>
+                                        <th>Kvittering</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01-01-2016</td>
+                                        <td><a href="#">Hent filnavn_7.xml</a></td>
+                                        <td>1. januar - 30. september</td>
+                                        <td><a href="#">Kvittering (01-01-2016)</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01-12-2016</td>
+                                        <td><a href="#">Hent filnavn_6.xml</a></td>
+                                        <td>1. januar - 30. september</td>
+                                        <td><a href="#">Kvittering (01-12-2015)</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01-11-2016</td>
+                                        <td><a href="#">Hent filnavn_5.xml</a></td>
+                                        <td>1. januar - 30. juni</td>
+                                        <td><a href="#">Kvittering (01-11-2015)</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>01-10-2016</td>
+                                        <td><a href="#">Hent filnavn_4.xml</a></td>
+                                        <td>Hele året</td>
+                                        <td><a href="#">Kvittering (01-10-2015)</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <hr />
+                        <!--
+                            ** Komponenter **
+                        -->
+                        <h2 id="subCompsSection" class="h2--guide">Components</h2>
+                        <p>Disse compnents er typisk sammensat af flere html elementer p&aring; siden.</p>
+                        <p>De er udenfor bootstraps scope og bruges alene eller sammen med andre bootstrap elementer.</p>
+                        <h3 id="subListsTaxCard" class="h3--guide">Skattekort (TastSelv)</h3>
+                        <p>Standard <code>dl</code> har højrestillet tekst i <code>dt</code>. Dette laves om til venstrestillet  i <code>dt</code> ved brug af <code>.skts-dl-horizontal-left</code>.</p>
+                        <p>Standard <code>dl</code> har <code>dt</code> som fed skrift. Dette laves om til fed skrift på <code>dd</code> ved brug af <code>.skts-inverse</code>.</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <dl class="dl-horizontal skts-dl-horizontal-left skts-inverse">
+                                <dt>Trækprocent:</dt>
+                                <dd>40 %</dd>
+                                <dt>Fradrag pr. md./14 dg.:</dt>
+                                <dd>5.000 kr./ 2.500 kr.</dd>
+                                <dt>Hovedkort bruges af:</dt>
+                                <dd>TruckerKaj Tours</dd>
+                                <dt>B-skat:</dt>
+                                <dd>5.312 kr.</dd>
+                            </dl>
+                        </div>
+                        <h3 id="subCompsLess" class="h3--guide">Less filer</h3>
+                        <ul>
+                            <li><em>custom_bootstrap/skts-general.less</em></li>
+                        </ul>
+                        <h3 id="subCompsSkipLinks" class="h3--guide">Hidden tab links</h3>
+                        <p>Hidden tab links ligger i en <code>.skts-focus-links</code> container, og vises kun ved at tabbe sig igennem siden.</p>
+                        <p>Alle sider har muligheden for at springe (uden om menuen) enten til indholdet eller til en evt. fejlboks.</p>
+                        <p><code>.skts-focus-links</code> sættes på et <code>ul</code> som indeholder links i et <code>li</code>.</p>
+                        <p>Der indsættes et destinations link (der på siden hvor brugeren skal lande) med <code>.sr-only</code>.</p>
+                        <p>
+                            Alle skjulte links har en <code>href</code> som svarer til destinations linkets <code>id</code>.
+                            Destinations linket har også <code>tabindex="-1"</code>.
+                        </p>
+                        <div class="bs-docs-example" data-pretty>
+                            <ul class="skts-focus-links">
+                                <li><a href="#skts-skip-link-target-indhold">Gå til indhold</a></li>
+                                <li><a href="#skts-skip-link-target-fejl">Gå til fejlbesked</a></li>
+                            </ul>
+                            <!-- HER ER NORMALT EN MENU -->
+                            <div class="alert alert-danger" role="alert">
+                                <!-- Destinations link til fejloksen -->
+                                <a href="#" class="sr-only" id="skts-skip-link-target-fejl" tabindex="-1">Fejl er fundet på siden</a>
+                                Fejl boks med <a href="#" onclick="helper.focusField(document.getElementById('testServerFejl'));">fokus</a> links til fejlen.
+                            </div>
+                            <!-- Destinations link til start af indholdet -->
+                            <a href="#" class="sr-only" id="skts-skip-link-target-indhold" tabindex="-1">Start af indhold</a>
+                        </div>
+                        
+                        <h3 id="subCompsResult" class="h3--guide">Opgørelses resultat</h3>
+                        <div class="bs-docs-example" data-pretty>
+                            <p>Du skal have penge tilbage:<span class="skts-positive-integer skts-postfix-kr skts-postfix-text">3.668</span></p>
+                            <p>Du skal betale:<span class="skts-negative-integer skts-postfix-kr skts-postfix-text">3.668</span></p>
+                            <p>Du skal have penge tilbage:<span class="skts-positive-color skts-postfix-kr skts-postfix-text">3.668</span></p>
+                            <p>Du skal betale:<span class="skts-negative-color skts-postfix-kr skts-postfix-text">3.668</span></p>
+                        </div>
+                        <h3 id="subCompsLines" class="h3--guide">Lines</h3>
+                        <p>Eksempler på lines:</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="skts-row-underline">En sektion med en underlinje</div>
+                        </div>
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="skts-row-result">En  sektion med en dobbelt underlinje</div>
+                            <br />
+                            <div class="skts-row-result skts-row-result--large">En  sektion med en dobbelt underlinje (stort)</div>
+                        </div>
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="skts-row-topline">En sektion med en overlinje</div>
+                        </div>
+                        <h3 id="subCompsShowHide" class="h3--guide">Show/hide content</h3>
+                        <p>Show/hide funktionen opnås ved at tilføje <code>.skts-collapse</code> til en container, som indeholder et link og <code>.hidden</code> på den næste sibling (søskende).</p>
+                        <p>Den næste sibling (søskende) er container for det indhold, som vises/skjules.</p>
+                        <p>Funktionen bruges for det meste i lister (<a href="#subListIconsEx">se eksempel</a>).</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <p class="skts-collapse">
+                                <a aria-expanded="false" href="#">Show/hide sektionen</a>
+                            </p>
+                            <div class="hidden">
+                                <p>Her er sektionen som vises/skjules</p>
+                            </div>
+                        </div>
+                        <p>Tilføj en 'status pil' til show/hide sektionen ved brug af <code>.skts-collapse-arrow</code> på link containeren.</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <p class="skts-collapse skts-collapse-arrow">
+                                <a aria-expanded="false" href="#">Show/hide sektionen med pil</a>
+                            </p>
+                            <div class="hidden">
+                                <p>Her er sektionen som vises/skjules</p>
+                            </div>
+                        </div>
+                        <p>Sektionen vises pr. default hvis <code>.skts-expanded</code> sættes på link containeren.</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <p class="skts-collapse skts-collapse-arrow skts-expanded">
+                                <a aria-expanded="false" href="#">Show/hide sektionen, vist pr. default</a>
+                            </p>
+                            <div class="hidden">
+                                <p>Her er sektionen som vises/skjules. Den er vist pr. default.</p>
+                            </div>
+                        </div>
+                        <p><code>.skts-hidden-form-section</code> bruges hvis en sektion har en hvid baggrund uden border. Klassen bruges også til feltsøgning i Forskud og sættes på en overordnet header med skjulte underelementer.</p>
+                        <p>Et felt kan godt være udfyldt og skujlt ved brug af klassen <code>.skts-override-hidden</code>.</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="skts-collapse skts-collapse-arrow skts-header-section" id="list014">
+                                <a href="#" aria-expanded="false">Indkomst</a>
+                            </div>
+                            <div class="skts-hidden-form-section">
+                                <div class="hidden row skts-process-form-section">
+                                    <div class="col-sm-12">
+                                        <label id="sec_311Label" for="sec_311">Pensionslignende ydelser fra tidligere arbejdsgiver <span class="skts-section-nr"><span class="sr-only">felt nummer </span>(311)</span></label>
+                                        <a href="https://www.skat.dk/SKAT.aspx?oID=1536746" target="_blank" class="skts-rounded-icon">?<span class="sr-only">Viser vindue med hjælp</span></a>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="skts-postfix-kr-year">
+                                            <input type="text" id="sec_311" value="" class="form-control skts-input-currency" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hidden row skts-process-form-section">
+                                    <div class="col-sm-12">
+                                        <label id="sec_11Label" for="sec_11">Anden personlig indkomst, fx fra privat dagpleje <span class="skts-section-nr"><span class="sr-only">felt nummer </span>(11)</span></label>
+                                        <a href="https://www.skat.dk/SKAT.aspx?oID=1536747" target="_blank" class="skts-rounded-icon">?<span class="sr-only">Viser vindue med hjælp</span></a>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="skts-postfix-kr-year">
+                                            <input type="text" id="sec_11" value="" class="form-control skts-input-currency" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row hidden skts-process-form-section skts-override-hidden">
+                                    <div class="col-sm-12">
+                                        <p>
+                                            Test af override
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <div class="btn skts-btn-radio">
+                                                <input type="radio" name="rub_125" id="rub_125Yes">
+                                                <label for="rub_125Yes">Ja</label>
+                                            </div>
+                                            <div class="btn skts-btn-radio active">
+                                                <input type="radio" name="rub_125" id="rub_125No" checked="checked">
+                                                <label for="rub_125No">Nej</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="h4--guide">Show/hide elementer i en sektion</h4>
+                        <p>
+                            Funktionen tildeles et ”trigger” element med klassen ”skts-toggle-section”.
+                            Elementet <strong>skal</strong> have attributten ”data-section-selector”,
+                            hvor værdien er en jQuery selector på den sektion, som indeholder elementerne som skal skjules/vises
+                        </p>
+                        <p>
+                            Sektionen med elementer som skjules/vises kan indeholde hvad som helst.
+                            Elementer med klassen ”skts-toggle-hide” bliver vist/skjult af ”trigger” elementet.
+                            Elementerne kan skjules fra starten med bootstrap klassen ”hide”.
+                        </p>
+                        <p>”Trigger” elementet tildeles klassen <code>.selected</code> klassen (kan styles med <code>.skts-toggle-section.selected</code>) når elementerne vises.</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <p><a href="#" class="skts-toggle-section" data-section-selector="#testToggleSection">Toggle sektion</a></p>
+                            <div id="testToggleSection">
+                                <p class="hidden skts-toggle-hidden">Jeg er skjult</p>
+                                <p class="">Jeg er ikke skjult</p>
+                                <p class="hidden skts-toggle-hidden">Jeg er også skjult</p>
+                                <p class="">Jeg er heller ikke skjult</p>
+                            </div>
+                        </div>
+                        <h3 id="subCompsHiddenInput" class="h3--guide">Show/hide status</h3>
+                        <p>Hvis en <code>.skts-collapse</code> sektion har en <code>id</code>, gemmes show/hide status som en <code>input type="hidden"</code>. Feltets <code>id</code> er en sammensætning af <code>appVars.expandedHiddenFieldPrefix</code> (fra <em>main.js</em>) og sektionens <code>id</code>.</p>
+                        <p><code>value</code> på det skjulte felt sættes til <code>true</code> når sektionen vises, og til <code>false</code> når sektionen skjules.</p>
+                        <p>Feltet tilføjes lige før slutningen af den <code>form</code> som listen er i.</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <input type="hidden" id="expandedStatusFor_list014" name="list014" value="false">
+                        </div>
+                        <hr />
+                        <!--
+                            ** Alerts **
+                        -->
+                        <h2 id="subAlertsSection" class="h2--guide">Alerts</h2>
+                        <h3 id="subAlertsLess" class="h3--guide">Less filer</h3>
+                        <ul>
+                            <li><em>custom_bootstrap/alerts-skts.less</em></li>
+                            <li><em>custom_bootstrap/buttons-skts.less</em></li>
+                        </ul>
+                        <h3 id="subAlertsInfo" class="h3--guide">Info</h3>
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="alert alert-info" role="alert">
+                                <h2>Vær opmærksom på</h2>
+                                <p>at vi nu har slettet din indberetning af private renter til 100270-0406 på <span class="skts-postfix-kr skts-postfix-text" >5.000</span></p>
+                            </div>
+                        </div>
+                        <h3 id="subAlertsWarning" class="h3--guide">Warning</h3>
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="alert alert-warning text-center" role="alert">
+                                <p>
+                                    Indholdstekst med <a href="#">link</a>
+                                </p>
+                                <button type="button" class="btn btn-default">Default button</button>
+                            </div>
+                        </div>
+                        <h3 id="subAlertsAlert" class="h3--guide">Error</h3>
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="alert alert-danger" role="alert">
+                                <p>
+                                    Indholdstekst med <a href="#">link</a>
+                                </p>
+                                <button type="button" class="btn btn-primary">Primary button</button>
+                            </div>
+                        </div>
+                        <hr />
+                        <!--
+                            ** Ikoner **
+                        -->
+                        <h2 id="subIconsSection" class="h2--guide">Icons</h2>
+                        <h3 id="subIconsLess" class="h3--guide">Less filer</h3>
+                        <ul>
+                            <li><em>custom/skts-icons.less</em></li>
+                        </ul>
+                        
+                        <h3 id="subIconsHelpInfoIcons" class="h3--guide">Info og hjælpe icons</h3>
+                        <p>Info og hjælpe ikoner opnås ved at bruge <code>.skts-rounded-icon</code>. En forklaring af ikonet inkluderes til skærmlæserne ved brug af bootstraps <code>.sr-only</code>.</p>
+                        <p>Ikonernes tekst ændres efter behov.</p>
+                        <p>Ikonent kan også bruge en alternativ visning med klassen <code>skts-rounded-icon--alt</code>.</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <p>
+                                <span class="skts-rounded-icon">
+                                    #
+                                    <span class="sr-only">Forklaring af ikonet</span>
+                                </span>
+                            </p>
+                            <p>
+                                <span class="skts-rounded-icon">
+                                    ?
+                                    <span class="sr-only">Forklaring af ikonet</span>
+                                </span>
+                            </p>
+                            <p>
+                                <span class="skts-rounded-icon">
+                                    i
+                                    <span class="sr-only">Forklaring af ikonet</span>
+                                </span>
+                            </p>
+                            <p>
+                                <span class="skts-rounded-icon skts-rounded-icon--alt">
+                                    i
+                                    <span class="sr-only">Forklaring af ikonet</span>
+                                </span>
+                            </p>
+                        </div>
+                        <h3 id="subIconsButton" class="h3--guide">Icon buttons</h3>
+                        <p>Disse knapper bruges til visning af undersider. En knap tegnes både med klassen <code>.skts-theme-icon</code> og en valid <code>skts-icon-*</code> klasse:<p>
+                            <ul>
+                                <li>
+                                    <code>.skts-icon-koersel</code> (kørselsfradrag)
+                                </li>
+                                <li>
+                                    <code>.skts-icon-underhold</code> (underholdsbidrag)
+                                </li>
+                                <li>
+                                    <code>.skts-icon-oevrige-renter</code> (øvrige renter)
+                                </li>
+                                <li>
+                                    <code>.skts-icon-io</code> (international organisation)
+                                </li>
+                                <li>
+                                    <code>.skts-icon-rf</code> (renter og formuer)
+                                </li>
+                                <li>
+                                    <code>.skts-icon-ue</code> (udenlandsk ejendom)
+                                </li>
+                                <li>
+                                    <code>.skts-icon-up</code> (udenlandsk pension)
+                                </li>
+                                <li>
+                                    <code>.skts-icon-ul</code> (udenlandsk lønindkomst)
+                                </li>
+                                <li>
+                                    <code>.skts-icon-ua</code> (udenlandske aktier og investeringsbeviser)
+                                </li>
+                                <li>
+                                    <code>.skts-icon-uv</code> (udenlandsk virksomhed)
+                                </li>
+                                <li>
+                                    <code>.skts-icon-ai</code> (andre udenlandske indkomster)
+                                </li>
+                            </ul>
+                        <p>Ikon knapperne sættes op med en CSS tabel (<code>.skts-css-table .skts-css-table--icon-text</code>), som har to kolonner (<code>.skts-t-col</code>). Ikon kolonnen skjules på mindre skærme med klassen <code>.hidden-xs</code>.</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a href="#" class="skts-highlighted-box js-form-submit-validate">
+                                        <div class="skts-css-table skts-css-table--icon-text">
+                                            <div class="skts-t-col hidden-xs">
+                                                <div class="skts-theme-icon skts-icon-koersel"></div>
+                                            </div>
+                                            <div class="skts-t-col">
+                                                <h3>Kørselsberegner</h3>
+                                                <p>indberet eller ret i dit kørselsfradrag (51)</p>
+                                                <h3 class="skts-postfix-kr skts-postfix-text">0</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="#" class="skts-highlighted-box js-form-submit">
+                                        <div class="skts-css-table skts-css-table--icon-text">
+                                            <div class="skts-t-col hidden-xs">
+                                                <div class="skts-theme-icon skts-icon-oevrige-renter"></div>
+                                            </div>
+                                            <div class="skts-t-col">
+                                                <h3>Øvrige renter</h3>
+                                                <p>indberet eller ret i dine renteforhold (44)</p>
+                                                <h3 class="skts-postfix-kr skts-postfix-text">0</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 id="subSKATIcons" class="h3--guide">SKAT icons</h3>
+                        <p>SKAT icons kan alignes med enten klassen <code>.skts-icon--align-left</code> eller <code>.skts-icon--align-right</code></p>
+                        <div class="bs-docs-example" data-pretty>
+                            <p>
+                                <a href="#"><span class="skts-icon skts-icon--print skts-icon--align-left"></span>Udskriv</a>
+                            </p>
+                            <p>
+                                <a href="#">Udskriv<span class="skts-icon skts-icon--print skts-icon--align-right"></span></a>
+                            </p>
+                        </div>
+                        <p><a href="design-ikoner.html">Se listen over SKAT icons i vores ikonsbibliotek</a></p>
+                        <hr />
+                        <!--
+                            ** Wizard **
+                        -->
+                        <h2 id="subWizardSection" class="h2--guide">Wizard</h2>
+                        <h3 id="subWizardLess" class="h3--guide">Less filer</h3>
+                        <ul>
+                            <li><em>custom/skts-wizard.less</em></li>
+                        </ul>
+                        <h3 id="subWizardStructure" class="h3--guide">Setup</h3>
+                        <p><code>.skts-wizard</code> bruges til begrænsning af indholdet.</p>
+                        <p><code>.skts-wizard-white</code> bruges når et område skal fremhæves.</p>
+                        <p><code>.skts-wizard-buttons</code> bruges til visning af lige knapper side om side (sammen med <code>.pull-left</code> og <code>.pull-right</code>.</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <header>
+                                <a href="#" class="skts-back">Tilbage</a>
+                                <div class="skts-logo">
+                                    <a href="index.html">
+                                        <span class="sr-only">Gå til forside</span>
+                                    </a>
+                                </div>
+                                <a class="skts-login pull-right" href="https://www.skat.dk/SKAT.aspx?oId=69534">Log af</a>
+                            </header>
+                            <div class="container skts-top-pad-1">
+                                <div class="skts-wizard">
+                                    <h1>Eksempel på forsiden af en wizard</h1>
+                                    <p><span class="skts-rounded-icon">?<span class="sr-only">Afsnittet nedenunder omhandler</span></span>Rubrik xx</p>
+                                    <p><button type="button" class="btn btn-default btn-lg skts-full-width">Knap 1</button></p>
+                                    <p><button type="button" class="btn btn-default btn-lg skts-full-width">Knap 2</button></p>
+
+                                    <h1>Eksempel på indholdside i en wizard</h1>
+                                    <form id="mainForm4" action="#" method="get" autocomplete="off">
+                                        <ul class="skts-navbar-wizard">
+                                            <li class="active"><span>Punkt 1</span></li>
+                                            <li><span>Punkt 2</span></li>
+                                        </ul>
+                                        <h2>Side titel</h2>
+                                        <div class="skts-text-right-fixed skts-collapse skts-collapse-arrow">
+                                            <a aria-expanded="false" href="#">Vis noget tekst</a>
+                                        </div>
+                                        <div class="skts-wizard-white hidden">
+                                            <p>Noget tekst</p>
+                                        </div>
+                                        <div class="clearfix skts-wizard-buttons">
+                                            <input type="submit" id="prevStep" class="btn btn-primary pull-right skts-validate" value="Næste">
+                                            <button type="button" id="nextStep" class="btn btn-default skts-btn-secondary pull-left" value="Tilbage" onclick="window.history.back()">Tilbage</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <!--
+                            ** Miscellaneous **
+                        -->
+                        <h2 id="subMiscSection" class="h2--guide">Miscellaneous</h2>
+                        <h3 id="subMiscLess" class="h3--guide">Less filer</h3>
+                        <ul>
+                            <li><em>custom/skts-general.less</em></li>
+                        </ul>
+                        <h3 id="subMissFuncs" class="h3--guide">Fuctions</h3>
+                        <h4 class="h4--guide">Fokus på et felt når siden indlæses</h4>
+                        <p>Et felt får fokus, når siden indlæses ved at bruge klassen <code>.js-set-focus</code> på sig selv.</p>
+                        <h3 id="subMiscClasses" class="h3--guide">Classes</h3>
+                        <p><code>.skts-normal-text</code> bruges til visning af standard tekst</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <h3>Nyt skattekort<span class="skts-normal-text"> (gælder fra 1. september 2015)</span></h3>
+                        </div>
+                        <p><code>.skts-top-pad-1</code> tilføjer <code>padding-top: 1em</code> til et element</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <div>Noget tekst</div>
+                            <div class="skts-top-pad-1">
+                                Her er et element med lidt mere luft i toppen
+                            </div>
+                        </div>
+                        <p><code>.skts-text-right-fixed</code> højrestiller tekst på tværs af skærmstørrelser</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <p class="text-right">
+                                Denne tekst er højrestillet på de mellem og store skærme og venstrestillet på de små og ekstra små skærme.
+                            </p>
+                            <p class="skts-text-right-fixed">
+                                Denne tekst bliver ved med at være højrestillet.
+                            </p>
+                        </div>
+                        <p><code>.skts-centered-padding</code> tilføjer padding til en sektion.</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="skts-centered-padding">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                                </p>
+                            </div>
+                        </div>
+                        <p><code>skts-heading-link</code> bruges når et link skal ligne den overskrift den er i</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <h3 class="skts-heading-link"><a href="forskud_ret.html">Forskudsopgørelse<span class="sr-only"> Gå til Forskudsopgørelse</span></a></h3>
+                        </div>
+                        <p><code>.skts-important-text</code> bruges når teksten, som beskriver en total i et regnestykke skal vises</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="clearfix">
+                                <span class="pull-left skts-important-text">Label til regnestykket</span>
+                                <span class="pull-right skts-row-underline skts-important-text skts-postfix-kr skts-postfix-text skts-postfix-text">771</span>
+                            </div>
+                        </div>
+                        <p><code>.skts-divider</code> bruges til visuelt opbrydning af elementer</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <div>Element 1</div>
+                            <hr class="skts-divider" />
+                            <div>Element 2</div>
+                        </div>
+                        <p><code>.js-close-window</code> bruges når et element skal lukke vinduet <code>onclick</code>. Husk at et vindue kun kan lukkes via JavaScript, hvis det er åbnet fra et link på samme site</p>
+                        <p><code>.skts-important-text</code> bruges når teksten skal fremhæves</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="clearfix">
+                                <span class="pull-left skts-important-text">Label til regnestykket</span>
+                                <span class="pull-right skts-important-text skts-postfix-kr skts-postfix-text skts-postfix-text">771</span>
+                            </div>
+                        </div>
+                        <hr />
+                        <!--
+                            ** Arkiv **
+                        -->
+                        <h2 id="subArchive" class="h2--guide">Arkiv</h2>
+                        <h3 id="subMenusLeftMenu" class="h3--guide">Venstremenu</h3>
+                        <p>Venstremenuen er opbygget som en liste. Menuen har en <code>h2</code> overskrift.</p>
+                        <p>Hele venstremenuen  placeres i en container med <code>.visible-lg-block</code>. Venstremenuen vises kun på de store skærme.</p>
+                        <p>Markeringen af et aktivt menupunkt foretages med klassen <code>.active</code> på <code>a</code>.</p>
+                        <p>
+                            Venstremenuen tildeles klassen <code>.skts-left-nav</code>. Venstremenulisten kopieres automatisk under <code>.active</code> <code>li</code> elementet i top navbar (<code>.navbar-default</code>).
+                            Den kopierede venstremenuliste vises på mellem, små og ekstra små skærme (når den originale venstremenu skjules).
+                        </p>
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="row">
+                                <div class="col-md-3 visible-lg-block">
+                                    <div class="skts-left-nav">
+                                        <h3>Forskudsopgørelse</h3>
+                                        <ul class="nav">
+                                            <li><a href="" class="active">Se personlige skatteoplysninger<span class="sr-only"> Åbner nyt vindue</span></a></li>
+                                            <li><a href="">Søg i indkomstoplysninger<span class="sr-only"> Åbner nyt vindue</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 id="subMenusGlobalMenu" class="h3--guide">Globalmenu</h3>
+                        <p>Globalmenuen bruges til navigation, som ikke er en del af den normale informations arkitektur. Den er opbygget som en liste.</p>
+                        <p>Menulisten sættes i <code>header</code> med <code>.nav .navbar .visible-md-block .visible-lg-block .skts-glonal-nav</code> container. Den vises kun på mellem og store skærme.</p>
+                        <p>
+                            Globalmenuen tildeles klassen <code>.skts-global-nav</code>. Globalmenulisten kopieres automatisk efter den første <code>ul</code> i top navbar.
+                            Den kopierede globalmenuliste vises kun på små og ekstra små skærme (når den originale globalmenu skjules).
+                        </p>
+                        <div class="bs-docs-example" data-pretty>
+                            <header>
+                                <ul class="nav navbar-nav visible-md-block visible-lg-block skts-global-nav">
+                                    <li><a href="">English</a></li>
+                                    <li><a href="">Test</a></li>
+                                </ul>
+                            </header>
+                            <div class="navbar navbar-default" role="navigation">
+                                <div class="container skts-top-pad-1">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span>Menu</span>
+                                        </button>
+                                    </div>
+                                    <div class="navbar-collapse collapse">
+                                        <ul class="nav navbar-nav">
+                                            <li><a href="">Forside</a></li>
+                                            <li><a href="">Årsopgørelse</a></li>
+                                            <li><a href="">Forskudsopgørelse</a></li>
+                                            <li><a href="">Betaling</a></li>
+                                        </ul>
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li><a href="">Kontakt</a></li>
+                                            <li><a href="">Profil</a></li>
+                                            <li><a href="">Hjælp<span class="sr-only"> åbner nyt vindue</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 id="subButtonsOLD" class="h3--guide">Forældede knapper</h3>
+                        <h4 class="h4--guide">Info knap</h4>
+                        <div class="bs-docs-example" data-pretty>
+                            <button type="button" class="btn btn-info">Info knap</button>
+                        </div>
+                        <h4 class="h4--guide">NemID knap</h4>
+                        <div class="bs-docs-example" data-pretty>
+                            <button type="button" class="btn skts-btn-nemid">NemID knap</button>
+                        </div>
+                        <h3 id="subTablesResp" class="h3--guide">Responsiv bootstrap tabel</h3>
+                        <p>Bootstraps tabel bruger <code>.table</code> på tabellen.</p>
+                        <p>Tabellen laves responsive ved at placere den i en <code>.table-responsive</code> container.</p>
+                        <p>Tabellen vises i en overflow <code>div</code> når siden vises på de små og ekstra små skærme. Når tabellen vises med overflow får alle kolonner (undtagen den første) <code>nowrap</code>.</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <caption class="sr-only">Her er en tabel caption som er skjult</caption>
+                                    <thead>
+                                        <tr>
+                                            <td><br /></td>
+                                            <td>Før AM-bidrag</td>
+                                            <td>AM-bidrag</td>
+                                            <td>Efter AM-bidrag</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Lønindkomst mv.</td>
+                                            <td>248.700 kr.</td>
+                                            <td>19.896 kr.</td>
+                                            <td>228.804 kr.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <hr />
+                        <h3 id="subTablesCalc" class="h3--guide">Beregningstabel</h3>
+                        <p>
+                            Denne tabel har:
+                        </p>
+                        <ul>
+                            <li>Ingen borders</li>
+                            <li>Ingen venstre padding på den første kolonne</li>
+                            <li>Ingen højre padding på den sidste kolonne</li>
+                            <li>Normale tabel overskrifter</li>
+                            <li>Højrestillet tekst (undtagen første kolonne)</li>
+                        </ul>                    
+                        <p>En beregningstabel opnås med <code>.skts-table-calculation</code> og bootstraps <code>.table</code>.</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <table class="table skts-table-calculation">
+                                <caption class="sr-only">Her er en tabel caption som er skjult</caption>
+                                <thead>
+                                    <tr>
+                                        <td><br /></td>
+                                        <td>Før AM-bidrag</td>
+                                        <td>AM-bidrag</td>
+                                        <td>Efter AM-bidrag</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Lønindkomst mv.</td>
+                                        <td>248.700 kr.</td>
+                                        <td>19.896 kr.</td>
+                                        <td>228.804 kr.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h3 id="subTablesRtl" class="h3--guide">Højrestillet tabel</h3>
+                        <p>Tabellen højrestilles ved at sætte en <code>table</code> i en <code>.skts-table-align-right</code> container.</p>
+                        <p>Denne tabel bruges typisk sammen med en responsiv beregningstabel.</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="table-responsive skts-table-align-right">
+                                <table class="table skts-table-calculation">
+                                    <caption class="sr-only">Her er en tabel caption som er skjult</caption>
+                                    <thead>
+                                        <tr>
+                                            <td><br /></td>
+                                            <td>Før AM-bidrag</td>
+                                            <td>AM-bidrag</td>
+                                            <td>Efter AM-bidrag</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Lønindkomst mv.</td>
+                                            <td>248.700 kr.</td>
+                                            <td>19.896 kr.</td>
+                                            <td>228.804 kr.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <h3 id="subIconsTopIcons" class="h3--guide">Top icons</h3>
+                        <p>Både print og PDF icons laves som en svg baggrund.</p>
+                        <p>Icons placeres i en <code>.skts-top-icons pull-right</code> container. Denne container sørger for højrestilling på store og mellem skærme, og venstrestilling på små og ekstra små skærme.</p>
+                        <p>PDF links kan vise en confirm boks når en bruger klikker på linket. TIlføjelsen af <code>.js-pdf-warning</code> på <code>a</code> elementet sørger for advarslen. Teksten i confirm boksen ligger i <em>main.js</em> som <code>appTexts.pdfWarning</code></p>
+                        
+                        <div class="bs-docs-example" data-pretty>
+                            <div class="clearfix">
+                                <div class="pull-right">
+                                    <p>
+                                        <a href="#" class="js-print"><span class="skts-icon skts-icon--print skts-icon--align-left"></span>Udskriv<span class="sr-only">Åbner nyt vindue</span></a>
+                                    </p>
+                                    <p>
+                                        <a href="#" class="js-pdf-warning"><span class="skts-icon skts-icon--pdf skts-icon--align-left"></span>Pdf<span class="sr-only">Åbner nyt vindue</span></a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 id="subIconsCalcIcon" class="h3--guide">Beregnings icon</h3>
+                        <p>Et beregnings ikon indsættes med <code>.skts-calculator-icon</code>.</p>
+                        <div class="bs-docs-example" data-pretty>
+                            <label id="sec_51Label">Label tekst</label>
+                            <span class="skts-calculator-icon"><a href="#"><br><span class="sr-only">Beskrivelse af linkets funktion</span></a></span>
+                        </div>
+                        
+						<hr/>
+						<h2>Læs mere</h2>
+                        <div class="well skts-nav-bottom">
+                            <ul class="nav">
+                                <li><a href="udvikling-framework.html">Framework udvikling</a></li>
+                                <li><a href="design-principper.html">Designprincipper</a></li>
+                                <li><a href="design-elementer.html">Brug af elementer</a></li>
+                                <li><a href="krav-tekster.html">Tekster</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="skts-nav-guide hidden-xs hidden-sm skts-top-pad-1">
+                            <h2>Elements</h2>
+                            <ul class="nav">
+                                <li>
+                                    <a href="#subStructureSection">Setup</a>
+                                    <ul class="nav level-2">
+                                        <li><a href="#subStructurePageStructure">Page setup</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#subHeaderSection">Header</a>
+                                    <ul class="nav level-2">
+                                        <li><a href="#subHeaderLogo">Skat logo</a></li>
+                                        <li><a href="#subHeaderLogIn">Log on/off</a></li>
+                                        <li><a href="#subHeaderSearch">Global search</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#subMenusSection">Navigation</a>
+                                    <ul class="nav level-2">
+                                        <li><a href="#subMenusBurgerMenu">Burger menu</a></li>
+                                        <li><a href="#subMenusTopMenu">Top navbar</a></li>
+                                        <li><a href="#subMenusBreadcrumb">Breadcrumb</a></li>
+                                        <li><a href="#subMenusTransport">Transport links</a></li>
+                                        <li><a href="#subMenusWizard">Progress bar</a></li>
+                                        <li><a href="#subMenusTabs">Tabs</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#subBtsSection">Buttons</a>
+                                    <ul class="nav level-2">
+                                        <li><a href="#subBtsTypes">Button types</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#subFormsSection">Forms</a>
+                                    <ul class="nav level-2">
+                                        <li><a href="#subFormsSubmit">Form submit</a></li>
+                                        <li><a href="#subFormsPostfix">Tekstinput postfix</a></li>
+                                        <li><a href="#subFormsClientVal">Clientside validation</a></li>
+                                        <li><a href="#subFormsReqLabel">Required</a></li>
+                                        <li><a href="#subFormsRadio">Radio buttons</a></li>
+                                        <li><a href="#subFormsMsg">Input message</a></li>
+                                        <li><a href="#subFormsServerError">Server error</a></li>
+                                        <li><a href="#subFormsLoading">Page loading</a></li>
+                                        
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#subTablesSection">Tables</a>
+                                    <ul class="nav level-2">
+                                        <li><a href="#subTablesCss">CSS table</a></li>
+                                        <li><a href="#subTablesCssList">List icon table</a></li>
+                                        <li><a href="#subTablesBlock">Block table</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#subCompsSection">Components</a>
+                                    <ul class="nav level-2">
+                                        <li><a href="#subListsTaxCard">Skattekort (TastSelv)</a></li>
+                                        <li><a href="#subCompsSkipLinks">Hidden tab links</a></li>
+                                        <li><a href="#subCompsResult">Opgørelses resultat</a></li>
+                                        <li><a href="#subCompsLines">Lines</a></li>
+                                        <li><a href="#subCompsShowHide">Show/hide content</a></li>
+                                        <li><a href="#subCompsHiddenInput">Show/hide status</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#subAlertsSection">Alerts</a>
+                                    <ul class="nav level-2">
+                                        <li><a href="#subAlertsInfo">Info</a></li>
+                                        <li><a href="#subAlertsWarning">Warning</a></li>
+                                        <li><a href="#subAlertsAlert">Error</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#subIconsSection">Icons</a>
+                                    <ul class="nav level-2">
+                                        <li><a href="#subIconsHelpInfoIcons">Info/hjælpe icons</a></li>
+                                        <li><a href="#subIconsButton">Icon buttons</a></li>
+                                        <li><a href="#subSKATIcons">SKAT icons</a></li>                                        
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#subWizardSection">Wizard</a>
+                                    <ul class="nav level-2">
+                                        <li><a href="#subWizardStructure">Setup</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#subMiscSection">Miscellaneous</a>
+                                    <ul class="nav level-2">
+                                        <li><a href="#subMissFuncs">Functions</a></li>
+                                        <li><a href="#subMiscClasses">Classes</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#subArchive">Archive</a>
+                                    <ul class="nav level-2">
+                                        <li><a href="#subMenusLeftMenu">Venstremenu</a></li>
+                                        <li><a href="#subMenusGlobalMenu">Globalmenu</a></li>
+                                        <li><a href="#subButtonsOLD">Forældet knapper</a></li>
+                                        <li><a href="#subTablesResp">Responsiv bootstrap tabel</a></li>
+                                        <li><a href="#subTablesCalc">Beregningstabel</a></li>
+                                        <li><a href="#subTablesRtl">Højrestillet tabel</a></li>
+                                        <li><a href="#subIconsTopIcons">Top icons</a></li>
+                                        <li><a href="#subIconsCalcIcon">Beregnings icon</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skts-push"></div>
+        </div>
+        <footer>
+            <div class="row">
+                <div class="col-sm-4 text-left hidden-xs" >
+                    <div class="skts-logo-small"><span class="sr-only">SKAT logo</span></div>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <a href="https://www.skat.dk/SKAT.aspx?oId=967" target="_blank">Kontakt SKAT</a>
+                </div>
+                <div class="col-sm-4 text-right hidden-xs"> 
+                    <a target="_blank" href="https://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="sr-only"> Åbner nyt vindue</span></a>
+                </div>
+            </div>
+        </footer>
+    <script src="sktscommon/js/skat.min.js"></script>
+    <script src="sktscommon/js/prototype-workflows.min.js"></script>
+    <!--ADDED FOR GUIDE PURPOSES ONLY -->
+    <script src="assets/js/prettify.js"></script>
+    <script src="assets/js/guide.js"></script>
+</body>
+</html>

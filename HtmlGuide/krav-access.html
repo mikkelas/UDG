@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="da"> 
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Udviklings- og designguide - SKAT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link href="sktscommon/css/skat.min.css" rel="stylesheet">
+		<link href="assets/css/guide.css" rel="stylesheet" type="text/css" />
+    </head>
+	<body data-spy="scroll">
+        <div class="skts-wrap">
+            <header class="container-fluid header-show">
+                <div class="row">
+                    <div class="col-xs-3 text-center skts-bg-main-1">
+                        <div class="skts-header-item">
+                            <button type="button" class="skts-menu-button js-create-nav-modal" data-toggle="modal" data-target="#sktsNavModal" data-nav-link-selector="#sktsTopNavLinks">
+                                <span class="sr-only">Vis/skjul navigation</span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                            </button>
+                            <div class="navbar-collapse hidden" id="sktsTopNavLinks">
+                                 <ul>
+                                    <li><a href="index.html">Forside</a></li>
+                                    <li><a href="design.html">Design</a></li>
+                                    <li><a href="udvikling.html">Udvikling</a></li>
+                                    <li><a href="brugeroplevelser.html">Brugeroplevelser</a></li>
+                                    <li><a href="krav.html" class="active">Non funktionelle krav</a></li>
+                                    <li><a href="changelog.html">Changelog</a></li>
+                                    <li><a href="kontakt.html">Kontakt</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 text-center skts-bg-main-2">
+                        <div class="skts-header-item skts-header-item--logo">
+                            <a class="skts-logo-responsive" href="index.html">
+                                <span class="sr-only">Gå til forside</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 text-center skts-bg-main-4">
+                        <div class="skts-header-item">
+                            <a href="index.html">UDG</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="skts-breadcrumb-container">
+                <ol class="breadcrumb container">
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="krav.html">Krav</a></li>
+                </ol>
+            </div>
+    		<div class="container skts-top-pad-1">
+    			<div class="row">
+    				<div class="col-md-8" id="mainContent">
+    					<h1 class="h1--guide">Tilgængelighedskrav</h1>
+							<p>Det er et erklæret mål, at SKATs webløsninger skal være tilgængelige for flest mulige mennesker i flest mulige situationer og fra flest mulige teknologiske platforme. Alle nyudviklede og redesignede webløsninger skal derfor leve op til WCAG 2.0 retningslinjer på niveau AA. Nedenfor findes et resume af retningslinjerne. Den fulde fuldstændige oversættelse kan findes på: <a target="_blank" href="http://www.w3.org/Translations/WCAG20-da/">http://www.w3.org/Translations/WCAG20-da/</a></p> 
+							<p>Retningslinjerne omhandler:</p>
+    					<h2 class="h2--guide" id="subP1">Opfattelig (princip 1)</h2>
+						<p>Information og brugergrænsefladekomponenter skal præsenteres for brugere på måder, de kan opfatte.</p>
+						<ul>
+							<li>1.1 Tekstbaserede alternativer: Der skal anvendes tekstbaserede alternativer til enhver form for ikke-tekstbaseret indhold, således at det kan ændres til de formater, som brugerne har behov for, f.eks. stor skrift, punktskrift, tale, symboler eller enklere sprog.</li>
+							<li>1.2 Tidsafhængige medier: Der skal leveres alternativer til tidsafhængige medier.</li>
+							<li>1.3 Tilpasset: Indhold skal udformes, så det kan præsenteres på forskellige måder (for eksempel med enklere layout), uden at information og struktur går tabt.</li>
+							<li>1.4 Adskillelig: Det skal gøres lettere for brugere at se og høre indhold, herunder at adskille forgrunden fra baggrunden.</li>
+						</ul>
+						<hr/>
+    					<h2 class="h2--guide" id="subP2">Anvendelig (princip 2)</h2>
+						<p>Brugergrænsefladekomponenter og navigation skal kunne anvendes.</p>
+						<ul>
+							<li>2.1 Tilgængelig via tastatur: Alle funktioner skal kunne benyttes via et tastatur.</li>
+							<li>2.2 Passende tid: Giv brugerne tilstrækkelig tid til at læse og anvende indhold.</li>
+							<li>2.3 Anfald: Indhold må ikke designes på en måde, der vides at kunne forårsage (epileptiske) anfald.</li>
+							<li>2.4 Navigerbar: Brugerne skal hjælpes med at navigere, finde indhold og afgøre, hvor de befinder sig.</li>
+						</ul>
+    					<hr/>
+    					<h2 class="h2--guide" id="subP3">Forståelig (princip 3)</h2>
+						<p>Information og betjening af brugergrænsefladen skal være forståelig.</p>
+						<ul>
+							<li>3.1 Læselig: Tekstbaseret indhold skal gøres læseligt og forståeligt.</li>
+							<li>3.2 Forudsigelig: Websider skal præsenteres og fungere på forudsigelige måder.</li>
+							<li>3.3 Inputhjælp: Brugere skal have hjælp til at undgå og rette fejl.</li>
+						</ul>
+     					<hr/>
+    					<h2 class="h2--guide" id="subP4">Robust (princip 4)</h2> 
+						<p>Indhold skal være robust nok til at kunne anvendes på stabil vis af en bred vifte af brugeragenter, herunder kompenserende teknologier.</p>
+						<ul>
+							<li>4.1 Læselig: Tekstbaseret indhold skal gøres læseligt og forståeligt.</li>
+							<li>4.2 Forudsigelig: Websider skal præsenteres og fungere på forudsigelige måder.</li>
+							<li>4.3 Inputhjælp: Brugere skal have hjælp til at undgå og rette fejl.</li>
+						</ul>
+    				</div>
+                    <div class="col-md-4">
+                        <div class="skts-nav-guide hidden-xs hidden-sm skts-top-pad-1 affix-top">
+                            <h2>Tilgængelighedskrav</h2>
+                            <ul class="nav">
+                                <li><a href="#subP1">Opfattelig</a></li>
+                                <li><a href="#subP2">Anvendelig</a></li>
+                                <li><a href="#subP3">Forståelig</a></li>
+                                <li><a href="#subP4">Robust</a></li>
+                            </ul>
+                        </div>
+                    </div>
+    			</div>
+    		</div>
+            <div class="skts-push"></div>
+        </div>
+        <footer>
+            <div class="row">
+                <div class="col-sm-4 text-left hidden-xs" >
+                    <div class="skts-logo-small"><span class="sr-only">SKAT logo</span></div>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <a href="https://www.skat.dk/SKAT.aspx?oId=967" target="_blank">Kontakt SKAT</a>
+                </div>
+                <div class="col-sm-4 text-right hidden-xs"> 
+                    <a target="_blank" href="https://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="sr-only"> Åbner nyt vindue</span></a>
+                </div>
+            </div>
+        </footer>
+		<script src="sktscommon/js/vendor/jquery-3.2.1.min.js"></script>
+		<script src="sktscommon/js/skat.min.js"></script>
+		<script src="sktscommon/js/prototype-workflows.min.js"></script>
+		<!--ADDED FOR GUIDE PURPOSES ONLY -->
+		<script src="assets/js/prettify.js"></script>
+		<script src="assets/js/guide.js"></script>
+	</body>
+</html>

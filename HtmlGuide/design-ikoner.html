@@ -1,0 +1,1785 @@
+﻿<!DOCTYPE html>
+<html lang="da"> 
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Udviklings- og designguide - SKAT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link href="sktscommon/css/skat.min.css" rel="stylesheet">
+		<link href="assets/css/guide.css" rel="stylesheet" type="text/css" />
+    </head>
+	<body data-spy="scroll">
+        <div class="skts-wrap">
+            <header class="container-fluid header-show">
+                <div class="row">
+                    <div class="col-xs-3 text-center skts-bg-main-1">
+                        <div class="skts-header-item">
+                            <button type="button" class="skts-menu-button js-create-nav-modal" data-toggle="modal" data-target="#sktsNavModal" data-nav-link-selector="#sktsTopNavLinks">
+                                <span class="sr-only">Vis/skjul navigation</span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                            </button>
+                            <div class="navbar-collapse hidden" id="sktsTopNavLinks">
+                                 <ul>
+                                    <li><a href="index.html">Forside</a></li>
+                                    <li><a href="design.html" class="active">Design</a></li>
+                                    <li><a href="udvikling.html">Udvikling</a></li>
+                                    <li><a href="brugeroplevelser.html">Brugeroplevelser</a></li>
+                                    <li><a href="krav.html">Non funktionelle krav</a></li>
+                                    <li><a href="changelog.html">Changelog</a></li>
+                                    <li><a href="kontakt.html">Kontakt</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 text-center skts-bg-main-2">
+                        <div class="skts-header-item skts-header-item--logo">
+                            <a class="skts-logo-responsive" href="index.html">
+                                <span class="sr-only">Gå til forside</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 text-center skts-bg-main-4">
+                        <div class="skts-header-item">
+                            <a href="index.html">UDG</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="skts-breadcrumb-container">
+                <ol class="breadcrumb container">
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="design.html">Design</a></li>
+                </ol>
+            </div>
+    		<div class="container skts-top-pad-1">
+    			<div class="row">
+    				<div class="col-md-10 col-md-offset-1" id="mainContent">
+    					<h1 class="h1--guide" id="subMethods">Ikoner</h1>
+						<p>Her på siden finder du SKATs ikonbibliotek. Biblioteket er opdelt i to sektioner: SKATs standardikoner og Specialikoner. Det vil oftest være SKATs standardikoner, der skal bruges i løsningerne. Ikonerne skal bruges ensartet på tværs af løsningerne. Er du i tvivl eller har brug for sparring, så kontakt evt. nogen, der har et overblik over ikonerne - fx Digital kommunikation og design.</p>
+						<p>Alle ikoner findes i tre udgaver: standardfarven, der er blå, samt sort og hvid. Det er SVG-filer, og de kan downloades ved at højreklikke på dem.</p>
+                        <h2 class="h2--guide">SKATs standard ikoner</h2>                        
+                        <p><a id="showBWicons" href="#">Vis sort/hvid ikoner</a></p>
+                        <p><a id="showNormalIcons" class="hidden" href="design-ikoner.html">Skjul sort/hvid ikoner</a></p>
+                        <div class="icon-table">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--afgifter skts-icon--large"><a href="sktscommon/images/ikoner/ikon-afgifter.svg"><br/></a></div>
+                                    <div>Afgifter (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--afgifter"><a href="sktscommon/images/ikoner/ikon-afgifter.svg"><br/></a></div>
+                                    <div>Afgifter (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--afgifter skts-icon--small"><a href="sktscommon/images/ikoner/ikon-afgifter.svg"><br/></a></div>
+                                    <div>Afgifter (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--afskrivning skts-icon--large"><a href="sktscommon/images/ikoner/ikon-afskrivning.svg"><br/></a></div>
+                                    <div>afskrivning (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--afskrivning"><a href="sktscommon/images/ikoner/ikon-afskrivning.svg"><br/></a></div>
+                                    <div>afskrivning (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--afskrivning skts-icon--small"><a href="sktscommon/images/ikoner/ikon-afskrivning.svg"><br/></a></div>
+                                    <div>afskrivning (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--aktier skts-icon--large"><a href="sktscommon/images/ikoner/ikon-aktier.svg"><br/></a></div>
+                                    <div>Aktier (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--aktier"><a href="sktscommon/images/ikoner/ikon-aktier.svg"><br/></a></div>
+                                    <div>Aktier (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--aktier skts-icon--small"><a href="sktscommon/images/ikoner/ikon-aktier.svg"><br/></a></div>
+                                    <div>Aktier (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--ansatte-og-loen skts-icon--large"><a href="sktscommon/images/ikoner/ikon-ansatte-og-loen.svg"><br /></a></div>
+                                    <div>Ansatte-og-loen (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--ansatte-og-loen"><a href="sktscommon/images/ikoner/ikon-ansatte-og-loen.svg"><br /></a></div>
+                                    <div>Ansatte-og-loen (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--ansatte-og-loen skts-icon--small"><a href="sktscommon/images/ikoner/ikon-ansatte-og-loen.svg"><br /></a></div>
+                                    <div>Ansatte-og-loen (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--arrow skts-icon--large"><a href="sktscommon/images/ikoner/ikon-arrow.svg"><br /></a></div>
+                                    <div>Arrow (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--arrow"><a href="sktscommon/images/ikoner/ikon-arrow.svg"><br /></a></div>
+                                    <div>Arrow (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--arrow skts-icon--small"><a href="sktscommon/images/ikoner/ikon-arrow.svg"><br /></a></div>
+                                    <div>Arrow (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--beregn skts-icon--large"><a href="sktscommon/images/ikoner/ikon-beregn.svg"><br/></a></div>
+                                    <div>Beregn (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--beregn"><a href="sktscommon/images/ikoner/ikon-beregn.svg"><br/></a></div>
+                                    <div>Beregn (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--beregn skts-icon--small"><a href="sktscommon/images/ikoner/ikon-beregn.svg"><br/></a></div>
+                                    <div>Beregn (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--bil skts-icon--large"><a href="sktscommon/images/ikoner/ikon-bil.svg"><br/></a></div>
+                                    <div>Bil (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--bil"><a href="sktscommon/images/ikoner/ikon-bil.svg"><br/></a></div>
+                                    <div>Bil (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--bil skts-icon--small"><a href="sktscommon/images/ikoner/ikon-bil.svg"><br/></a></div>
+                                    <div>Bil (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--borger skts-icon--large"><a href="sktscommon/images/ikoner/ikon-borger.svg"><br/></a></div>
+                                    <div>Borger (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--borger"><a href="sktscommon/images/ikoner/ikon-borger.svg"><br/></a></div>
+                                    <div>Borger (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--borger skts-icon--small"><a href="sktscommon/images/ikoner/ikon-borger.svg"><br/></a></div>
+                                    <div>Borger (S)</div>
+                                </div>
+							</div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--boede skts-icon--large"><a href="sktscommon/images/ikoner/ikon-boede.svg"><br/></a></div>
+                                    <div>Bøde (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--boede"><a href="sktscommon/images/ikoner/ikon-boede.svg"><br/></a></div>
+                                    <div>Bøde (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--boede skts-icon--small"><a href="sktscommon/images/ikoner/ikon-boede.svg"><br/></a></div>
+                                    <div>Bøde (S)</div>
+                                </div>
+                            </div>
+							<div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--boernepasning skts-icon--large"><a href="sktscommon/images/ikoner/ikon-boernepasning.svg"><br/></a></div>
+                                    <div>Børnepasning (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--boernepasning"><a href="sktscommon/images/ikoner/ikon-boernepasning.svg"><br/></a></div>
+                                    <div>Børnepasning (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--boernepasning skts-icon--small"><a href="sktscommon/images/ikoner/ikon-boernepasning.svg"><br/></a></div>
+                                    <div>Børnepasning (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--cykel skts-icon--large"><a href="sktscommon/images/ikoner/ikon-cykel.svg"><br /></a></div>
+                                    <div>Cykel (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--cykel"><a href="sktscommon/images/ikoner/ikon-cykel.svg"><br /></a></div>
+                                    <div>Cykel (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--cykel skts-icon--small"><a href="sktscommon/images/ikoner/ikon-cykel.svg"><br /></a></div>
+                                    <div>Cykel (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--dagsbevis skts-icon--large"><a href="sktscommon/images/ikoner/ikon-dagsbevis.svg"><br/></a></div>
+                                    <div>Dagsbevis (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--dagsbevis"><a href="sktscommon/images/ikoner/ikon-dagsbevis.svg"><br/></a></div>
+                                    <div>Dagsbevis (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--dagsbevis skts-icon--small"><a href="sktscommon/images/ikoner/ikon-dagsbevis.svg"><br/></a></div>
+                                    <div>Dagsbevis (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--dk-flag skts-icon--large"><a href="sktscommon/images/ikoner/ikon-dk-flag.svg"><br /></a></div>
+                                    <div>Dk-flag (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--dk-flag"><a href="sktscommon/images/ikoner/ikon-dk-flag.svg"><br /></a></div>
+                                    <div>Dk-flag (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--dk-flag skts-icon--small"><a href="sktscommon/images/ikoner/ikon-dk-flag.svg"><br /></a></div>
+                                    <div>Dk-flag (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--doedsfald skts-icon--large"><a href="sktscommon/images/ikoner/ikon-doedsfald.svg"><br/></a></div>
+                                    <div>Dødsfald (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--doedsfald"><a href="sktscommon/images/ikoner/ikon-doedsfald.svg"><br/></a></div>
+                                    <div>Dødsfald (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--doedsfald skts-icon--small"><a href="sktscommon/images/ikoner/ikon-doedsfald.svg"><br/></a></div>
+                                    <div>Dødsfald (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--eindkomst skts-icon--large"><a href="sktscommon/images/ikoner/ikon-eindkomst.svg"><br/></a></div>
+                                    <div>eIndkomst (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--eindkomst"><a href="sktscommon/images/ikoner/ikon-eindkomst.svg"><br/></a></div>
+                                    <div>eIndkomst (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--eindkomst skts-icon--small"><a href="sktscommon/images/ikoner/ikon-eindkomst.svg"><br/></a></div>
+                                    <div>eIndkomst (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--ejendom skts-icon--large"><a href="sktscommon/images/ikoner/ikon-ejendom.svg"><br/></a></div>
+                                    <div>Ejendom (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--ejendom"><a href="sktscommon/images/ikoner/ikon-ejendom.svg"><br/></a></div>
+                                    <div>Ejendom (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--ejendom skts-icon--small"><a href="sktscommon/images/ikoner/ikon-ejendom.svg"><br/></a></div>
+                                    <div>Ejendom (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--ejendomsvurdering skts-icon--large"><a href="sktscommon/images/ikoner/ikon-ejendomsvurdering.svg"><br/></a></div>
+                                    <div>Ejendomsvurdering (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--ejendomsvurdering"><a href="sktscommon/images/ikoner/ikon-ejendomsvurdering.svg"><br/></a></div>
+                                    <div>Ejendomsvurdering (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--ejendomsvurdering skts-icon--small"><a href="sktscommon/images/ikoner/ikon-ejendomsvurdering.svg"><br/></a></div>
+                                    <div>Ejendomsvurdering (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--erhverv skts-icon--large"><a href="sktscommon/images/ikoner/ikon-erhverv.svg"><br/></a></div>
+                                    <div>Erhverv (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--erhverv"><a href="sktscommon/images/ikoner/ikon-erhverv.svg"><br/></a></div>
+                                    <div>Erhverv (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--erhverv skts-icon--small"><a href="sktscommon/images/ikoner/ikon-erhverv.svg"><br/></a></div>
+                                    <div>Erhverv (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--excel skts-icon--large"><a href="sktscommon/images/ikoner/ikon-excel.svg"><br/></a></div>
+                                    <div>Excel (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--excel"><a href="sktscommon/images/ikoner/ikon-excel.svg"><br/></a></div>
+                                    <div>Excel (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--excel skts-icon--small"><a href="sktscommon/images/ikoner/ikon-excel.svg"><br/></a></div>
+                                    <div>Excel (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--facebook skts-icon--large"><a href="sktscommon/images/ikoner/ikon-facebook.svg"><br/></a></div>
+                                    <div>Facebook (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--facebook"><a href="sktscommon/images/ikoner/ikon-facebook.svg"><br/></a></div>
+                                    <div>Facebook (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--facebook skts-icon--small"><a href="sktscommon/images/ikoner/ikon-facebook.svg"><br/></a></div>
+                                    <div>Facebook (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--flytning skts-icon--large"><a href="sktscommon/images/ikoner/ikon-flytning.svg"><br/></a></div>
+                                    <div>Flytning (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--flytning"><a href="sktscommon/images/ikoner/ikon-flytning.svg"><br/></a></div>
+                                    <div>Flytning (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--flytning skts-icon--small"><a href="sktscommon/images/ikoner/ikon-flytning.svg"><br/></a></div>
+                                    <div>Flytning (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--foreninger skts-icon--large"><a href="sktscommon/images/ikoner/ikon-foreninger.svg"><br/></a></div>
+                                    <div>Foreninger (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--foreninger"><a href="sktscommon/images/ikoner/ikon-foreninger.svg"><br/></a></div>
+                                    <div>Foreninger (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--foreninger skts-icon--small"><a href="sktscommon/images/ikoner/ikon-foreninger.svg"><br/></a></div>
+                                    <div>Foreninger (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--formue skts-icon--large"><a href="sktscommon/images/ikoner/ikon-formue.svg"><br/></a></div>
+                                    <div>Formue (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--formue"><a href="sktscommon/images/ikoner/ikon-formue.svg"><br/></a></div>
+                                    <div>Formue (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--formue skts-icon--small"><a href="sktscommon/images/ikoner/ikon-formue.svg"><br/></a></div>
+                                    <div>Formue (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--forskning skts-icon--large"><a href="sktscommon/images/ikoner/ikon-forskning.svg"><br/></a></div>
+                                    <div>Forskning (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--forskning"><a href="sktscommon/images/ikoner/ikon-forskning.svg"><br/></a></div>
+                                    <div>Forskning (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--forskning skts-icon--small"><a href="sktscommon/images/ikoner/ikon-forskning.svg"><br/></a></div>
+                                    <div>Forskning (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--fradrag skts-icon--large"><a href="sktscommon/images/ikoner/ikon-fradrag.svg"><br /></a></div>
+                                    <div>Fradrag (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--fradrag"><a href="sktscommon/images/ikoner/ikon-fradrag.svg"><br /></a></div>
+                                    <div>Fradrag (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--fradrag skts-icon--small"><a href="sktscommon/images/ikoner/ikon-fradrag.svg"><br /></a></div>
+                                    <div>Fradrag (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--gaver skts-icon--large"><a href="sktscommon/images/ikoner/ikon-gaver.svg"><br /></a></div>
+                                    <div>Gaver (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--gaver"><a href="sktscommon/images/ikoner/ikon-gaver.svg"><br /></a></div>
+                                    <div>Gaver (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--gaver skts-icon--small"><a href="sktscommon/images/ikoner/ikon-gaver.svg"><br /></a></div>
+                                    <div>Gaver (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--henvendelser skts-icon--large"><a href="sktscommon/images/ikoner/ikon-henvendelser.svg"><br/></a></div>
+                                    <div>Henvendelser (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--henvendelser"><a href="sktscommon/images/ikoner/ikon-henvendelser.svg"><br/></a></div>
+                                    <div>Henvendelser (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--henvendelser skts-icon--small"><a href="sktscommon/images/ikoner/ikon-henvendelser.svg"><br/></a></div>
+                                    <div>Henvendelser (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--hjaelp skts-icon--large"><a href="sktscommon/images/ikoner/ikon-hjaelp.svg"><br/></a></div>
+                                    <div>Hjælp (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--hjaelp"><a href="sktscommon/images/ikoner/ikon-hjaelp.svg"><br/></a></div>
+                                    <div>Hjælp (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--hjaelp skts-icon--small"><a href="sktscommon/images/ikoner/ikon-hjaelp.svg"><br/></a></div>
+                                    <div>Hjælp (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--hjaelp-til-tastselv skts-icon--large"><a href="sktscommon/images/ikoner/ikon-hjaelp-til-tastselv.svg"><br/></a></div>
+                                    <div>Hjaelp til tastselv (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--hjaelp-til-tastselv"><a href="sktscommon/images/ikoner/ikon-hjaelp-til-tastselv.svg"><br/></a></div>
+                                    <div>Hjaelp til tastselv (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--hjaelp-til-tastselv skts-icon--small"><a href="sktscommon/images/ikoner/ikon-hjaelp-til-tastselv.svg"><br/></a></div>
+                                    <div>Hjaelp til tastselv (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--haandvaerkerfradrag skts-icon--large"><a href="sktscommon/images/ikoner/ikon-haandvaerkerfradrag.svg"><br/></a></div>
+                                    <div>Håndværkerfradrag (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--haandvaerkerfradrag"><a href="sktscommon/images/ikoner/ikon-haandvaerkerfradrag.svg"><br/></a></div>
+                                    <div>Håndværkerfradrag (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--haandvaerkerfradrag skts-icon--small"><a href="sktscommon/images/ikoner/ikon-haandvaerkerfradrag.svg"><br/></a></div>
+                                    <div>Håndværkerfradrag (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--import-registreringsafgift skts-icon--large"><a href="sktscommon/images/ikoner/ikon-import-registreringsafgift.svg"><br/></a></div>
+                                    <div>Import registreringsafgift (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--import-registreringsafgift"><a href="sktscommon/images/ikoner/ikon-import-registreringsafgift.svg"><br/></a></div>
+                                    <div>Import registreringsafgift (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--import-registreringsafgift skts-icon--small"><a href="sktscommon/images/ikoner/ikon-import-registreringsafgift.svg"><br/></a></div>
+                                    <div>Import registreringsafgift (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--indenfor-eu skts-icon--large"><a href="sktscommon/images/ikoner/ikon-indenfor-eu.svg"><br/></a></div>
+                                    <div>Indenfor EU (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--indenfor-eu"><a href="sktscommon/images/ikoner/ikon-indenfor-eu.svg"><br/></a></div>
+                                    <div>Indenfor EU (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--indenfor-eu skts-icon--small"><a href="sktscommon/images/ikoner/ikon-indenfor-eu.svg"><br/></a></div>
+                                    <div>Indenfor EU (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--indkomst-og-skat skts-icon--large"><a href="sktscommon/images/ikoner/ikon-indkomst-og-skat.svg"><br /></a></div>
+                                    <div>Indkomst-og-skat (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--indkomst-og-skat"><a href="sktscommon/images/ikoner/ikon-indkomst-og-skat.svg"><br /></a></div>
+                                    <div>Indkomst-og-skat (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--indkomst-og-skat skts-icon--small"><a href="sktscommon/images/ikoner/ikon-indkomst-og-skat.svg"><br /></a></div>
+                                    <div>Indkomst-og-skat (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--indkomster skts-icon--large"><a href="sktscommon/images/ikoner/ikon-indkomster.svg"><br/></a></div>
+                                    <div>Indkomster (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--indkomster"><a href="sktscommon/images/ikoner/ikon-indkomster.svg"><br/></a></div>
+                                    <div>Indkomster (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--indkomster skts-icon--small"><a href="sktscommon/images/ikoner/ikon-indkomster.svg"><br/></a></div>
+                                    <div>Indkomster (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--indstillinger skts-icon--large"><a href="sktscommon/images/ikoner/ikon-indstillinger.svg"><br/></a></div>
+                                    <div>Indstillinger (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--indstillinger"><a href="sktscommon/images/ikoner/ikon-indstillinger.svg"><br/></a></div>
+                                    <div>Indstillinger (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--indstillinger skts-icon--small"><a href="sktscommon/images/ikoner/ikon-indstillinger.svg"><br/></a></div>
+                                    <div>Indstillinger (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--information skts-icon--large"><a href="sktscommon/images/ikoner/ikon-information.svg"><br/></a></div>
+                                    <div>Information (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--information"><a href="sktscommon/images/ikoner/ikon-information.svg"><br/></a></div>
+                                    <div>Information (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--information skts-icon--small"><a href="sktscommon/images/ikoner/ikon-information.svg"><br/></a></div>
+                                    <div>Information (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--instagram skts-icon--large"><a href="sktscommon/images/ikoner/ikon-instagram.svg"><br/></a></div>
+                                    <div>Instagram (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--instagram"><a href="sktscommon/images/ikoner/ikon-instagram.svg"><br/></a></div>
+                                    <div>Instagram (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--instagram skts-icon--small"><a href="sktscommon/images/ikoner/ikon-instagram.svg"><br/></a></div>
+                                    <div>Instagram (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--integrer skts-icon--large"><a href="sktscommon/images/ikoner/ikon-integrer.svg"><br/></a></div>
+                                    <div>integrer (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--integrer"><a href="sktscommon/images/ikoner/ikon-integrer.svg"><br/></a></div>
+                                    <div>integrer (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--integrer skts-icon--small"><a href="sktscommon/images/ikoner/ikon-integrer.svg"><br/></a></div>
+                                    <div>integrer (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--ivaerksaetter skts-icon--large"><a href="sktscommon/images/ikoner/ikon-ivaerksaetter.svg"><br/></a></div>
+                                    <div>Iværksætter (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--ivaerksaetter"><a href="sktscommon/images/ikoner/ikon-ivaerksaetter.svg"><br/></a></div>
+                                    <div>Iværksætter (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--ivaerksaetter skts-icon--small"><a href="sktscommon/images/ikoner/ikon-ivaerksaetter.svg"><br/></a></div>
+                                    <div>Iværksætter (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--job skts-icon--large"><a href="sktscommon/images/ikoner/ikon-job.svg"><br/></a></div>
+                                    <div>Job (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--job"><a href="sktscommon/images/ikoner/ikon-job.svg"><br/></a></div>
+                                    <div>Job (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--job skts-icon--small"><a href="sktscommon/images/ikoner/ikon-job.svg"><br/></a></div>
+                                    <div>Job (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--kalender skts-icon--large"><a href="sktscommon/images/ikoner/ikon-kalender.svg"><br/></a></div>
+                                    <div>Kalender (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--kalender"><a href="sktscommon/images/ikoner/ikon-kalender.svg"><br/></a></div>
+                                    <div>Kalender (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--kalender skts-icon--small"><a href="sktscommon/images/ikoner/ikon-kalender.svg"><br/></a></div>
+                                    <div>Kalender (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--kontakt skts-icon--large"><a href="sktscommon/images/ikoner/ikon-kontakt.svg"><br/></a></div>
+                                    <div>Kontakt (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--kontakt"><a href="sktscommon/images/ikoner/ikon-kontakt.svg"><br/></a></div>
+                                    <div>Kontakt (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--kontakt skts-icon--small"><a href="sktscommon/images/ikoner/ikon-kontakt.svg"><br/></a></div>
+                                    <div>Kontakt (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--kontekstuel-lovgivning skts-icon--large"><a href="sktscommon/images/ikoner/ikon-kontekstuel-lovgivning.svg"><br/></a></div>
+                                    <div>kontekstuel-lovgivning (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--kontekstuel-lovgivning"><a href="sktscommon/images/ikoner/ikon-kontekstuel-lovgivning.svg"><br/></a></div>
+                                    <div>kontekstuel-lovgivning (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--kontekstuel-lovgivning skts-icon--small"><a href="sktscommon/images/ikoner/ikon-kontekstuel-lovgivning.svg"><br/></a></div>
+                                    <div>kontekstuel-lovgivning (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--kuffert skts-icon--large"><a href="sktscommon/images/ikoner/ikon-kuffert.svg"><br /></a></div>
+                                    <div>Kuffert (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--kuffert"><a href="sktscommon/images/ikoner/ikon-kuffert.svg"><br /></a></div>
+                                    <div>Kuffert (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--kuffert skts-icon--small"><a href="sktscommon/images/ikoner/ikon-kuffert.svg"><br /></a></div>
+                                    <div>Kuffert (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--kran skts-icon--large"><a href="sktscommon/images/ikoner/ikon-kran.svg"><br /></a></div>
+                                    <div>Kran (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--kran"><a href="sktscommon/images/ikoner/ikon-kran.svg"><br /></a></div>
+                                    <div>Kran (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--kran skts-icon--small"><a href="sktscommon/images/ikoner/ikon-kran.svg"><br /></a></div>
+                                    <div>Kran (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--linkedin skts-icon--large"><a href="sktscommon/images/ikoner/ikon-linkedin.svg"><br/></a></div>
+                                    <div>Linkedin (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--linkedin"><a href="sktscommon/images/ikoner/ikon-linkedin.svg"><br/></a></div>
+                                    <div>Linkedin (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--linkedin skts-icon--small"><a href="sktscommon/images/ikoner/ikon-linkedin.svg"><br/></a></div>
+                                    <div>Linkedin (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--loenindkomst skts-icon--large"><a href="sktscommon/images/ikoner/ikon-loenindkomst.svg"><br /></a></div>
+                                    <div>Lønindkomst (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--loenindkomst"><a href="sktscommon/images/ikoner/ikon-loenindkomst.svg"><br /></a></div>
+                                    <div>Lønindkomst (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--loenindkomst skts-icon--small"><a href="sktscommon/images/ikoner/ikon-loenindkomst.svg"><br /></a></div>
+                                    <div>Lønindkomst (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--loensumsafgift skts-icon--large"><a href="sktscommon/images/ikoner/ikon-loensumsafgift.svg"><br/></a></div>
+                                    <div>Lønsumsafgift (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--loensumsafgift"><a href="sktscommon/images/ikoner/ikon-loensumsafgift.svg"><br/></a></div>
+                                    <div>Lønsumsafgift (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--loensumsafgift skts-icon--small"><a href="sktscommon/images/ikoner/ikon-loensumsafgift.svg"><br/></a></div>
+                                    <div>Lønsumsafgift (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--log-ind skts-icon--large"><a href="sktscommon/images/ikoner/ikon-log-ind.svg"><br/></a></div>
+                                    <div>Logind (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--log-ind"><a href="sktscommon/images/ikoner/ikon-log-ind.svg"><br/></a></div>
+                                    <div>Logind (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--log-ind skts-icon--small"><a href="sktscommon/images/ikoner/ikon-log-ind.svg"><br/></a></div>
+                                    <div>Logind (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--log-ud skts-icon--large"><a href="sktscommon/images/ikoner/ikon-log-ud.svg"><br/></a></div>
+                                    <div>Logud (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--log-ud"><a href="sktscommon/images/ikoner/ikon-log-ud.svg"><br/></a></div>
+                                    <div>Logud (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--log-ud skts-icon--small"><a href="sktscommon/images/ikoner/ikon-log-ud.svg"><br/></a></div>
+                                    <div>Logud (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--luk skts-icon--large"><a href="sktscommon/images/ikoner/ikon-luk.svg"><br/></a></div>
+                                    <div>Luk (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--luk"><a href="sktscommon/images/ikoner/ikon-luk.svg"><br/></a></div>
+                                    <div>Luk (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--luk skts-icon--small"><a href="sktscommon/images/ikoner/ikon-luk.svg"><br/></a></div>
+                                    <div>Luk (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--lyt skts-icon--large"><a href="sktscommon/images/ikoner/ikon-lyt.svg"><br/></a></div>
+                                    <div>Lyt (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--lyt"><a href="sktscommon/images/ikoner/ikon-lyt.svg"><br/></a></div>
+                                    <div>Lyt (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--lyt skts-icon--small"><a href="sktscommon/images/ikoner/ikon-lyt.svg"><br/></a></div>
+                                    <div>Lyt (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--laan skts-icon--large"><a href="sktscommon/images/ikoner/ikon-laan.svg"><br /></a></div>
+                                    <div>Lån (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--laan"><a href="sktscommon/images/ikoner/ikon-laan.svg"><br /></a></div>
+                                    <div>Lån (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--laan skts-icon--small"><a href="sktscommon/images/ikoner/ikon-laan.svg"><br /></a></div>
+                                    <div>Lån (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--menu skts-icon--large"><a href="sktscommon/images/ikoner/ikon-menu.svg"><br /></a></div>
+                                    <div>Menu (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--menu"><a href="sktscommon/images/ikoner/ikon-menu.svg"><br /></a></div>
+                                    <div>Menu (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--menu skts-icon--small"><a href="sktscommon/images/ikoner/ikon-menu.svg"><br /></a></div>
+                                    <div>Menu (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--moms skts-icon--large"><a href="sktscommon/images/ikoner/ikon-moms.svg"><br/></a></div>
+                                    <div>Moms (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--moms"><a href="sktscommon/images/ikoner/ikon-moms.svg"><br/></a></div>
+                                    <div>Moms (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--moms skts-icon--small"><a href="sktscommon/images/ikoner/ikon-moms.svg"><br/></a></div>
+                                    <div>Moms (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--more skts-icon--large"><a href="sktscommon/images/ikoner/ikon-more.svg"><br /></a></div>
+                                    <div>More (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--more"><a href="sktscommon/images/ikoner/ikon-more.svg"><br /></a></div>
+                                    <div>More (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--more skts-icon--small"><a href="sktscommon/images/ikoner/ikon-more.svg"><br /></a></div>
+                                    <div>More (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--omregistrering skts-icon--large"><a href="sktscommon/images/ikoner/ikon-omregistrering.svg"><br/></a></div>
+                                    <div>Omregistrering (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--omregistrering"><a href="sktscommon/images/ikoner/ikon-omregistrering.svg"><br/></a></div>
+                                    <div>Omregistrering (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--omregistrering skts-icon--small"><a href="sktscommon/images/ikoner/ikon-omregistrering.svg"><br/></a></div>
+                                    <div>Omregistrering (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--pdf skts-icon--large"><a href="sktscommon/images/ikoner/ikon-pdf.svg"><br/></a></div>
+                                    <div>Pdf (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--pdf"><a href="sktscommon/images/ikoner/ikon-pdf.svg"><br/></a></div>
+                                    <div>Pdf (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--pdf skts-icon--small"><a href="sktscommon/images/ikoner/ikon-pdf.svg"><br/></a></div>
+                                    <div>Pdf (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--pension skts-icon--large"><a href="sktscommon/images/ikoner/ikon-pension.svg"><br/></a></div>
+                                    <div>Pension (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--pension"><a href="sktscommon/images/ikoner/ikon-pension.svg"><br/></a></div>
+                                    <div>Pension (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--pension skts-icon--small"><a href="sktscommon/images/ikoner/ikon-pension.svg"><br/></a></div>
+                                    <div>Pension (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--personalegoder skts-icon--large"><a href="sktscommon/images/ikoner/ikon-personalegoder.svg"><br /></a></div>
+                                    <div>Personalegoder (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--personalegoder"><a href="sktscommon/images/ikoner/ikon-personalegoder.svg"><br /></a></div>
+                                    <div>Personalegoder (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--personalegoder skts-icon--small"><a href="sktscommon/images/ikoner/ikon-personalegoder.svg"><br /></a></div>
+                                    <div>Personalegoder (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--pinterest skts-icon--large"><a href="sktscommon/images/ikoner/ikon-pinterest.svg"><br/></a></div>
+                                    <div>Pinterest (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--pinterest"><a href="sktscommon/images/ikoner/ikon-pinterest.svg"><br/></a></div>
+                                    <div>Pinterest (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--pinterest skts-icon--small"><a href="sktscommon/images/ikoner/ikon-pinterest.svg"><br/></a></div>
+                                    <div>Pinterest (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--play skts-icon--large"><a href="sktscommon/images/ikoner/ikon-play.svg"><br/></a></div>
+                                    <div>Play (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--play"><a href="sktscommon/images/ikoner/ikon-play.svg"><br/></a></div>
+                                    <div>Play (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--play skts-icon--small"><a href="sktscommon/images/ikoner/ikon-play.svg"><br/></a></div>
+                                    <div>Play (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--print skts-icon--large"><a href="sktscommon/images/ikoner/ikon-print.svg"><br/></a></div>
+                                    <div>Print (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--print"><a href="sktscommon/images/ikoner/ikon-print.svg"><br/></a></div>
+                                    <div>Print (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--print skts-icon--small"><a href="sktscommon/images/ikoner/ikon-print.svg"><br/></a></div>
+                                    <div>Print (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--problem skts-icon--large"><a href="sktscommon/images/ikoner/ikon-problem.svg"><br /></a></div>
+                                    <div>Problem (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--problem"><a href="sktscommon/images/ikoner/ikon-problem.svg"><br /></a></div>
+                                    <div>Problem (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--problem skts-icon--small"><a href="sktscommon/images/ikoner/ikon-problem.svg"><br /></a></div>
+                                    <div>Problem (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--punktafgifter skts-icon--large"><a href="sktscommon/images/ikoner/ikon-punktafgifter.svg"><br/></a></div>
+                                    <div>Punktafgifter (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--punktafgifter"><a href="sktscommon/images/ikoner/ikon-punktafgifter.svg"><br/></a></div>
+                                    <div>Punktafgifter (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--punktafgifter skts-icon--small"><a href="sktscommon/images/ikoner/ikon-punktafgifter.svg"><br/></a></div>
+                                    <div>Punktafgifter (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--registreringsafgift skts-icon--large"><a href="sktscommon/images/ikoner/ikon-registreringsafgift.svg"><br/></a></div>
+                                    <div>Registreringsafgift (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--registreringsafgift"><a href="sktscommon/images/ikoner/ikon-registreringsafgift.svg"><br/></a></div>
+                                    <div>Registreringsafgift (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--registreringsafgift skts-icon--small"><a href="sktscommon/images/ikoner/ikon-registreringsafgift.svg"><br/></a></div>
+                                    <div>Registreringsafgift (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--renteudgifter-oevrige skts-icon--large"><a href="sktscommon/images/ikoner/ikon-renteudgifter-oevrige.svg"><br/></a></div>
+                                    <div>Renteudgifter øvrige (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--renteudgifter-oevrige"><a href="sktscommon/images/ikoner/ikon-renteudgifter-oevrige.svg"><br/></a></div>
+                                    <div>Renteudgifter øvrige (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--renteudgifter-oevrige skts-icon--small"><a href="sktscommon/images/ikoner/ikon-renteudgifter-oevrige.svg"><br/></a></div>
+                                    <div>Renteudgifter øvrige (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--raadgivere-revisorer skts-icon--large"><a href="sktscommon/images/ikoner/ikon-raadgivere-revisorer.svg"><br/></a></div>
+                                    <div>Rådgivere revisorer (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--raadgivere-revisorer"><a href="sktscommon/images/ikoner/ikon-raadgivere-revisorer.svg"><br/></a></div>
+                                    <div>Rådgivere revisorer (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--raadgivere-revisorer skts-icon--small"><a href="sktscommon/images/ikoner/ikon-raadgivere-revisorer.svg"><br/></a></div>
+                                    <div>Rådgivere revisorer (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--raadgivning skts-icon--large"><a href="sktscommon/images/ikoner/ikon-raadgivning.svg"><br/></a></div>
+                                    <div>Rådgivning (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--raadgivning"><a href="sktscommon/images/ikoner/ikon-raadgivning.svg"><br/></a></div>
+                                    <div>Rådgivning (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--raadgivning skts-icon--small"><a href="sktscommon/images/ikoner/ikon-raadgivning.svg"><br/></a></div>
+                                    <div>Rådgivning (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--segment skts-icon--large"><a href="sktscommon/images/ikoner/ikon-segment.svg"><br/></a></div>
+                                    <div>segment (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--segment"><a href="sktscommon/images/ikoner/ikon-segment.svg"><br/></a></div>
+                                    <div>segment (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--segment skts-icon--small"><a href="sktscommon/images/ikoner/ikon-segment.svg"><br/></a></div>
+                                    <div>segment (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--send skts-icon--large"><a href="sktscommon/images/ikoner/ikon-send.svg"><br/></a></div>
+                                    <div>Send (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--send"><a href="sktscommon/images/ikoner/ikon-send.svg"><br/></a></div>
+                                    <div>Send (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--send skts-icon--small"><a href="sktscommon/images/ikoner/ikon-send.svg"><br/></a></div>
+                                    <div>Send (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--servicedesk skts-icon--large"><a href="sktscommon/images/ikoner/ikon-servicedesk.svg"><br/></a></div>
+                                    <div>Servicedesk (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--servicedesk"><a href="sktscommon/images/ikoner/ikon-servicedesk.svg"><br/></a></div>
+                                    <div>Servicedesk (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--servicedesk skts-icon--small"><a href="sktscommon/images/ikoner/ikon-servicedesk.svg"><br/></a></div>
+                                    <div>Servicedesk (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--skattekonto skts-icon--large"><a href="sktscommon/images/ikoner/ikon-skattekonto.svg"><br /></a></div>
+                                    <div>Skattekonto (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--skattekonto"><a href="sktscommon/images/ikoner/ikon-skattekonto.svg"><br /></a></div>
+                                    <div>Skattekonto (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--skattekonto skts-icon--small"><a href="sktscommon/images/ikoner/ikon-skattekonto.svg"><br /></a></div>
+                                    <div>Skattekonto (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--skattekort skts-icon--large"><a href="sktscommon/images/ikoner/ikon-skattekort.svg"><br /></a></div>
+                                    <div>Skattekort (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--skattekort"><a href="sktscommon/images/ikoner/ikon-skattekort.svg"><br /></a></div>
+                                    <div>Skattekort (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--skattekort skts-icon--small"><a href="sktscommon/images/ikoner/ikon-skattekort.svg"><br /></a></div>
+                                    <div>Skattekort (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--skatten-2015 skts-icon--large"><a href="sktscommon/images/ikoner/ikon-skatten-2015.svg"><br /></a></div>
+                                    <div>Skatten 2015 (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--skatten-2015"><a href="sktscommon/images/ikoner/ikon-skatten-2015.svg"><br /></a></div>
+                                    <div>Skatten 2015 (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--skatten-2015 skts-icon--small"><a href="sktscommon/images/ikoner/ikon-skatten-2015.svg"><br /></a></div>
+                                    <div>Skatten 2015 (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--skatten-2016 skts-icon--large"><a href="sktscommon/images/ikoner/ikon-skatten-2016.svg"><br/></a></div>
+                                    <div>Skatten 2016 (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--skatten-2016"><a href="sktscommon/images/ikoner/ikon-skatten-2016.svg"><br/></a></div>
+                                    <div>Skatten 2016 (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--skatten-2016 skts-icon--small"><a href="sktscommon/images/ikoner/ikon-skatten-2016.svg"><br/></a></div>
+                                    <div>Skatten 2016 (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--skatten-2017 skts-icon--large"><a href="sktscommon/images/ikoner/ikon-skatten-2017.svg"><br /></a></div>
+                                    <div>Skatten 2017 (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--skatten-2017"><a href="sktscommon/images/ikoner/ikon-skatten-2017.svg"><br /></a></div>
+                                    <div>Skatten 2017 (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--skatten-2017 skts-icon--small"><a href="sktscommon/images/ikoner/ikon-skatten-2017.svg"><br /></a></div>
+                                    <div>Skatten 2017 (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--starting-a-business skts-icon--large"><a href="sktscommon/images/ikoner/ikon-starting-a-business.svg"><br/></a></div>
+                                    <div>Starting a business (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--starting-a-business"><a href="sktscommon/images/ikoner/ikon-starting-a-business.svg"><br/></a></div>
+                                    <div>Starting a business (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--starting-a-business skts-icon--small"><a href="sktscommon/images/ikoner/ikon-starting-a-business.svg"><br/></a></div>
+                                    <div>Starting a business (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--su skts-icon--large"><a href="sktscommon/images/ikoner/ikon-su.svg"><br/></a></div>
+                                    <div>SU (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--su"><a href="sktscommon/images/ikoner/ikon-su.svg"><br/></a></div>
+                                    <div>SU (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--su skts-icon--small"><a href="sktscommon/images/ikoner/ikon-su.svg"><br/></a></div>
+                                    <div>SU (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--soeg skts-icon--large"><a href="sktscommon/images/ikoner/ikon-soeg.svg"><br/></a></div>
+                                    <div>Søg (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--soeg"><a href="sktscommon/images/ikoner/ikon-soeg.svg"><br/></a></div>
+                                    <div>Søg (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--soeg skts-icon--small"><a href="sktscommon/images/ikoner/ikon-soeg.svg"><br/></a></div>
+                                    <div>Søg (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--told skts-icon--large"><a href="sktscommon/images/ikoner/ikon-told.svg"><br/></a></div>
+                                    <div>Told (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--told"><a href="sktscommon/images/ikoner/ikon-told.svg"><br/></a></div>
+                                    <div>Told (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--told skts-icon--small"><a href="sktscommon/images/ikoner/ikon-told.svg"><br/></a></div>
+                                    <div>Told (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--transparens skts-icon--large"><a href="sktscommon/images/ikoner/ikon-transparens.svg"><br/></a></div>
+                                    <div>transparens (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--transparens"><a href="sktscommon/images/ikoner/ikon-transparens.svg"><br/></a></div>
+                                    <div>transparens (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--transparens skts-icon--small"><a href="sktscommon/images/ikoner/ikon-transparens.svg"><br/></a></div>
+                                    <div>transparens (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--transport skts-icon--large"><a href="sktscommon/images/ikoner/ikon-transport.svg"><br/></a></div>
+                                    <div>Transport (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--transport"><a href="sktscommon/images/ikoner/ikon-transport.svg"><br/></a></div>
+                                    <div>Transport (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--transport skts-icon--small"><a href="sktscommon/images/ikoner/ikon-transport.svg"><br/></a></div>
+                                    <div>Transport (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--twitter skts-icon--large"><a href="sktscommon/images/ikoner/ikon-twitter.svg"><br/></a></div>
+                                    <div>Twitter (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--twitter"><a href="sktscommon/images/ikoner/ikon-twitter.svg"><br/></a></div>
+                                    <div>Twitter (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--twitter skts-icon--small"><a href="sktscommon/images/ikoner/ikon-twitter.svg"><br/></a></div>
+                                    <div>Twitter (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--udland skts-icon--large"><a href="sktscommon/images/ikoner/ikon-udland.svg"><br/></a></div>
+                                    <div>Udland (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--udland"><a href="sktscommon/images/ikoner/ikon-udland.svg"><br/></a></div>
+                                    <div>Udland (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--udland skts-icon--small"><a href="sktscommon/images/ikoner/ikon-udland.svg"><br/></a></div>
+                                    <div>Udland (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--udvidet-indberetning skts-icon--large"><a href="sktscommon/images/ikoner/ikon-udvidet-indberetning.svg"><br/></a></div>
+                                    <div>Udvidet indberetning (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--udvidet-indberetning"><a href="sktscommon/images/ikoner/ikon-udvidet-indberetning.svg"><br/></a></div>
+                                    <div>Udvidet indberetning (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--udvidet-indberetning skts-icon--small"><a href="sktscommon/images/ikoner/ikon-udvidet-indberetning.svg"><br/></a></div>
+                                    <div>Udvidet indberetning (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--underholdsbidrag skts-icon--large"><a href="sktscommon/images/ikoner/ikon-underholdsbidrag.svg"><br/></a></div>
+                                    <div>Underholdsbidrag (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--underholdsbidrag"><a href="sktscommon/images/ikoner/ikon-underholdsbidrag.svg"><br/></a></div>
+                                    <div>Underholdsbidrag (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--underholdsbidrag skts-icon--small"><a href="sktscommon/images/ikoner/ikon-underholdsbidrag.svg"><br/></a></div>
+                                    <div>Underholdsbidrag (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--unge skts-icon--large"><a href="sktscommon/images/ikoner/ikon-unge.svg"><br/></a></div>
+                                    <div>Unge (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--unge"><a href="sktscommon/images/ikoner/ikon-unge.svg"><br/></a></div>
+                                    <div>Unge (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--unge skts-icon--small"><a href="sktscommon/images/ikoner/ikon-unge.svg"><br/></a></div>
+                                    <div>Unge (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--upload skts-icon--large"><a href="sktscommon/images/ikoner/ikon-upload.svg"><br/></a></div>
+                                    <div>Upload (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--upload"><a href="sktscommon/images/ikoner/ikon-upload.svg"><br/></a></div>
+                                    <div>Upload (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--upload skts-icon--small"><a href="sktscommon/images/ikoner/ikon-upload.svg"><br/></a></div>
+                                    <div>Upload (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--virksomhed skts-icon--large"><a href="sktscommon/images/ikoner/ikon-virksomhed.svg"><br/></a></div>
+                                    <div>Virksomhed (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--virksomhed"><a href="sktscommon/images/ikoner/ikon-virksomhed.svg"><br/></a></div>
+                                    <div>Virksomhed (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--virksomhed skts-icon--small"><a href="sktscommon/images/ikoner/ikon-virksomhed.svg"><br/></a></div>
+                                    <div>Virksomhed (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--virksomhedsregistrering skts-icon--large"><a href="sktscommon/images/ikoner/ikon-virksomhedsregistrering.svg"><br/></a></div>
+                                    <div>Virksomhedsregistrering (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--virksomhedsregistrering"><a href="sktscommon/images/ikoner/ikon-virksomhedsregistrering.svg"><br/></a></div>
+                                    <div>Virksomhedsregistrering (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--virksomhedsregistrering skts-icon--small"><a href="sktscommon/images/ikoner/ikon-virksomhedsregistrering.svg"><br/></a></div>
+                                    <div>Virksomhedsregistrering (S)</div>
+                                </div>
+                            </div>                            
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--youtube skts-icon--large"><a href="sktscommon/images/ikoner/ikon-youtube.svg"><br/></a></div>
+                                    <div>YouTube (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--youtube"><a href="sktscommon/images/ikoner/ikon-youtube.svg"><br/></a></div>
+                                    <div>YouTube (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--youtube skts-icon--small"><a href="sktscommon/images/ikoner/ikon-youtube.svg"><br/></a></div>
+                                    <div>YouTube (S)</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--aarsopgoerelsen skts-icon--large"><a href="sktscommon/images/ikoner/ikon-aarsopgoerelsen.svg"><br/></a></div>
+                                    <div>Årsopgørelsen (L)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--aarsopgoerelsen"><a href="sktscommon/images/ikoner/ikon-aarsopgoerelsen.svg"><br/></a></div>
+                                    <div>Årsopgørelsen (M)</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--aarsopgoerelsen skts-icon--small"><a href="sktscommon/images/ikoner/ikon-aarsopgoerelsen.svg"><br/></a></div>
+                                    <div>Årsopgørelsen (S)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2 class="h2--guide">Special ikoner</h2>
+    					<div class="icon-table">
+    						<div class="row">
+                                <div class="col-sm-4">
+                                    <div class="skts-icon skts-icon--afloeb-draen skts-icon--large"><a href="sktscommon/images/ikoner/ikon-afloeb-draen.svg"><br/></a></div>
+                                    <div>Afløb (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--afloeb-draen"><a href="sktscommon/images/ikoner/ikon-afloeb-draen.svg"><br/></a></div>
+    								<div>Afløb (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--afloeb-draen skts-icon--small"><a href="sktscommon/images/ikoner/ikon-afloeb-draen.svg"><br/></a></div>
+    								<div>Afløb (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div data-test="testing" class="skts-icon skts-icon--asbest-pcb-bly skts-icon--large"><a href="sktscommon/images/ikoner/ikon-asbest-pcb-bly.svg"><br/></a></div>
+    								<div>Asbest-pcb-bly (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--asbest-pcb-bly"><a href="sktscommon/images/ikoner/ikon-asbest-pcb-bly.svg"><br/></a></div>
+    								<div>Asbest-pcb-bly (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--asbest-pcb-bly skts-icon--small"><a href="sktscommon/images/ikoner/ikon-asbest-pcb-bly.svg"><br/></a></div>
+    								<div>Asbest-pcb-bly (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--braendeovne skts-icon--large"><a href="sktscommon/images/ikoner/ikon-braendeovne.svg"><br/></a></div>
+    								<div>Brændeovne (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--braendeovne"><a href="sktscommon/images/ikoner/ikon-braendeovne.svg"><br/></a></div>
+    								<div>Brændeovne (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--braendeovne skts-icon--small"><a href="sktscommon/images/ikoner/ikon-braendeovne.svg"><br/></a></div>
+    								<div>Brændeovne (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--fjernvarmeunits skts-icon--large"><a href="sktscommon/images/ikoner/ikon-fjernvarmeunits.svg"><br/></a></div>
+    								<div>Fjernvarmeunits (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--fjernvarmeunits"><a href="sktscommon/images/ikoner/ikon-fjernvarmeunits.svg"><br/></a></div>
+    								<div>Fjernvarmeunits (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--fjernvarmeunits skts-icon--small"><a href="sktscommon/images/ikoner/ikon-fjernvarmeunits.svg"><br/></a></div>
+    								<div>Fjernvarmeunits (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--glasdoere skts-icon--large"><a href="sktscommon/images/ikoner/ikon-glasdoere.svg"><br/></a></div>
+    								<div>Glasdøre (L)</div>
+    							</div>
+    						<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--glasdoere"><a href="sktscommon/images/ikoner/ikon-glasdoere.svg"><br/></a></div>
+    								<div>Glasdøre (M)</div>
+    							</div>
+    						<div class="col-sm-4">
+    							<div class="skts-icon skts-icon--glasdoere skts-icon--small"><a href="sktscommon/images/ikoner/ikon-glasdoere.svg"><br/></a></div>
+    							<div>Glasdøre (S)</div>
+    						</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--havearbejde skts-icon--large"><a href="sktscommon/images/ikoner/ikon-havearbejde.svg"><br/></a></div>
+    								<div>Havearbejde (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--havearbejde"><a href="sktscommon/images/ikoner/ikon-havearbejde.svg"><br/></a></div>
+    								<div>Havearbejde (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--havearbejde skts-icon--small"><a href="sktscommon/images/ikoner/ikon-havearbejde.svg"><br/></a></div>
+    								<div>Havearbejde (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--installation-af-varmepumper skts-icon--large"><a href="sktscommon/images/ikoner/ikon-installation-af-varmepumper.svg"><br/></a></div>
+    								<div>Installation af varmepumper (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--installation-af-varmepumper"><a href="sktscommon/images/ikoner/ikon-installation-af-varmepumper.svg"><br/></a></div>
+    								<div>Installation af varmepumper (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--installation-af-varmepumper skts-icon--small"><a href="sktscommon/images/ikoner/ikon-installation-af-varmepumper.svg"><br/></a></div>
+    								<div>Installation af varmepumper (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--installation-af-varmestyring skts-icon--large"><a href="sktscommon/images/ikoner/ikon-installation-af-varmestyring.svg"><br/></a></div>
+    								<div>Installation af varmestyring (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--installation-af-varmestyring"><a href="sktscommon/images/ikoner/ikon-installation-af-varmestyring.svg"><br/></a></div>
+    								<div>Installation af varmestyring (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--installation-af-varmestyring skts-icon--small"><a href="sktscommon/images/ikoner/ikon-installation-af-varmestyring.svg"><br/></a></div>
+    								<div>Installation af varmestyring (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--intelligent-styring skts-icon--large"><a href="sktscommon/images/ikoner/ikon-intelligent-styring.svg"><br/></a></div>
+    								<div>Intelligent styring (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--intelligent-styring"><a href="sktscommon/images/ikoner/ikon-intelligent-styring.svg"><br/></a></div>
+    								<div>Intelligent styring (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--intelligent-styring skts-icon--small"><a href="sktscommon/images/ikoner/ikon-intelligent-styring.svg"><br/></a></div>
+    								<div>Intelligent styring (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--isolering-af-gulv skts-icon--large"><a href="sktscommon/images/ikoner/ikon-isolering-af-gulv.svg"><br/></a></div>
+    								<div>Isolering af gulv (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--isolering-af-gulv"><a href="sktscommon/images/ikoner/ikon-isolering-af-gulv.svg"><br/></a></div>
+    								<div>Isolering af gulv (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--isolering-af-gulv skts-icon--small"><a href="sktscommon/images/ikoner/ikon-isolering-af-gulv.svg"><br/></a></div>
+    								<div>Isolering af gulv (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--isolering-af-tag skts-icon--large"><a href="sktscommon/images/ikoner/ikon-isolering-af-tag.svg"><br/></a></div>
+    								<div>Isolering af tag (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--isolering-af-tag"><a href="sktscommon/images/ikoner/ikon-isolering-af-tag.svg"><br/></a></div>
+    								<div>Isolering af tag (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--isolering-af-tag skts-icon--small"><a href="sktscommon/images/ikoner/ikon-isolering-af-tag.svg"><br/></a></div>
+    								<div>Isolering af tag (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--isolering-af-ydervaegge skts-icon--large"><a href="sktscommon/images/ikoner/ikon-ydervaegge-af-tag.svg"><br/></a></div>
+    								<div>Isolering af ydervaegge (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--isolering-af-ydervaegge"><a href="sktscommon/images/ikoner/ikon-isolering-af-ydervaegge.svg"><br/></a></div>
+    								<div>Isolering af ydervaegge (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--isolering-af-ydervaegge skts-icon--small"><a href="sktscommon/images/ikoner/ikon-isolering-af-ydervaegge.svg"><br/></a></div>
+    								<div>Isolering af ydervaegge (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--ladestik-til-elbiler skts-icon--large"><a href="sktscommon/images/ikoner/ikon-ladestik-til-elbiler.svg"><br/></a></div>
+    								<div>Ladestik til elbiler (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--ladestik-til-elbiler"><a href="sktscommon/images/ikoner/ikon-ladestik-til-elbiler.svg"><br/></a></div>
+    								<div>Ladestik til elbiler (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--ladestik-til-elbiler skts-icon--small"><a href="sktscommon/images/ikoner/ikon-ladestik-til-elbiler.svg"><br/></a></div>
+    								<div>Ladestik til elbiler (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--oversvoemmelse skts-icon--large"><a href="sktscommon/images/ikoner/ikon-oversvoemmelse.svg"><br/></a></div>
+    								<div>Oversvømmelse (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--oversvoemmelse"><a href="sktscommon/images/ikoner/ikon-oversvoemmelse.svg"><br/></a></div>
+    								<div>Oversvømmelse (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--oversvoemmelse skts-icon--small"><a href="sktscommon/images/ikoner/ikon-oversvoemmelse.svg"><br/></a></div>
+    								<div>Oversvømmelse (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--permeable-belaegninger skts-icon--large"><a href="sktscommon/images/ikoner/ikon-permeable-belaegninger.svg"><br/></a></div>
+    								<div>Permeable belægninger (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--permeable-belaegninger"><a href="sktscommon/images/ikoner/ikon-permeable-belaegninger.svg"><br/></a></div>
+    								<div>Permeable belægninger (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--permeable-belaegninger skts-icon--small"><a href="sktscommon/images/ikoner/ikon-permeable-belaegninger.svg"><br/></a></div>
+    								<div>Permeable belægninger (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--radonsikring skts-icon--large"><a href="sktscommon/images/ikoner/ikon-radonsikring.svg"><br/></a></div>
+    								<div>Radonsikring (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--radonsikring"><a href="sktscommon/images/ikoner/ikon-radonsikring.svg"><br/></a></div>
+    								<div>Radonsikring (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--radonsikring skts-icon--small"><a href="sktscommon/images/ikoner/ikon-radonsikring.svg"><br/></a></div>
+    								<div>Radonsikring (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--rengoering skts-icon--large"><a href="sktscommon/images/ikoner/ikon-rengoering.svg"><br/></a></div>
+    								<div>Rengøring (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--rengoering"><a href="sktscommon/images/ikoner/ikon-rengoering.svg"><br/></a></div>
+    								<div>Rengøring (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--rengoering skts-icon--small"><a href="sktscommon/images/ikoner/ikon-rengoering.svg"><br/></a></div>
+    								<div>Rengøring (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--skorsten skts-icon--large"><a href="sktscommon/images/ikoner/ikon-skorsten.svg"><br/></a></div>
+    								<div>Skorsten (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--skorsten"><a href="sktscommon/images/ikoner/ikon-skorsten.svg"><br/></a></div>
+    								<div>Skorsten (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--skorsten skts-icon--small"><a href="sktscommon/images/ikoner/ikon-skorsten.svg"><br/></a></div>
+    								<div>Skorsten (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--solafskaermning skts-icon--large"><a href="sktscommon/images/ikoner/ikon-solafskaermning.svg"><br/></a></div>
+    								<div>Solafskærmning (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--solafskaermning"><a href="sktscommon/images/ikoner/ikon-solafskaermning.svg"><br/></a></div>
+    								<div>Solafskærmning (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--solafskaermning skts-icon--small"><a href="sktscommon/images/ikoner/ikon-solafskaermning.svg"><br/></a></div>
+    								<div>Solafskærmning (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--tilslutning-til-bredbaand skts-icon--large"><a href="sktscommon/images/ikoner/ikon-tilslutning-til-bredbaand.svg"><br/></a></div>
+    								<div>Tilslutning til bredbånd (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--tilslutning-til-bredbaand"><a href="sktscommon/images/ikoner/ikon-tilslutning-til-bredbaand.svg"><br/></a></div>
+    								<div>Tilslutning til bredbånd (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--tilslutning-til-bredbaand skts-icon--small"><a href="sktscommon/images/ikoner/ikon-tilslutning-til-bredbaand.svg"><br/></a></div>
+    								<div>Tilslutning til bredbånd (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--udvendigt-malerarbejde skts-icon--large"><a href="sktscommon/images/ikoner/ikon-udvendigt-malerarbejde.svg"><br/></a></div>
+    								<div>Udvendigt malerarbejde (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--udvendigt-malerarbejde"><a href="sktscommon/images/ikoner/ikon-udvendigt-malerarbejde.svg"><br/></a></div>
+    								<div>Udvendigt malerarbejde (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--udvendigt-malerarbejde skts-icon--small"><a href="sktscommon/images/ikoner/ikon-udvendigt-malerarbejde.svg"><br/></a></div>
+    								<div>Udvendigt malerarbejde (S)</div>
+    							</div>
+    						</div>
+    						 <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="skts-icon skts-icon--varmeanlaeg skts-icon--large"><a href="sktscommon/images/ikoner/ikon-varmeanlaeg.svg"><br/></a></div>
+                                        <div>Varmeanlæg (L)</div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="skts-icon skts-icon--varmeanlaeg"><a href="sktscommon/images/ikoner/ikon-varmeanlaeg.svg"><br/></a></div>
+                                        <div>Varmeanlæg (M)</div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="skts-icon skts-icon--varmeanlaeg skts-icon--small"><a href="sktscommon/images/ikoner/ikon-varmeanlaeg.svg"><br/></a></div>
+                                        <div>Varmeanlæg (S)</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="skts-icon skts-icon--ventilation skts-icon--large"><a href="sktscommon/images/ikoner/ikon-ventilation.svg"><br/></a></div>
+                                        <div>Ventilation (L)</div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="skts-icon skts-icon--ventilation"><a href="sktscommon/images/ikoner/ikon-ventilation.svg"><br/></a></div>
+                                        <div>Ventilation (M)</div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="skts-icon skts-icon--ventilation skts-icon--small"><a href="sktscommon/images/ikoner/ikon-ventilation.svg"><br/></a></div>
+                                        <div>Ventilation (S)</div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="skts-icon skts-icon--vindmoeller skts-icon--large"><a href="sktscommon/images/ikoner/ikon-vindmoeller.svg"><br/></a></div>
+                                        <div>Vindmøller (L)</div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="skts-icon skts-icon--vindmoeller"><a href="sktscommon/images/ikoner/ikon-vindmoeller.svg"><br/></a></div>
+                                        <div>Vindmøller (M)</div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="skts-icon skts-icon--vindmoeller skts-icon--small"><a href="sktscommon/images/ikoner/ikon-vindmoeller.svg"><br/></a></div>
+                                        <div>Vindmøller (S)</div>
+                                    </div>
+                                </div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--vinduespudsning skts-icon--large"><a href="sktscommon/images/ikoner/ikon-vinduespudsning.svg"><br/></a></div>
+    								<div>Vinduespudsning (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--vinduespudsning"><a href="sktscommon/images/ikoner/ikon-vinduespudsning.svg"><br/></a></div>
+    								<div>Vinduespudsning (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--vinduespudsning skts-icon--small"><a href="sktscommon/images/ikoner/ikon-vinduespudsning.svg"><br/></a></div>
+    								<div>Vinduespudsning (S)</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--yderdoere skts-icon--large"><a href="sktscommon/images/ikoner/ikon-yderdoere.svg"><br/></a></div>
+    								<div>Yderdøre (L)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--yderdoere"><a href="sktscommon/images/ikoner/ikon-yderdoere.svg"><br/></a></div>
+    								<div>Yderdøre (M)</div>
+    							</div>
+    							<div class="col-sm-4">
+    								<div class="skts-icon skts-icon--yderdoere skts-icon--small"><a href="sktscommon/images/ikoner/ikon-yderdoere.svg"><br/></a></div>
+    								<div>Yderdøre (S)</div>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+            <div class="skts-push"></div>
+        </div>
+        <footer>
+            <div class="row">
+                <div class="col-sm-4 text-left hidden-xs" >
+                    <div class="skts-logo-small"><span class="sr-only">SKAT logo</span></div>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <a href="https://www.skat.dk/SKAT.aspx?oId=967" target="_blank">Kontakt SKAT</a>
+                </div>
+                <div class="col-sm-4 text-right hidden-xs"> 
+                    <a target="_blank" href="https://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="sr-only"> Åbner nyt vindue</span></a>
+                </div>
+            </div>
+        </footer>
+        <!-- Modal start-->
+        <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Luk"><span aria-hidden="true"></span></button>
+                        <h2 class="modal-title js-modal-title">Download ikon</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Download <span class="js-icon-name"></span> som svg eller png</p>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="clearfix skts-wizard-buttons">
+                            <a href="#" id="js-svg-link" download="#" class="btn pull-right skts-btn-secondary">Svg</a>
+                            <a href="#" id="js-png-link" download="#" class="btn pull-left skts-btn-secondary">Png</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Modal end-->
+		<script src="sktscommon/js/vendor/jquery-3.2.1.min.js"></script>
+		<script src="sktscommon/js/skat.min.js"></script>
+		<script src="sktscommon/js/prototype-workflows.min.js"></script>
+		<!--ADDED FOR GUIDE PURPOSES ONLY -->
+		<script src="assets/js/prettify.js"></script>
+		<script src="assets/js/guide.js"></script>
+	</body>
+</html>

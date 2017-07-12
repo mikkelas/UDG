@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="da"> 
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Udviklings- og designguide - SKAT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link href="sktscommon/css/skat.min.css" rel="stylesheet">
+		<link href="assets/css/guide.css" rel="stylesheet" type="text/css" />
+    </head>
+	<body data-spy="scroll">
+		<div class="skts-wrap">
+			<header class="container-fluid header-show">
+                <div class="row">
+                    <div class="col-xs-3 text-center skts-bg-main-1">
+                        <div class="skts-header-item">
+                            <button type="button" class="skts-menu-button js-create-nav-modal" data-toggle="modal" data-target="#sktsNavModal" data-nav-link-selector="#sktsTopNavLinks">
+                                <span class="sr-only">Vis/skjul navigation</span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                            </button>
+                            <div class="navbar-collapse hidden" id="sktsTopNavLinks">
+                                 <ul>
+                                    <li><a href="index.html">Forside</a></li>
+		                            <li><a href="design.html">Design</a></li>
+		                            <li><a href="udvikling.html">Udvikling</a></li>
+		                            <li><a href="brugeroplevelser.html">Brugeroplevelser</a></li>
+		                            <li><a href="krav.html" class="active">Non funktionelle krav</a></li>
+		                            <li><a href="changelog.html">Changelog</a></li>
+		                            <li><a href="kontakt.html">Kontakt</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 text-center skts-bg-main-2">
+                        <div class="skts-header-item skts-header-item--logo">
+                            <a class="skts-logo-responsive" href="index.html">
+                                <span class="sr-only">Gå til forside</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 text-center skts-bg-main-4">
+                        <div class="skts-header-item">
+                            <a href="index.html">UDG</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+			<div class="skts-breadcrumb-container">
+                <ol class="breadcrumb container">
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="krav.html">Krav</a></li>
+                </ol>
+            </div>
+			<div class="container skts-top-pad-1">
+				<div class="row">
+					<div class="col-md-8" id="mainContent">
+						<h1 class="h1--guide" id="browser-underst">Tekniske krav</h1>
+						<h2 class="h2--guide" id="subBrowser">Browserunderstøttelse</h2>
+						<p>Underst&oslash;ttelse af følgende</p>
+						<ul>
+							<li>Windows
+								<ul>
+									<li>Google chrome (Current - 1) og Current</li>
+									<li>Firefox (Current - 1) og Current</li>
+									<li>Edge (Current - 1) og Current</li>
+									<li>Internet explorer 11</li>
+									<li>Internet explorer 10 *</li>
+								</ul>
+							</li>
+							<li>Android 4.2, 4.4 og 5.x, 6.x, 7.x
+								<ul>
+									<li>Google chrome</li>
+									<li>Internet (den indbyggede) *</li>
+									<li>Firefox *</li>
+								</ul>
+							</li>
+							<li>IOS 7, IOS 8, IOS 9, IOS 10
+								<ul>
+									<li>Safari (Current - 1) og Current</li>
+									<li>Google chrome (Current - 1) og Current</li>
+								</ul>
+							</li>
+							<li>Windows phone
+								<ul>
+									<li>Internet explorer 10 *</li>
+								</ul>
+							</li>
+							<li>OSX
+								<ul>
+									<li>Safari</li>
+									<li>Google chrome</li>
+								</ul>
+							</li>
+						</ul>
+						<p>Guiden indeholder i vid udstr&aelig;kning elementer fra HTML5 og CSS3, der ikke er fuldt underst&oslash;ttede i alle browsere. Det er tilladt at benytte s&aring;danne elementer progressivt, s&aring; l&aelig;nge de ikke er n&oslash;dvendige for funktioner eller &oslash;del&aelig;gger look and feel.</p>
+						<p>* Disse browsers understøttes kun funktionelt</p>				
+						<hr/>
+						<h2 class="h2--guide" id="subHtmlVersion">HTML Version</h2>
+						<p>Alle sites skal bruge HTML5 specifikationen. For at bruge denne specifikation skal html elementet udfyldes s&aring;ledes:</p>
+<pre class="prettyprint linenums">
+&lt;!DOCTYPE&nbsp;html&gt;
+&lt;html&nbsp;lang=&quot;da&quot;&gt;
+&nbsp;&nbsp;...
+&lt;/html&gt;</pre>
+						<p>OBS: Siderne skal også kunne parses som XML. Det betyder at:</p>
+						<ul>
+							<li>Alle elementer lukkes (inkl. <code>br</code>, <code>hr</code>, <code>img</code>, <code>input</code>, <code>link</code> og <code>meta</code>).</li>
+							<li>Alle elementer og attributter skal skrives med små bogstaver.</li>
+							<li>Attributter skal sættes (inkl. selected og disabled), så hvis den ønskes tom, så sættes den =&quot;&quot;.</li>
+							<li>Attributter skal skrives med &quot; &quot;.</li>
+							<li>Inline scripts skal skrives i en CDATA sektion.</li>
+							<li>Og-tegn, mindre-end-tegn og større-end-tegn må ikke skrives som tekst.</li>
+							<li>Alle sider skal være deklareret som utf-8.</li>
+						</ul>
+						
+						<hr/>
+						<h2 class="h2--guide" id="subHttps">HTTPS - TLS</h2>
+						<p>Alle sider og dertilhørende includes skal beskyttes med HTTPS. Skal understøtte den nyeste version af TLS og må ikke have mulighed for fallback til SSL</p>
+						<h2 class="h2--guide" id="subJquery">jQuery</h2>
+						<p>jQuery skal inkluderes manuelt i projektet. Det skal altid være den senste version af jQuery i enten version 1.x eller 3.x som bruges i en løsning</p>
+					</div>
+					<div class="col-md-4">
+						<div class="skts-nav-guide hidden-xs hidden-sm skts-top-pad-1 affix-top">
+							<h2>Tekniske krav</h2>
+							<ul class="nav">
+								<li><a href="#subBrowser">Browserunderstøttelse</a></li>
+								<li><a href="#subHtmlVersion">HTML Version</a></li>
+								<li><a href="#subHttps">HTTPS - TLS</a></li>
+								<li><a href="#subJquery">jQuery</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+            <div class="skts-push"></div>
+        </div>
+		<footer>
+            <div class="row">
+                <div class="col-sm-4 text-left hidden-xs" >
+                    <div class="skts-logo-small"><span class="sr-only">SKAT logo</span></div>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <a href="https://www.skat.dk/SKAT.aspx?oId=967" target="_blank">Kontakt SKAT</a>
+                </div>
+                <div class="col-sm-4 text-right hidden-xs"> 
+                    <a target="_blank" href="https://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="sr-only"> Åbner nyt vindue</span></a>
+                </div>
+            </div>
+        </footer>
+		<script src="sktscommon/js/vendor/jquery-3.2.1.min.js"></script>
+		<script src="sktscommon/js/skat.min.js"></script>
+		<script src="sktscommon/js/prototype-workflows.min.js"></script>
+		<!--ADDED FOR GUIDE PURPOSES ONLY -->
+		<script src="assets/js/prettify.js"></script>
+		<script src="assets/js/guide.js"></script>
+	</body>
+</html>

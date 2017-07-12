@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="da"> 
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title>Udviklings- og designguide - SKAT</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+        <meta name="msapplication-tap-highlight" content="no"/>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link href="sktscommon/css/skat.min.css" rel="stylesheet">
+        <link href="assets/css/guide.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body data-spy="scroll">
+        <div class="skts-wrap">
+            <header class="container-fluid header-show">
+                <div class="row">
+                    <div class="col-xs-3 text-center skts-bg-main-1">
+                        <div class="skts-header-item">
+                            <button type="button" class="skts-menu-button js-create-nav-modal" data-toggle="modal" data-target="#sktsNavModal" data-nav-link-selector="#sktsTopNavLinks">
+                                <span class="sr-only">Vis/skjul navigation</span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                                <span class="skts-icon-bar"></span>
+                            </button>
+                            <div class="navbar-collapse hidden" id="sktsTopNavLinks">
+                                 <ul>
+                                    <li><a href="index.html">Forside</a></li>
+                                    <li><a href="design.html">Design</a></li>
+                                    <li><a href="udvikling.html">Udvikling</a></li>
+                                    <li><a href="brugeroplevelser.html" class="active">Brugeroplevelser</a></li>
+                                    <li><a href="krav.html">Non funktionelle krav</a></li>
+                                    <li><a href="changelog.html">Changelog</a></li>
+                                    <li><a href="kontakt.html">Kontakt</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 text-center skts-bg-main-2">
+                        <div class="skts-header-item skts-header-item--logo">
+                            <a class="skts-logo-responsive" href="index.html">
+                                <span class="sr-only">Gå til forside</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 text-center skts-bg-main-4">
+                        <div class="skts-header-item">
+                            <a href="index.html">UDG</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="skts-breadcrumb-container">
+                <ol class="breadcrumb container">
+                    <li><a href="index.html">Forside</a></li>
+                </ol>
+            </div>
+            <div class="container skts-top-pad-1">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2" id="mainContent">
+                        <h1 class="h1--guide" id="subGeneral">Brugeroplevelser</h1>
+                        <div class="row skts-top-pad-1">
+                            <div class="col-md-1 text-center">
+                                <h1>1</h1>
+                            </div>
+                            <div class="col-md-11">
+                                <h1>Adaptiv SKAT</h1>
+                                <p>Tilpasning til brugernes specifikke virkelighed.</p>
+                            </div>
+                        </div>
+                        <div class="row skts-top-pad-1">                           
+                            <div class="col-md-1 text-center">
+                                <h1>2</h1>
+                            </div>
+                            <div class="col-md-11">
+                                <h1>Sanity check</h1>
+                                <p>Sikre og hjælpe brugerne med altid at indberette korrekt data.</p>
+                            </div>
+                        </div>
+                        <div class="row skts-top-pad-1">
+                            <div class="col-md-1 text-center">
+                                <h1>3</h1>
+                            </div>
+                            <div class="col-md-11">
+                                <h1>Kollaborativ tilgang</h1>
+                                <p>Samarbejde med de aktører som brugerne allerede bruger i dagligdagen.</p>
+                            </div>
+                        </div>
+                        <div class="row skts-top-pad-1">                           
+                            <div class="col-md-1 text-center">
+                                <h1>4</h1>
+                            </div>
+                            <div class="col-md-11">
+                                <h1>Tydeliggøre lovgivningen</h1>
+                                <p>Hjælpe brugerne med bedre at forstå lovgivningen.</p>
+                            </div>
+                        </div>
+                        <div class="row skts-top-pad-1">
+                            <div class="col-md-1 text-center">
+                                <h1>5</h1>
+                            </div>
+                            <div class="col-md-11">
+                                <h1>Intelligent selvhjælp</h1>
+                                <p>Gøre det nemmere for brugerne.</p>
+                            </div>
+                        </div>
+                        <div class="row skts-top-pad-1">
+                            <div class="col-md-1 text-center">
+                                <h1>6</h1>
+                            </div>
+                            <div class="col-md-11">
+                                <h1>Datasikkerhed</h1>
+                                <p>Give brugerne vished om og forståelse af hvordan og hvor deres data benyttes.</p>
+                                
+                            </div>
+                        </div>
+                        <div class="row skts-top-pad-1">
+                            <div class="col-md-1 text-center">
+                                <h1>7</h1>
+                            </div>
+                            <div class="col-md-11">
+                                <h1>Skat fodspor</h1>
+                                <p>At give brugerne en bedre forståelse for vigtigheden af deres bidrag til statskassen.</p>
+                            </div>
+                        </div>
+                        <div class="row skts-top-pad-1">
+                            <div class="col-md-1 text-center">
+                                <h1>8</h1>
+                            </div>
+                            <div class="col-md-11">
+                                <h1>Datadrevet rådgivning</h1>
+                                <p>Baseret på data giver vi brugerne en kvalificeret rådgivning.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skts-push"></div>
+        </div>
+        <footer>
+            <div class="row">
+                <div class="col-sm-4 text-left hidden-xs" >
+                    <div class="skts-logo-small"><span class="sr-only">SKAT logo</span></div>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <a href="https://www.skat.dk/SKAT.aspx?oId=967" target="_blank">Kontakt SKAT</a>
+                </div>
+                <div class="col-sm-4 text-right hidden-xs"> 
+                    <a target="_blank" href="https://www.skat.dk/SKAT.aspx?oId=1617453&amp;layout=353121">Om cookies<span class="sr-only"> Åbner nyt vindue</span></a>
+                </div>
+            </div>
+        </footer>
+        <script src="sktscommon/js/vendor/jquery-3.2.1.min.js"></script>
+        <script src="sktscommon/js/skat.min.js"></script>
+        <script src="sktscommon/js/prototype-workflows.min.js"></script>
+        <!--ADDED FOR GUIDE PURPOSES ONLY -->
+        <script src="assets/js/prettify.js"></script>
+        <script src="assets/js/guide.js"></script>
+    </body>
+</html>
